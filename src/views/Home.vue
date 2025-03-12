@@ -5,12 +5,20 @@
     </div>
     <h2>BlueArchiveGM 控制台</h2>
     <p>欢迎使用 BlueArchiveGM 控制台，请在下方输入服务器地址开始使用。</p>
-    <el-input
-      v-model="serverAddress"
-      placeholder="请输入服务器地址"
-      style="width: 300px; margin-bottom: 20px"
-    ></el-input>
-    <el-button type="primary" @click="saveServerAddress">保存</el-button>
+    <div class="input-container">
+      <el-input
+        v-model="serverAddress"
+        placeholder="请输入服务器地址"
+        style="width: 300px"
+      ></el-input>
+      <el-button type="primary" @click="saveServerAddress">保存</el-button>
+    </div>
+    <p>文本测试</p>
+    <p>文本测试</p>
+    <p>文本测试</p>
+    <p>文本测试</p>
+    <p>文本测试</p>
+    <p>文本测试</p>
   </el-card>
 </template>
 
@@ -44,9 +52,16 @@ export default {
   margin-bottom: 20px;
 }
 .logo {
-  width: 100px;
+  width: 200px;
   height: auto;
   animation: bounce 2s infinite;
+}
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 @keyframes fadeIn {
   from {

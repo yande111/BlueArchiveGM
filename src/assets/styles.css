@@ -55,34 +55,41 @@ body,
     transform: translateY(0);
   }
 }
+/* 输入框和按钮的容器 */
+.input-container {
+  display: flex;
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center; /* 水平居中对齐 */
+  gap: 10px; /* 输入框和按钮之间的间距 */
+  margin: 20px 0; /* 容器的上下外边距 */
+}
+
 /* 输入框样式 */
-.el-input {
-  font-size: 14px; /* 设置字体大小 */
-  padding: 12px; /* 内边距调整 */
-  border-radius: 8px; /* 圆角效果 */
-  border: 1px solid #d3d3d3; /* 边框颜色 */
-  background-color: #ffffff; /* 背景色 */
-  transition: all 0.3s ease; /* 过渡效果 */
+.input-field {
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  width: 300px; /* 设置输入框的宽度 */
 }
 
-.el-input:focus {
-  border-color: #1e90ff; /* 焦点时蓝色边框 */
-  box-shadow: 0 0 8px rgba(30, 144, 255, 0.4); /* 焦点时蓝色阴影 */
+.input-field:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
 }
 
-.el-input__inner {
-  color: #333; /* 字体颜色 */
+/* 保存按钮样式 */
+.save-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #1e90ff;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
-.el-input__inner::placeholder {
-  color: #aaa; /* 占位符颜色 */
-}
-
-/* 自定义输入框大小 */
-.el-input.is-small .el-input__inner {
-  padding: 10px;
-}
-
-.el-input.is-large .el-input__inner {
-  padding: 14px;
+.save-button:hover {
+  background-color: #005b99; /* 悬浮时变色 */
 }
