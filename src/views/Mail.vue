@@ -71,14 +71,18 @@ export default {
   methods: {
     async handleMail() {
       const baseURL = localStorage.getItem('serverAddress')
+      const authKey = localStorage.getItem('serverAuthKey')
       if (!baseURL) {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
-      // 构造请求URL，并对需要编码的参数进行 encodeURIComponent 处理
       const url = `${baseURL}/cdq/api?cmd=m&player=${this.form.player}&sender=${encodeURIComponent(this.form.sender)}&comment=${encodeURIComponent(this.form.comment)}&send_date=${this.form.send_date}&expire_date=${this.form.expire_date}&parcel_info_list=${encodeURIComponent(this.form.parcel_info_list)}`
       try {
-        const res = await axios.get(url)
+        const res = await axios.get(url, {
+          headers: {
+            Authorization: authKey,
+          },
+        })
         this.response = JSON.stringify(res.data)
       } catch (error) {
         this.response = '请求错误：' + error

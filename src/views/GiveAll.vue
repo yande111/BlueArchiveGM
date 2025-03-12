@@ -23,6 +23,21 @@
       show-icon
       style="margin-top: 20px"
     ></el-alert>
+    <el-collapse class="documentation">
+      <el-collapse-item title="使用方法（必看！）">
+        <ui class="guide-list">
+          <li>提示：玩家不在线或未注册</li>
+          <li><code>解决方法：注册或登录当前用户</code></li>
+          <li>物品类别：</li>
+          <li><code>"Material": // 材料</code></li>
+          <li><code>"Character": // 角色</code></li>
+          <li><code>"Equipment": // 装备</code></li>
+          <li><code>"Furniture": // 家具</code></li>
+          <li><code>"Favor": // 礼物</code></li>
+          <li><code>"Emblem": // 称号</code></li>
+        </ui>
+      </el-collapse-item>
+    </el-collapse>
   </el-card>
 </template>
 
@@ -43,13 +58,18 @@ export default {
   methods: {
     async handleGiveAll() {
       const baseURL = localStorage.getItem('serverAddress')
+      const authKey = localStorage.getItem('serverAuthKey')
       if (!baseURL) {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
       try {
         const url = `${baseURL}/cdq/api?cmd=ga&uid=${this.form.uid}&t=${this.form.t}&num=${this.form.num}`
-        const res = await axios.get(url)
+        const res = await axios.get(url, {
+          headers: {
+            Authorization: authKey,
+          },
+        })
         this.response = JSON.stringify(res.data)
       } catch (error) {
         this.response = '请求错误：' + error

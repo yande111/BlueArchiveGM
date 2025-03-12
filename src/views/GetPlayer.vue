@@ -39,13 +39,18 @@ export default {
   methods: {
     async handleGetPlayer() {
       const baseURL = localStorage.getItem('serverAddress')
+      const authKey = localStorage.getItem('serverAuthKey')
       if (!baseURL) {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
       try {
         const url = `${baseURL}/cdq/api?cmd=gp&uid=${this.form.uid}&bin=${this.form.bin}`
-        const res = await axios.get(url)
+        const res = await axios.get(url, {
+          headers: {
+            Authorization: authKey,
+          },
+        })
         this.response = JSON.stringify(res.data)
       } catch (error) {
         this.response = '请求错误：' + error

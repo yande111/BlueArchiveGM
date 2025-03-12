@@ -1,0 +1,21 @@
+.documentation {
+  margin-top: 2rem;
+}
+
+.guide-list {
+  padding-left: 1.5rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.guide-list li {
+  margin-bottom: 0.8rem;
+}
+
+.guide-list code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}

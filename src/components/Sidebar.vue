@@ -12,14 +12,44 @@
         text-color="#000000"
         active-text-color="#1E90FF"
       >
-        <el-menu-item index="/" class="menu-item">首页</el-menu-item>
-        <el-menu-item index="/give" class="menu-item">给予物品</el-menu-item>
-        <el-menu-item index="/give-all" class="menu-item">给予全部物品</el-menu-item>
-        <el-menu-item index="/get-player" class="menu-item">获取玩家信息</el-menu-item>
-        <el-menu-item index="/mail" class="menu-item">发送邮件</el-menu-item>
-        <el-menu-item index="/get-email-code" class="menu-item">获取邮箱验证码</el-menu-item>
-        <el-menu-item index="/item-list" class="menu-item">物品列表</el-menu-item>
-        <el-menu-item index="/about" class="menu-item">关于</el-menu-item>
+        <el-menu-item index="/" class="menu-item">
+          <i class="bi bi-house-door"></i> 首页
+        </el-menu-item>
+        <el-menu-item index="/give" class="menu-item">
+          <i class="bi bi-gift"></i> 给予物品
+        </el-menu-item>
+        <el-menu-item index="/give-all" class="menu-item">
+          <i class="bi bi-gift-fill"></i> 给予全部物品
+        </el-menu-item>
+        <el-menu-item index="/get-player" class="menu-item">
+          <i class="bi bi-person"></i> 获取玩家信息
+        </el-menu-item>
+        <el-menu-item index="/mail" class="menu-item">
+          <i class="bi bi-envelope"></i> 发送邮件
+        </el-menu-item>
+        <el-menu-item index="/get-email-code" class="menu-item">
+          <i class="bi bi-envelope-open"></i> 获取邮箱验证码
+        </el-menu-item>
+        <el-sub-menu index="1" popper-class="custom-submenu">
+          <template #title>
+            <i class="bi bi-columns-gap"></i>
+            <span class="menu-text">ID列表</span>
+          </template>
+          <el-menu-item index="/item-list">
+            <i class="bi bi-list-nested"></i>
+            <span class="menu-text">物品列表</span>
+          </el-menu-item>
+          <el-menu-item index="/submenu1-2">
+            <i class="bi bi-file-earmark"></i>
+            <span class="menu-text">暂未开发</span>
+          </el-menu-item>
+        </el-sub-menu>
+        <!-- <el-menu-item index="/item-list" class="menu-item">
+          <i class="bi bi-list"></i> 物品列表
+        </el-menu-item> -->
+        <el-menu-item index="/about" class="menu-item">
+          <i class="bi bi-info-circle"></i> 关于
+        </el-menu-item>
       </el-menu>
     </div>
   </div>
@@ -39,6 +69,7 @@ export default {
   position: relative;
   background-color: #ffffff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: visible !important; /* 确保子菜单可以超出 */
 }
 
 /* 用伪元素确保背景效果一致 */
@@ -87,6 +118,16 @@ export default {
     color 0.3s ease;
 }
 
+/* 菜单图标样式 */
+.menu-item i {
+  margin-right: 10px;
+}
+
+/* 让图标和文字之间留出一点间隔 */
+.menu-text {
+  margin-left: 8px;
+}
+
 /* 鼠标悬停时背景色 */
 .menu-item:hover {
   background-color: #f5f5f5; /* 鼠标悬停背景色 */
@@ -101,11 +142,30 @@ export default {
     color 0.3s ease; /* 选中项背景颜色和文字颜色过渡动画 */
 }
 
+/* 选中项左侧蓝色竖条 */
+.el-menu-item.is-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #1e90ff;
+}
+
 /* 非选中项的默认背景 */
 .el-menu-item:not(.is-active) {
   background-color: transparent;
   transition:
     background-color 0.3s ease,
     color 0.3s ease; /* 非选中项背景色和文字颜色过渡 */
+}
+
+/* 让子菜单可以超出父级菜单宽度 */
+:deep(.el-menu--popup) {
+  min-width: 220px !important;
+  max-width: 300px !important;
+  white-space: nowrap;
+  z-index: 9999 !important;
 }
 </style>
