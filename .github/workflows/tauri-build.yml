@@ -1,0 +1,43 @@
+name: Build Tauri App
+
+on:
+  push:
+    branches:
+      - main  # 触发构建的分支，修改为你的主分支名称
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build:
+    runs-on: windows-latest  # 使用 Windows 服务器
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # 你可以改成你项目的 Node 版本
+          cache: 'npm'  # 如果你用 npm，改成 'npm'
+
+      - name: 安装 Rust (MSVC)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc  # 使用 MSVC 工具链
+
+      - name: 安装 pnpm
+        run: npm install -g pnpm
+
+      - name: 安装依赖
+        run: pnpm install
+
+      - name: 构建前端
+        run: pnpm run build  # 如果你的前端需要构建
+
+      - name: 构建 Tauri
+        run: pnpm tauri build
+
+      - name: 上传 EXE 作为构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: tauri-app
+          path: src-tauri/target/release/bundle/nsis/*.exe  # 修改为实际的 EXE 路径
