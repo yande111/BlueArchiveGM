@@ -31,6 +31,9 @@ jobs:
         run: npm run build  # 如果你的前端需要构建
 
       - name: 构建 Tauri
+        run: npm install tauri
+
+      - name: 构建 Tauri
         run: npm tauri build
 
       - name: 上传 EXE 作为构建产物
