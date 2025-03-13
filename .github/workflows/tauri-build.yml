@@ -3,7 +3,7 @@ name: Build Tauri App
 on:
   push:
     branches:
-      - main  # 触发构建的分支，修改为你的主分支名称
+      - master  # 触发构建的分支，修改为你的主分支名称
   workflow_dispatch:  # 允许手动触发
 
 jobs:
