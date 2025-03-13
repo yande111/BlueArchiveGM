@@ -24,14 +24,11 @@ jobs:
         with:
           targets: x86_64-pc-windows-msvc  # 使用 MSVC 工具链
 
-      - name: 安装 pnpm
-        run: npm install -g pnpm
-
       - name: 安装依赖
-        run: pnpm install
+        run: npm install
 
       - name: 构建前端
-        run: pnpm run build  # 如果你的前端需要构建
+        run: npm run build  # 如果你的前端需要构建
 
       - name: 构建 Tauri
         run: pnpm tauri build
