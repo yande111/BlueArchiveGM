@@ -56,23 +56,34 @@
       <div v-if="hasData" key="content">
         <el-card class="server-status-card">
           <h3 class="server-title">服务器状态（{{ autoUpdateStatus }}）</h3>
+          <!-- 计时器区域 -->
+          <div class="timer-bar-container">
+            <div class="timer-bar" :key="progressKey"></div>
+            <span class="timer-text">{{ countdown }}s</span>
+          </div>
           <el-skeleton :loading="loading" animated :rows="5">
             <el-descriptions :column="2" border>
-              <el-descriptions-item label="用户数量">{{
-                serverData.playerNum
-              }}</el-descriptions-item>
-              <el-descriptions-item label="TPS">{{ serverData.tps }}</el-descriptions-item>
-              <el-descriptions-item label="RT">{{ serverData.rt }}</el-descriptions-item>
-              <el-descriptions-item label="客户端版本">{{
-                serverData.clientVersion
-              }}</el-descriptions-item>
-              <el-descriptions-item label="服务器版本">{{
-                serverData.serverVersion
-              }}</el-descriptions-item>
-              <el-descriptions-item label="CPU 状态">{{ serverData.cpuOc }}</el-descriptions-item>
-              <el-descriptions-item label="内存状态">{{
-                serverData.memoryOc
-              }}</el-descriptions-item>
+              <el-descriptions-item label="用户数量">
+                {{ serverData.playerNum }}
+              </el-descriptions-item>
+              <el-descriptions-item label="TPS">
+                {{ serverData.tps }}
+              </el-descriptions-item>
+              <el-descriptions-item label="RT">
+                {{ serverData.rt }}
+              </el-descriptions-item>
+              <el-descriptions-item label="客户端版本">
+                {{ serverData.clientVersion }}
+              </el-descriptions-item>
+              <el-descriptions-item label="服务器版本">
+                {{ serverData.serverVersion }}
+              </el-descriptions-item>
+              <el-descriptions-item label="CPU 状态">
+                {{ serverData.cpuOc }}
+              </el-descriptions-item>
+              <el-descriptions-item label="内存状态">
+                {{ serverData.memoryOc }}
+              </el-descriptions-item>
             </el-descriptions>
             <div class="update-time">最后更新：{{ lastUpdate || '--:--:--' }}</div>
           </el-skeleton>
@@ -82,18 +93,6 @@
         <div class="empty-text">暂无服务器状态数据</div>
       </el-card>
     </transition>
-
-    <el-collapse class="documentation">
-      <el-collapse-item title="操作指南">
-        <ul class="guide-list">
-          <li>首次使用需填写地址和密钥后点击「保存配置」</li>
-          <li>地址示例：<code>http://127.0.0.1:5000</code></li>
-          <li>KEY需联系服务器管理员获取</li>
-          <li>状态信息在页面可见时每30秒自动同步</li>
-          <li>可随时手动点击更新按钮刷新状态</li>
-        </ul>
-      </el-collapse-item>
-    </el-collapse>
   </el-card>
 </template>
 
@@ -118,6 +117,9 @@ export default {
       isPageVisible: true,
       loading: false,
       updateQueue: null,
+      countdown: 30, // 30秒倒计时初始值
+      timerInterval: null,
+      progressKey: 0, // 用于重置 CSS 动画的 key
     }
   },
   computed: {
@@ -138,20 +140,28 @@ export default {
         this.$message.error('地址需包含 http/https 协议头')
         return
       }
-
       this.saving = true
       try {
         localStorage.setItem('serverAddress', this.serverAddress)
         localStorage.setItem('serverAuthKey', this.serverAuthKey)
-
         if (!this.hasSaved) {
           this.hasSaved = true
-          await this.manualUpdate(true)
-          this.startAutoUpdate()
-          this.$message.success('配置保存成功')
+          // 尝试更新，若无法连接则提示错误
+          const success = await this.manualUpdate(true)
+          if (!success) {
+            this.$message.error('无法连接到服务器，请检查配置')
+          } else {
+            this.startAutoUpdate()
+            this.$message.success('配置保存成功')
+          }
         } else {
-          this.restartAutoUpdate()
-          this.$message.success('配置更新成功')
+          const success = await this.manualUpdate(true)
+          if (!success) {
+            this.$message.error('无法连接到服务器，请检查配置')
+          } else {
+            this.restartAutoUpdate()
+            this.$message.success('配置更新成功')
+          }
         }
       } catch (error) {
         this.$message.error('操作失败: ' + error.message)
@@ -161,25 +171,28 @@ export default {
     },
 
     async manualUpdate(silent = false) {
-      if (this.updating) return
+      if (this.updating) return false
       this.loading = true
       this.updating = true
-
       try {
-        // 添加平滑过渡延迟
+        // 平滑过渡延迟
         await new Promise((resolve) => setTimeout(resolve, 300))
-
         const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
           headers: { Authorization: this.serverAuthKey },
           timeout: 5000,
         })
-
         if (response.status === 200 && response.data.code === 0) {
           const parsedData = JSON.parse(response.data.msg)
           await this.applyDataUpdate(parsedData)
+          this.countdown = 30
+          this.progressKey++
           if (!silent) this.$message.success('状态更新成功')
           this.autoUpdateErrorShown = false
           return true
+        } else {
+          // 服务器返回非预期数据时视为错误
+          this.handleUpdateError(new Error(response.data.message || '服务器返回错误'), silent)
+          return false
         }
       } catch (error) {
         this.handleUpdateError(error, silent)
@@ -191,27 +204,19 @@ export default {
     },
 
     async applyDataUpdate(parsedData) {
-      // 分阶段更新数据
       const tempData = { ...this.serverData }
-
-      // 第一阶段更新核心数据
       tempData.playerNum = parsedData.playerNum || 0
       tempData.tps = parsedData.tps || 0
       this.serverData = { ...tempData }
       await this.$nextTick()
-
-      // 第二阶段更新其他数据
       tempData.rt = parsedData.rt || 0
       tempData.clientVersion = parsedData.clientVersion || '未知'
       tempData.serverVersion = parsedData.serverVersion || '未知'
       this.serverData = { ...tempData }
       await this.$nextTick()
-
-      // 第三阶段更新资源数据
       tempData.cpuOc = parsedData.cpuOc ? parsedData.cpuOc.toFixed(2) + '%' : '未知'
       tempData.memoryOc = parsedData.memoryOc || '未知'
       this.serverData = { ...tempData }
-
       this.lastUpdate = this.getCurrentTime()
     },
 
@@ -230,11 +235,8 @@ export default {
     startAutoUpdate() {
       this.clearAutoUpdate()
       if (!this.hasSaved) return
-
-      // 延迟初始化自动更新
       this.updateQueue = setTimeout(() => {
         if (!this.isPageVisible) return
-
         this.autoUpdateTimer = setInterval(async () => {
           if (document.visibilityState === 'visible') {
             try {
@@ -244,8 +246,6 @@ export default {
             }
           }
         }, 30000)
-
-        // 立即执行静默更新
         this.silentUpdate()
       }, 500)
     },
@@ -256,10 +256,11 @@ export default {
           headers: { Authorization: this.serverAuthKey },
           timeout: 5000,
         })
-
         if (response.status === 200 && response.data.code === 0) {
           const parsedData = JSON.parse(response.data.msg)
           await this.applyDataUpdate(parsedData)
+          this.countdown = 30
+          this.progressKey++
           this.autoUpdateErrorShown = false
         }
       } catch (error) {
@@ -291,17 +292,30 @@ export default {
     handleVisibilityChange() {
       this.isPageVisible = document.visibilityState === 'visible'
       if (this.isPageVisible) {
-        // 添加返回时的延迟加载
         setTimeout(() => this.startAutoUpdate(), 300)
       } else {
         this.clearAutoUpdate()
       }
+    },
+
+    startCountdown() {
+      // 每秒更新一次倒计时
+      this.timerInterval = setInterval(() => {
+        if (this.countdown > 0) {
+          this.countdown--
+        } else {
+          // 当倒计时归零时重置倒计时并触发 CSS 动画重启
+          this.countdown = 30
+          this.progressKey++
+        }
+      }, 1000)
     },
   },
 
   beforeUnmount() {
     document.removeEventListener('visibilitychange', this.handleVisibilityChange)
     this.clearAutoUpdate()
+    clearInterval(this.timerInterval)
   },
 
   mounted() {
@@ -309,19 +323,39 @@ export default {
     if (this.hasSaved) {
       this.handleVisibilityChange()
     }
+    this.startCountdown()
   },
 }
 </script>
 
 <style scoped>
 .home-card {
-  max-width: 600px;
-  margin: 2rem auto;
+  max-width: 680px;
+  margin: 1rem auto; /* 调整上边距，向上移动一点 */
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 12px 40px -12px rgba(0, 0, 0, 0.12),
+    0 4px 24px -4px rgba(0, 0, 0, 0.08),
+    inset 0 0 12px rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-out both;
 }
 
+.home-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 48px -12px rgba(0, 0, 0, 0.16),
+    0 6px 32px -4px rgba(0, 0, 0, 0.12),
+    inset 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+/* 其余样式保持不变 */
 .logo-container {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -333,6 +367,15 @@ export default {
   margin-bottom: 1rem;
   object-fit: contain;
   transition: opacity 0.3s;
+}
+
+.description {
+  color: #4a5568;
+  margin-top: 0.5rem;
+}
+
+.form-container {
+  margin-bottom: 2rem;
 }
 
 .input-container {
@@ -351,7 +394,7 @@ export default {
   min-width: 120px;
   padding: 0 20px;
   flex-shrink: 0;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 
 .update-button {
@@ -362,10 +405,25 @@ export default {
 .server-status-card {
   margin-top: 2rem;
   padding: 1.5rem;
-  border-radius: 8px;
-  background: #f8f9fa;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 12px 40px -12px rgba(0, 0, 0, 0.12),
+    0 4px 24px -4px rgba(0, 0, 0, 0.08),
+    inset 0 0 12px rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.server-status-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 48px -12px rgba(0, 0, 0, 0.16),
+    0 6px 32px -4px rgba(0, 0, 0, 0.12),
+    inset 0 0 16px rgba(255, 255, 255, 0.5);
 }
 
 .server-title {
@@ -374,6 +432,41 @@ export default {
   font-weight: 600;
   color: #2c3e50;
   text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.timer-bar-container {
+  position: relative;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 8px auto 16px;
+  width: 80%;
+}
+
+.timer-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  animation: progressAnimation 30s linear forwards;
+}
+
+@keyframes progressAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.timer-text {
+  position: absolute;
+  top: -24px;
+  right: 0;
+  font-size: 0.8em;
+  color: #4a5568;
 }
 
 .update-time {
@@ -381,33 +474,6 @@ export default {
   text-align: center;
   color: #666;
   font-size: 0.9em;
-}
-
-.documentation {
-  margin-top: 2rem;
-  border-radius: 8px;
-}
-
-.guide-list {
-  padding-left: 1.8rem;
-  color: #4a5568;
-  line-height: 1.7;
-}
-
-.guide-list li {
-  margin-bottom: 0.8rem;
-}
-
-.guide-list code {
-  background: #e2e8f0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
-
-.icon {
-  margin-right: 8px;
-  font-size: 1.1em;
 }
 
 .empty-placeholder {
@@ -427,16 +493,25 @@ export default {
   transform: translateY(10px);
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @media (max-width: 480px) {
   .home-card {
     margin: 1rem;
     padding: 1.5rem;
   }
-
   .action-group {
     flex-direction: column;
   }
-
   .save-button,
   .update-button {
     width: 100%;

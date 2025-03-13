@@ -8,7 +8,7 @@
         class="el-menu-vertical-demo"
         :default-active="$route.path"
         router
-        background-color="#ffffff"
+        background-color="transparent"
         text-color="#000000"
         active-text-color="#1E90FF"
       >
@@ -44,9 +44,6 @@
             <span class="menu-text">暂未开发</span>
           </el-menu-item>
         </el-sub-menu>
-        <!-- <el-menu-item index="/item-list" class="menu-item">
-          <i class="bi bi-list"></i> 物品列表
-        </el-menu-item> -->
         <el-menu-item index="/about" class="menu-item">
           <i class="bi bi-info-circle"></i> 关于
         </el-menu-item>
@@ -62,41 +59,22 @@ export default {
 </script>
 
 <style scoped>
-/* 外层侧边栏背景铺满视口 */
+/* 外层侧边栏半透明 */
 .sidebar {
   width: 220px;
-  min-height: 100vh; /* 背景铺满整个视口 */
+  min-height: 100vh;
   position: relative;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.47); /* 半透明背景 */
+  backdrop-filter: blur(10px); /* 模糊效果 */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow: visible !important; /* 确保子菜单可以超出 */
-}
-
-/* 用伪元素确保背景效果一致 */
-.sidebar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ffffff;
-  z-index: -1;
-}
-
-/* 内容容器，高度为90vh，并垂直居中 */
-.sidebar-content {
-  height: 90vh;
-  margin: auto 0;
-  display: flex;
-  flex-direction: column;
+  overflow: visible !important;
 }
 
 /* LOGO区域 */
 .logo-wrapper {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid rgba(240, 240, 240, 0.7); */
 }
 
 .sidebar-logo {
@@ -104,15 +82,15 @@ export default {
   height: auto;
 }
 
-/* 菜单区域占据剩余空间 */
+/* 菜单区域 */
 .el-menu-vertical-demo {
   flex: 1;
   border-right: none;
+  background: transparent !important;
 }
 
 /* 侧边栏选项样式 */
 .menu-item {
-  background-color: #fff;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -130,16 +108,16 @@ export default {
 
 /* 鼠标悬停时背景色 */
 .menu-item:hover {
-  background-color: #f5f5f5; /* 鼠标悬停背景色 */
+  background-color: rgba(245, 245, 245, 0.7); /* 半透明悬停背景 */
 }
 
 /* 选中项的背景色和文字颜色 */
 .el-menu-item.is-active {
-  background-color: #e8f4ff !important; /* 选中项的背景色 */
-  color: #1e90ff !important; /* 选中的文字颜色 */
+  background-color: rgba(232, 244, 255, 0.8) !important; /* 半透明选中背景 */
+  color: #1e90ff !important;
   transition:
     background-color 0.3s ease,
-    color 0.3s ease; /* 选中项背景颜色和文字颜色过渡动画 */
+    color 0.3s ease;
 }
 
 /* 选中项左侧蓝色竖条 */
@@ -151,21 +129,5 @@ export default {
   width: 5px;
   height: 100%;
   background-color: #1e90ff;
-}
-
-/* 非选中项的默认背景 */
-.el-menu-item:not(.is-active) {
-  background-color: transparent;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease; /* 非选中项背景色和文字颜色过渡 */
-}
-
-/* 让子菜单可以超出父级菜单宽度 */
-:deep(.el-menu--popup) {
-  min-width: 220px !important;
-  max-width: 300px !important;
-  white-space: nowrap;
-  z-index: 9999 !important;
 }
 </style>
