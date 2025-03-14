@@ -54,8 +54,13 @@ export default {
       }
       try {
         const url = `${baseURL}/cdq/api?cmd=gp&uid=${this.form.uid}&bin=${this.form.bin}`
+        // 仅在 authKey 存在时添加 Authorization 请求头
+        let headers = {}
+        if (authKey) {
+          headers.Authorization = authKey
+        }
         const res = await axios.get(url, {
-          headers: { Authorization: authKey },
+          headers,
         })
         // 根据返回结果判断成功与否，这里假设 res.data.code === 0 表示成功
         if (res.data.code === 0) {
@@ -63,7 +68,7 @@ export default {
           this.$message.success('获取玩家信息成功')
         } else {
           this.responseType = 'error'
-          this.$message.error('获取玩家信息失败：' + (res.data.message || '未知错误'))
+          this.$message.error('获取玩家信息失败：' + (res.data.message || '请查看响应获取具体错误'))
         }
         this.response = JSON.stringify(res.data, null, 2)
       } catch (error) {

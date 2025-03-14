@@ -259,9 +259,15 @@ export default {
 
         if (this.form.player_type === 1) params.uid = this.form.uid
 
+        // 仅在 authKey 存在时添加 Authorization 请求头
+        let headers = {}
+        if (authKey) {
+          headers.Authorization = authKey
+        }
+
         const res = await axios.get(`${baseURL}/cdq/api`, {
           params,
-          headers: { Authorization: authKey },
+          headers,
         })
 
         this.response = true

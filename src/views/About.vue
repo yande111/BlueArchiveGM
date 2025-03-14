@@ -9,7 +9,7 @@
         <h2>关于 BlueArchiveGM</h2>
       </div>
       <div class="about-content">
-        <p><strong>版本：</strong> beta-0.0.4</p>
+        <p><strong>版本：</strong> 1.0.1</p>
         <p><strong>开发者：</strong> KitanoSakura</p>
         <p>
           <strong>项目基于：</strong>
@@ -41,6 +41,13 @@
     <el-card class="timeline-card" shadow="hover">
       <h3>Update log</h3>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h4>2025-03-14</h4>
+            <p>1.0.1 优化KEY读取，实现无key情况下也能使用GM，修复部分问题</p>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">

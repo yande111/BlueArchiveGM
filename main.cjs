@@ -3,15 +3,18 @@ const path = require('path')
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1280,
-    height: 800,
+    width: 1536,
+    height: 864,
+    frame: true, // 保留边框，但不显示工具栏
+    autoHideMenuBar: true,
+    icon: path.join(__dirname, 'assets', 'app.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
   })
 
-  // 加载开发服务器地址（请确保 npm run dev 正在运行）
-  win.loadURL('http://localhost:3000')
+  win.loadFile(path.join(__dirname, 'dist', 'index.html'))
+  // Menu.setApplicationMenu(null)
 }
 
 app.whenReady().then(() => {

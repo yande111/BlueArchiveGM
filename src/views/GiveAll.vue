@@ -111,7 +111,7 @@ export default {
           this.$message.success('物品授予成功！')
         } else {
           this.responseType = 'error'
-          this.$message.error('操作失败：' + (res.data.message || '未知错误'))
+          this.$message.error('操作失败：' + (res.data.message || '请查看响应获取具体错误'))
         }
 
         this.response = JSON.stringify(res.data, null, 2)

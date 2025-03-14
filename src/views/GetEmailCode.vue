@@ -52,10 +52,13 @@ export default {
       this.isSubmitting = true
       try {
         const url = `${baseURL}/cdq/api?cmd=gec&account=${encodeURIComponent(this.form.account)}`
+        // 仅在 authKey 存在时添加 Authorization 请求头
+        let headers = {}
+        if (authKey) {
+          headers.Authorization = authKey
+        }
         const res = await axios.get(url, {
-          headers: {
-            Authorization: authKey,
-          },
+          headers,
         })
         // 假设返回数据中 code 为 0 表示成功
         if (res.data.code === 0) {
@@ -63,7 +66,7 @@ export default {
           this.$message.success('获取验证码成功')
         } else {
           this.responseType = 'error'
-          this.$message.error('获取验证码失败：' + (res.data.message || '未知错误'))
+          this.$message.error('获取验证码失败：' + (res.data.message || '请查看响应获取具体错误'))
         }
         this.response = JSON.stringify(res.data, null, 2)
       } catch (error) {

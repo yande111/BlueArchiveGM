@@ -99,18 +99,19 @@ export default {
 
       try {
         const url = `${baseURL}/cdq/api?cmd=g&uid=${this.form.uid}&id=${this.form.id}&t=${this.form.t}&num=${this.form.num}`
-        const res = await axios.get(url, {
-          headers: {
-            Authorization: authKey,
-          },
-        })
+        // 仅在 authKey 存在时添加 Authorization 请求头
+        let headers = {}
+        if (authKey) {
+          headers.Authorization = authKey
+        }
+        const res = await axios.get(url, { headers })
 
         if (res.data.code === 0) {
           this.responseType = 'success'
           this.$message.success('物品授予成功！')
         } else {
           this.responseType = 'error'
-          this.$message.error('操作失败：' + (res.data.message || '未知错误'))
+          this.$message.error('操作失败：' + (res.data.message || '请查看响应获取具体错误'))
         }
         this.response = JSON.stringify(res.data, null, 2)
       } catch (error) {

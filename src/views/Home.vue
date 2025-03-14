@@ -20,7 +20,7 @@
       </div>
 
       <div class="input-container">
-        <el-input v-model="serverAuthKey" placeholder="认证密钥" show-password clearable>
+        <el-input v-model="serverAuthKey" placeholder="认证密钥（可选）" show-password clearable>
           <template #prefix>
             <el-icon><Key /></el-icon>
           </template>
@@ -124,8 +124,8 @@ export default {
   },
   computed: {
     isFormValid() {
-      const isValid = this.serverAddress && this.serverAuthKey
-      return isValid && this.serverAddress.startsWith('http')
+      // 只校验地址是否有效，不再要求必须填写认证密钥
+      return this.serverAddress && this.serverAddress.startsWith('http')
     },
     autoUpdateStatus() {
       return this.isPageVisible ? '每30秒自动同步' : '后台暂停更新'
@@ -177,8 +177,13 @@ export default {
       try {
         // 平滑过渡延迟
         await new Promise((resolve) => setTimeout(resolve, 300))
+        // 根据是否有认证密钥决定请求头
+        const headers = {}
+        if (this.serverAuthKey) {
+          headers.Authorization = this.serverAuthKey
+        }
         const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
-          headers: { Authorization: this.serverAuthKey },
+          headers,
           timeout: 5000,
         })
         if (response.status === 200 && response.data.code === 0) {
@@ -252,8 +257,12 @@ export default {
 
     async silentUpdate() {
       try {
+        const headers = {}
+        if (this.serverAuthKey) {
+          headers.Authorization = this.serverAuthKey
+        }
         const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
-          headers: { Authorization: this.serverAuthKey },
+          headers,
           timeout: 5000,
         })
         if (response.status === 200 && response.data.code === 0) {
@@ -329,9 +338,10 @@ export default {
 </script>
 
 <style scoped>
+/* 样式保持不变 */
 .home-card {
   max-width: 680px;
-  margin: 1rem auto; /* 调整上边距，向上移动一点 */
+  margin: 1rem auto;
   padding: 2rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.45);
@@ -355,7 +365,6 @@ export default {
     inset 0 0 16px rgba(255, 255, 255, 0.5);
 }
 
-/* 其余样式保持不变 */
 .logo-container {
   text-align: center;
   margin-bottom: 1.5rem;
