@@ -1,6 +1,12 @@
 中文 | [English](README_en-US.md)
 
-![introduce](https://socialify.git.ci/PrimeStudentCouncil/BlueArchiveGM/image?custom_description=%E5%97%AF%E5%A7%86%EF%BC%8C%E8%9C%82%E8%9C%9C%E8%9B%8B%E7%B3%95%E7%9A%84%E8%AF%9D%E2%80%A6%E2%80%A6%E6%AF%94%E8%B5%B7%E8%8D%89%E8%8E%93%E7%89%9B%E5%A5%B6%E2%80%A6%E2%80%A6%E9%A6%99%E8%95%89%E7%89%9B%E5%A5%B6%E6%9B%B4%E2%80%A6%E2%80%A6%E6%88%91%E5%90%83%E4%B8%8D%E4%BA%86%E8%BF%99%E4%B9%88%E5%A4%9A%E5%95%A6%E2%80%A6%E2%80%A6%09&description=1&font=Source+Code+Pro&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FPrimeStudentCouncil%2FBlueArchiveGM%2Fblob%2Fmaster%2Fassets%2Fapp.jpg%3Fraw%3Dtrue&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
+![introduce](https://socialify.git.ci/PrimeStudentCouncil/BlueArchiveGM/image?custom_description=%E5%90%AC%E8%AF%B4%E6%9C%89%E7%A5%9E%E7%A7%98%E5%8A%9B%E9%87%8F%EF%BC%9F%E8%BF%98%E6%9C%89%E5%86%92%E9%99%A9%EF%BC%9F%EF%BC%81&description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FPrimeStudentCouncil%2FBlueArchiveGM%2Fblob%2Fmaster%2Fassets%2Fapp.jpg%3Fraw%3Dtrue&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
+
+---
+
+**听说有小彩蛋？**
+
+---
 
 # ⚠️通知通知 ~
 
