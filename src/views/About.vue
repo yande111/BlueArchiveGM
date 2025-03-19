@@ -9,13 +9,19 @@
         <h2>关于 BlueArchiveGM</h2>
       </div>
       <div class="about-content">
-        <p><strong>版本：</strong> 1.0.1</p>
+        <p><strong>版本：</strong> 1.0.2</p>
         <p><strong>开发者：</strong> KitanoSakura</p>
         <p>
           <strong>项目基于：</strong>
           <a href="https://github.com/gucooing/BaPs/" target="_blank">BaPs</a>
         </p>
-        <p>此工具为 GM 控制台，旨在提供便捷的玩家管理功能。</p>
+        <p>
+          <strong>有任何问题可前往Issues进行反馈：</strong>
+          <a href="https://github.com/PrimeStudentCouncil/BlueArchiveGM/issues" target="_blank"
+            >issues</a
+          >
+        </p>
+        <p>BlueArchiveGM，基于BAPS制作的多功能游戏内容控制台</p>
       </div>
       <div class="sns-container">
         <a class="sns-item" href="https://discord.gg/kpYzPgv8Ur" target="_blank">
@@ -41,6 +47,16 @@
     <el-card class="timeline-card" shadow="hover">
       <h3>Update log</h3>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h4>2025-03-19</h4>
+            <p>
+              1.0.2
+              更新图标为本地，新增ID列表，取代老物品列表（未完善）新增调整学生数值，优化部分名词，优化UI，优化并更新某些奇怪的问题，修复APP白屏问题，
+            </p>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">

@@ -53,7 +53,19 @@
     </div>
 
     <transition name="fade-slide" mode="out-in">
-      <div v-if="hasData" key="content">
+      <!-- 当存在错误时，显示服务离线状态及错误原因 -->
+      <div v-if="serverError" key="error">
+        <el-card class="server-status-card">
+          <h3 class="server-title">服务器状态</h3>
+          <div class="offline-status">
+            <p>服务离线</p>
+            <p>错误原因：{{ serverError }}</p>
+          </div>
+          <div class="update-time">最后更新：{{ lastUpdate || '--:--:--' }}</div>
+        </el-card>
+      </div>
+      <!-- 正常情况下显示数据 -->
+      <div v-else-if="hasData" key="content">
         <el-card class="server-status-card">
           <h3 class="server-title">服务器状态（{{ autoUpdateStatus }}）</h3>
           <!-- 计时器区域 -->
@@ -63,7 +75,7 @@
           </div>
           <el-skeleton :loading="loading" animated :rows="5">
             <el-descriptions :column="2" border>
-              <el-descriptions-item label="用户数量">
+              <el-descriptions-item label="在线玩家数量">
                 {{ serverData.playerNum }}
               </el-descriptions-item>
               <el-descriptions-item label="TPS">
@@ -111,6 +123,7 @@ export default {
       saving: false,
       updating: false,
       serverData: null,
+      serverError: '', // 用于记录错误原因
       autoUpdateTimer: null,
       autoUpdateErrorShown: false,
       lastUpdate: null,
@@ -189,13 +202,11 @@ export default {
         if (response.status === 200 && response.data.code === 0) {
           const parsedData = JSON.parse(response.data.msg)
           await this.applyDataUpdate(parsedData)
-          this.countdown = 30
-          this.progressKey++
+          this.serverError = '' // 成功更新后清除错误
           if (!silent) this.$message.success('状态更新成功')
           this.autoUpdateErrorShown = false
           return true
         } else {
-          // 服务器返回非预期数据时视为错误
           this.handleUpdateError(new Error(response.data.message || '服务器返回错误'), silent)
           return false
         }
@@ -208,7 +219,33 @@ export default {
       return false
     },
 
+    async silentUpdate() {
+      try {
+        const headers = {}
+        if (this.serverAuthKey) {
+          headers.Authorization = this.serverAuthKey
+        }
+        const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
+          headers,
+          timeout: 5000,
+        })
+        if (response.status === 200 && response.data.code === 0) {
+          const parsedData = JSON.parse(response.data.msg)
+          await this.applyDataUpdate(parsedData)
+          this.serverError = '' // 成功时清除错误信息
+          this.autoUpdateErrorShown = false
+        }
+      } catch (error) {
+        if (!this.autoUpdateErrorShown) {
+          this.$message.warning(`自动同步失败: ${error.message}`)
+          this.autoUpdateErrorShown = true
+        }
+        this.handleUpdateError(error, true)
+      }
+    },
+
     async applyDataUpdate(parsedData) {
+      // 更新服务器数据
       const tempData = { ...this.serverData }
       tempData.playerNum = parsedData.playerNum || 0
       tempData.tps = parsedData.tps || 0
@@ -223,6 +260,10 @@ export default {
       tempData.memoryOc = parsedData.memoryOc || '未知'
       this.serverData = { ...tempData }
       this.lastUpdate = this.getCurrentTime()
+      // 每次成功更新后重置并启动倒计时
+      this.clearCountdown()
+      this.countdown = 30
+      this.startCountdown()
     },
 
     handleUpdateError(error, silent) {
@@ -234,6 +275,8 @@ export default {
       } else {
         message += error.message
       }
+      this.serverError = message // 保存错误原因以便在状态卡片中显示
+      this.clearCountdown() // 更新失败时停止倒计时
       if (!silent) this.$message.error(message)
     },
 
@@ -255,31 +298,6 @@ export default {
       }, 500)
     },
 
-    async silentUpdate() {
-      try {
-        const headers = {}
-        if (this.serverAuthKey) {
-          headers.Authorization = this.serverAuthKey
-        }
-        const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
-          headers,
-          timeout: 5000,
-        })
-        if (response.status === 200 && response.data.code === 0) {
-          const parsedData = JSON.parse(response.data.msg)
-          await this.applyDataUpdate(parsedData)
-          this.countdown = 30
-          this.progressKey++
-          this.autoUpdateErrorShown = false
-        }
-      } catch (error) {
-        if (!this.autoUpdateErrorShown) {
-          this.$message.warning(`自动同步失败: ${error.message}`)
-          this.autoUpdateErrorShown = true
-        }
-      }
-    },
-
     getCurrentTime() {
       const now = new Date()
       return `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`
@@ -298,6 +316,27 @@ export default {
       }
     },
 
+    // 清除倒计时
+    clearCountdown() {
+      if (this.timerInterval) {
+        clearInterval(this.timerInterval)
+        this.timerInterval = null
+      }
+    },
+
+    // 仅在成功更新服务器状态后启动倒计时
+    startCountdown() {
+      if (this.timerInterval) return
+      this.timerInterval = setInterval(() => {
+        if (this.countdown > 0) {
+          this.countdown--
+        } else {
+          this.countdown = 30
+          this.progressKey++
+        }
+      }, 1000)
+    },
+
     handleVisibilityChange() {
       this.isPageVisible = document.visibilityState === 'visible'
       if (this.isPageVisible) {
@@ -306,25 +345,12 @@ export default {
         this.clearAutoUpdate()
       }
     },
-
-    startCountdown() {
-      // 每秒更新一次倒计时
-      this.timerInterval = setInterval(() => {
-        if (this.countdown > 0) {
-          this.countdown--
-        } else {
-          // 当倒计时归零时重置倒计时并触发 CSS 动画重启
-          this.countdown = 30
-          this.progressKey++
-        }
-      }, 1000)
-    },
   },
 
   beforeUnmount() {
     document.removeEventListener('visibilitychange', this.handleVisibilityChange)
     this.clearAutoUpdate()
-    clearInterval(this.timerInterval)
+    this.clearCountdown()
   },
 
   mounted() {
@@ -332,13 +358,11 @@ export default {
     if (this.hasSaved) {
       this.handleVisibilityChange()
     }
-    this.startCountdown()
   },
 }
 </script>
 
 <style scoped>
-/* 样式保持不变 */
 .home-card {
   max-width: 680px;
   margin: 1rem auto;
@@ -489,6 +513,14 @@ export default {
   text-align: center;
   color: #999;
   padding: 2rem;
+}
+
+/* 离线状态样式 */
+.offline-status {
+  text-align: center;
+  color: #f56c6c;
+  font-size: 1rem;
+  padding: 1rem 0;
 }
 
 .fade-slide-enter-active,

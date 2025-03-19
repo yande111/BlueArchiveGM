@@ -52,7 +52,7 @@
           <li>物品类型不知道？</li>
           <li>以下是物品类别：</li>
           <li><code>"Material": // 材料</code></li>
-          <li><code>"Character": // 角色</code></li>
+          <li><code>"Character": // 学生</code></li>
           <li><code>"Equipment": // 装备</code></li>
           <li><code>"Furniture": // 家具</code></li>
           <li><code>"Favor": // 礼物</code></li>

@@ -30,7 +30,13 @@
         <el-menu-item index="/get-email-code" class="menu-item">
           <i class="bi bi-envelope-open"></i> 获取邮箱验证码
         </el-menu-item>
-        <el-sub-menu index="1" popper-class="custom-submenu">
+        <el-menu-item index="/character" class="menu-item">
+          <i class="bi bi-person-gear"></i> 设置学生数值
+        </el-menu-item>
+        <el-menu-item index="/id-list" class="menu-item">
+          <i class="bi bi-list-nested"></i> 获取物品列表
+        </el-menu-item>
+        <!-- <el-sub-menu index="1" popper-class="custom-submenu">
           <template #title>
             <i class="bi bi-columns-gap"></i>
             <span class="menu-text">ID列表</span>
@@ -43,7 +49,7 @@
             <i class="bi bi-file-earmark"></i>
             <span class="menu-text">暂未开发</span>
           </el-menu-item>
-        </el-sub-menu>
+        </el-sub-menu> -->
         <el-menu-item index="/about" class="menu-item">
           <i class="bi bi-info-circle"></i> 关于
         </el-menu-item>
