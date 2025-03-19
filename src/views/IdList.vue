@@ -240,8 +240,9 @@ export default {
         }
         newItem.source = sourceKey
         if (sourceKey === 'students') {
-          // 使用 id 构建学生图片 URL
-          newItem.Icon = `/src/assets/icon/${newItem.Id}.webp`
+          // 使用相对路径并通过 icons 对象获取
+          const iconPath = `/src/assets/icon/${newItem.Id}.webp`
+          newItem.Icon = icons[iconPath]?.default || ''
         } else {
           if (newItem.Icon) {
             newItem.Icon = icons[`/src/assets/icon/${newItem.Icon}.webp`]?.default || ''
