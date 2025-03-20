@@ -198,7 +198,7 @@ export default {
   },
   async created() {
     // 动态加载除学生之外的图标
-    const icons = import.meta.glob('@/assets/icon/*.webp', { eager: true })
+    const icons = import.meta.glob('@/assets/icon/*.png', { eager: true })
     // 指定需要读取的键列表
     const keys = [
       'Id',
@@ -240,11 +240,12 @@ export default {
         }
         newItem.source = sourceKey
         if (sourceKey === 'students') {
-          // 使用 id 构建学生图片 URL
-          newItem.Icon = `/src/assets/icon/${newItem.Id}.webp`
+          // 使用相对路径并通过 icons 对象获取
+          const iconPath = `/src/assets/icon/${newItem.Id}.png`
+          newItem.Icon = icons[iconPath]?.default || ''
         } else {
           if (newItem.Icon) {
-            newItem.Icon = icons[`/src/assets/icon/${newItem.Icon}.webp`]?.default || ''
+            newItem.Icon = icons[`/src/assets/icon/${newItem.Icon}.png`]?.default || ''
           }
         }
         return newItem
