@@ -13,12 +13,9 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 安装 jq
-        run: choco install jq  # 安装 jq，用于读取 package.json 的版本号
-
       - name: 读取 package.json 版本号
         id: package_version
-        run: echo "VERSION=$(node -p \"require('./package.json').version\")" >> $GITHUB_ENV
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
       - name: 获取最新提交信息
         id: commit_message
@@ -48,7 +45,7 @@ jobs:
         run: npx tauri build
 
       - name: 重命名 EXE
-        run: rename src-tauri/target/release/*.exe BlueArchiveGM.exe  # Windows 上使用 rename 命令
+        run: mv src-tauri/target/release/*.exe src-tauri/target/release/BlueArchiveGM.exe
 
       - name: 上传 EXE 作为构建产物
         uses: actions/upload-artifact@v4
@@ -66,4 +63,4 @@ jobs:
           prerelease: true  # 标记为预发布版本
           files: src-tauri/target/release/BlueArchiveGM.exe
         env:
-          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}  # 使用 GitHub 提供的 Token 或自定义的 PAT
+          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}
