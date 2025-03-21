@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "BlueArchiveGM",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "identifier": "com.KitanoSakura.BaGMTool",
   "build": {
     "frontendDist": "../dist",
@@ -25,7 +25,13 @@
   },
   "bundle": {
     "active": true,
-    "targets": "portable",
+    "targets": {
+      "app": true,
+      "nsis": {
+        "portableMode": true,
+        "oneClick": false
+      }
+    },
     "icon": [
       "icons/app.ico",
       "icons/app.ico",
