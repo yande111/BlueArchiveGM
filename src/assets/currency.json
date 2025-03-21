@@ -65,14 +65,14 @@
     {
         "Id": 10,
         "Rarity": "N",
-        "Icon": "currency_icon_chaserbticket",
+        "Icon": "",
         "Name": "信用回收挑战券",
         "Desc": "可以进行特别委托的挑战券。"
     },
     {
         "Id": 11,
         "Rarity": "N",
-        "Icon": "currency_icon_chaserbticket",
+        "Icon": "",
         "Name": "据点防御挑战券",
         "Desc": "可以进行特别委托的挑战券。"
     },

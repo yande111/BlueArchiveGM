@@ -31,14 +31,16 @@
 
 # 💌 客户端版本下载
 
-前往
+**前往Releases**
+**下载最新客户端~**
+
 [releases](https://github.com/PrimeStudentCouncil/BlueArchiveGM/releases)
-下载最新客户端~
 
 # 💝GM在线版
 
-**(没有与服务器通信的能力无法使用哦~，比如内网环境)**
-**内网请使用客户端或自行编译**
+**GM更新可能会不及时，若需要在本地使用请使用本地版**
+**GM在线版支持本地使用哦~**
+
 [BlueArchiveGM](https://gm.bluearchive.cc)
 
 # 🪄 **运行环境**

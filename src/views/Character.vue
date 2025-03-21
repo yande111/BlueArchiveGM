@@ -187,22 +187,10 @@ export default {
   box-shadow: 0 6px 16px -4px rgba(79, 172, 254, 0.4) !important;
 }
 
-/* 响应内容样式，统一玻璃质感风格 */
+/* 修改响应提示框样式，与其他组件一致 */
 .response-alert {
   margin-top: 20px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.86) !important;
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow:
-    0 12px 40px -12px rgba(0, 0, 0, 0.12),
-    0 4px 24px -4px rgba(0, 0, 0, 0.08),
-    inset 0 0 12px rgba(255, 255, 255, 0.4);
-  white-space: pre-wrap;
-  font-family: monospace;
-  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 8px;
 }
 
 @keyframes fadeIn {

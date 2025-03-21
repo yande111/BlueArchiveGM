@@ -57,9 +57,7 @@ export default {
         if (authKey) {
           headers.Authorization = authKey
         }
-        const res = await axios.get(url, {
-          headers,
-        })
+        const res = await axios.get(url, { headers })
         // 假设返回数据中 code 为 0 表示成功
         if (res.data.code === 0) {
           this.responseType = 'success'
@@ -144,11 +142,10 @@ export default {
   box-shadow: 0 6px 16px -4px rgba(79, 172, 254, 0.4) !important;
 }
 
+/* 修改响应提示框样式，使背景颜色与其他组件一致 */
 .response-alert {
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
-  background: rgba(255, 255, 255, 0.9) !important;
   margin-top: 20px;
+  border-radius: 8px;
 }
 
 @keyframes fadeIn {

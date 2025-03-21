@@ -1,6 +1,7 @@
 <template>
   <el-card class="function-card" shadow="hover">
     <h2>给予玩家单个物品</h2>
+    <p>Tips：一次只能获取一个物品哦~</p>
     <el-form :model="form" label-width="100px">
       <el-form-item label="玩家ID">
         <el-input v-model="form.uid" placeholder="请输入玩家ID">
@@ -9,17 +10,20 @@
           </template>
         </el-input>
       </el-form-item>
+      <el-form-item label="物品类型">
+        <el-select v-model="form.t" placeholder="请选择物品类型">
+          <el-option
+            v-for="option in typeOptions"
+            :key="option.value"
+            :label="option.label"
+            :value="option.value"
+          />
+        </el-select>
+      </el-form-item>
       <el-form-item label="物品ID">
-        <el-input v-model="form.id" placeholder="请输入物品ID">
+        <el-input v-model="form.id" placeholder="请输入物品ID" :disabled="!form.t">
           <template #prefix>
             <el-icon><Box /></el-icon>
-          </template>
-        </el-input>
-      </el-form-item>
-      <el-form-item label="物品类型">
-        <el-input v-model="form.t" placeholder="请输入物品类型">
-          <template #prefix>
-            <el-icon><CollectionTag /></el-icon>
           </template>
         </el-input>
       </el-form-item>
@@ -85,6 +89,32 @@ export default {
       },
       response: '',
       responseType: '', // 成功时设置为 'success'，错误时设置为 'error'
+      typeOptions: [
+        { value: 'None', label: '无' },
+        { value: 'Character', label: '学生' },
+        { value: 'Currency', label: '货币' },
+        { value: 'Equipment', label: '装备' },
+        { value: 'Item', label: '物品' },
+        { value: 'GachaGroup', label: '卡池' },
+        { value: 'Product', label: '商品' },
+        { value: 'Shop', label: '商店' },
+        { value: 'MemoryLobby', label: '记忆大厅' },
+        { value: 'AccountExp', label: '账号经验' },
+        { value: 'CharacterExp', label: '学生经验' },
+        { value: 'FavorExp', label: '好感经验' },
+        { value: 'TSS', label: 'TSS' },
+        { value: 'Furniture', label: '家具' },
+        { value: 'ShopRefresh', label: '商店刷新' },
+        { value: 'LocationExp', label: '地点经验' },
+        { value: 'Recipe', label: '配方' },
+        { value: 'CharacterWeapon', label: '学生武器' },
+        { value: 'ProductMonthly', label: '月度商品' },
+        { value: 'CharacterGear', label: '学生装备' },
+        { value: 'IdCardBackground', label: '资料背景' },
+        { value: 'Emblem', label: '徽章' },
+        { value: 'Sticker', label: '贴纸' },
+        { value: 'Costume', label: '服饰' },
+      ],
     }
   },
   methods: {

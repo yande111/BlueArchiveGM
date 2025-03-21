@@ -20,14 +20,11 @@
           v-model="searchQuery"
           placeholder="搜索物品（名称、描述或ID）"
           class="search-input"
-          prefix-icon="el-icon-search"
-        />
-
-        <!-- 分类筛选 -->
-        <el-select v-model="selectedCategory" placeholder="选择分类" class="category-select">
-          <el-option label="全部" value="all" />
-          <el-option v-for="(cat, index) in categoryList" :key="index" :label="cat" :value="cat" />
-        </el-select>
+        >
+          <template #prefix>
+            <i class="bi bi-search-heart"></i>
+          </template>
+        </el-input>
 
         <!-- 数据列表 -->
         <div class="idlist-list">
@@ -77,7 +74,6 @@ export default {
   data() {
     return {
       searchQuery: '',
-      selectedCategory: 'all',
       selectedSource: 'combined', // 'combined', 'items', 'students', 'furniture', 'equipment', 'currency'
       pageSize: 10,
       currentPage: 1,
@@ -127,35 +123,21 @@ export default {
           return []
       }
     },
-    // 根据搜索和分类过滤当前数据
+    // 根据搜索过滤当前数据
     filteredItems() {
       const query = this.searchQuery.toLowerCase()
-      let filtered = this.currentSourceItems.filter((item) => {
+      return this.currentSourceItems.filter((item) => {
         return (
           (item.Name && item.Name.toLowerCase().includes(query)) ||
           (item.Desc && item.Desc.toLowerCase().includes(query)) ||
           (item.Id && item.Id.toString().includes(query))
         )
       })
-      if (this.selectedCategory !== 'all') {
-        filtered = filtered.filter((item) => item.Category === this.selectedCategory)
-      }
-      return filtered
     },
     // 分页显示数据
     paginatedItems() {
       const start = (this.currentPage - 1) * this.pageSize
       return this.filteredItems.slice(start, start + this.pageSize)
-    },
-    // 从当前数据中提取所有分类
-    categoryList() {
-      const categories = new Set()
-      this.currentSourceItems.forEach((item) => {
-        if (item.Category) {
-          categories.add(item.Category)
-        }
-      })
-      return Array.from(categories)
     },
   },
   methods: {
@@ -192,12 +174,9 @@ export default {
     searchQuery() {
       this.currentPage = 1
     },
-    selectedCategory() {
-      this.currentPage = 1
-    },
   },
   async created() {
-    // 动态加载除学生之外的图标
+    // 动态加载图标
     const icons = import.meta.glob('@/assets/icon/*.png', { eager: true })
     // 指定需要读取的键列表
     const keys = [
@@ -308,27 +287,34 @@ export default {
   border-radius: 2px;
 }
 
-/* 侧边栏与主内容布局 */
+/* 侧边栏样式 */
 .idlist-container {
   display: flex;
   gap: 20px;
 }
 .idlist-sidebar {
-  width: 200px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
+  width: 220px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+/* 侧边栏菜单 */
 .idlist-menu {
   border: none;
   background: transparent;
 }
 .idlist-menu :deep(.el-menu-item) {
-  padding: 10px 15px;
+  padding: 12px 16px;
   margin: 5px 0;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+.idlist-menu :deep(.el-menu-item:hover),
+.idlist-menu :deep(.is-active) {
+  background-color: #e6f7ff;
 }
 
 /* 主内容区 */
@@ -341,30 +327,21 @@ export default {
 .search-input {
   margin-bottom: 20px;
   width: 100%;
-  border-radius: 25px;
-  overflow: hidden;
 }
 .search-input .el-input__inner {
-  border: none;
-  background: #f9f9f9;
+  border: 1px solid #d9d9d9;
+  border-radius: 25px;
   padding: 12px 20px;
   font-size: 16px;
-  transition:
-    box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 .search-input .el-input__inner:focus {
-  background: #ffffff;
+  border-color: #4facfe;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-/* 分类下拉框 */
-.category-select {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-/* 数据列表使用 CSS Grid 显示一行 5 个 */
+/* 数据列表 */
 .idlist-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -447,32 +424,6 @@ export default {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 640px) {
-  .function-card {
-    margin: 20px;
-    border-radius: 12px;
-  }
-  :deep(h2) {
-    font-size: 1.5rem;
-  }
-  .idlist-container {
-    flex-direction: column;
-  }
-  .idlist-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  .idlist-main {
-    padding: 0;
-  }
-  /* 手机端改为2列显示 */
-  .idlist-list {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

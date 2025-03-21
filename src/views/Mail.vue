@@ -430,10 +430,10 @@ export default {
   box-shadow: 0 6px 16px -4px rgba(79, 172, 254, 0.4) !important;
 }
 
+/* 修改响应提示框样式，使背景颜色与其他组件一致 */
 .response-alert {
+  margin-top: 24px;
   border-radius: 8px;
-  backdrop-filter: blur(4px);
-  background: rgba(255, 255, 255, 0.9) !important;
 }
 
 @keyframes fadeIn {

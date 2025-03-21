@@ -9,8 +9,8 @@
         <h2>关于 BlueArchiveGM</h2>
       </div>
       <div class="about-content">
-        <p><strong>版本：</strong> 1.0.2</p>
-        <p><strong>开发者：</strong> KitanoSakura</p>
+        <p><strong>版本：</strong> 1.0.3</p>
+        <p><strong>开发者：</strong> KitanoSakura（北野桜奈）</p>
         <p>
           <strong>项目基于：</strong>
           <a href="https://github.com/gucooing/BaPs/" target="_blank">BaPs</a>
@@ -21,7 +21,11 @@
             >issues</a
           >
         </p>
-        <p>BlueArchiveGM，基于BAPS制作的多功能游戏内容控制台</p>
+        <p>
+          使用本工具时，请务必遵守相关的开源协议！ 老师您可以修改项目内的任何代码
+          但是，请不要修改项目内引导至本仓库的相关入口，徽标等
+          以及本工具在此完全免费开源，请勿二次售卖！ 请务必留下版权信息，非常感谢各位老师的使用！
+        </p>
       </div>
       <div class="sns-container">
         <a class="sns-item" href="https://discord.gg/kpYzPgv8Ur" target="_blank">
@@ -47,6 +51,13 @@
     <el-card class="timeline-card" shadow="hover">
       <h3>Update log</h3>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h4>2025-03-20</h4>
+            <p>1.0.3 修复图片问题，优化图片显示，修复给予物品无类型问题，优化ID列表美观度</p>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
@@ -76,20 +87,6 @@
           <div class="timeline-content">
             <h4>2025-03-11</h4>
             <p>进行了全面的性能优化，提升了加载速度并修复了界面兼容问题。</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h4>2025-03-10</h4>
-            <p>增加了更多用户自定义功能，并且优化了用户界面，使得操作更加直观。</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h4>2025-03-09</h4>
-            <p>BlueArchiveGM框架搭建完成，初始版本发布，包含基础功能。</p>
           </div>
         </div>
       </div>
