@@ -27,11 +27,11 @@
     "active": true,
     "targets": "all",
     "icon": [
-      "assets/app.ico",
-      "assets/app.ico",
-      "assets/app.ico",
-      "assets/app.ico",
-      "assets/app.ico"
+      "./icons/app.ico",
+      "./icons/app.ico",
+      "./icons/app.ico",
+      "./icons/app.ico",
+      "./icons/app.ico"
     ]
   }
 }
