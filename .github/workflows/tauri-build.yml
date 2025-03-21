@@ -63,4 +63,4 @@ jobs:
           prerelease: false
           files: src-tauri/target/release/BlueArchiveGM.exe
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}
