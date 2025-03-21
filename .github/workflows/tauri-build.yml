@@ -1,5 +1,10 @@
 name: Build Tauri App
 
+# 增加全局权限设置
+permissions:
+  contents: write
+  releases: write
+
 on:
   push:
     branches:
