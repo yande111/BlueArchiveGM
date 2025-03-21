@@ -3,12 +3,12 @@ name: Build Tauri App
 on:
   push:
     branches:
-      - master  # 触发构建的分支
+      - master  # 触发构建的分支，修改为你的主分支名称
   workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
-    runs-on: windows-latest  # 在 Windows 服务器上运行
+    runs-on: windows-latest  # 使用 Windows 服务器
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -16,55 +16,28 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 20  # 你可以改成你项目的 Node 版本
+          cache: 'npm'  # 如果你用 npm，改成 'npm'
 
       - name: 安装 Rust (MSVC)
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: x86_64-pc-windows-msvc  # 仅使用 MSVC 工具链
+          targets: x86_64-pc-windows-msvc  # 使用 MSVC 工具链
 
       - name: 安装依赖
         run: npm install
 
       - name: 构建前端
-        run: npm run build  # 确保前端代码已经编译
+        run: npm run build  # 如果你的前端需要构建
 
-      - name: 安装 Tauri CLI
+      - name: 安装 Tauri
         run: npm install tauri
-        
-      - name: 构建 Tauri 
+
+      - name: 构建 Tauri
         run: npx tauri build
 
-      - name: 获取 package.json 中的版本号
-        id: get_version
-        run: |
-          echo "version=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
-
-      - name: 获取最新提交说明
-        id: get_commit_message
-        run: |
-          commit_message=$(git log -1 --pretty=%B)
-          echo "commit_message=${commit_message}" >> $GITHUB_OUTPUT
-
-      - name: 创建 GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 上传 EXE 作为构建产物
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: ${{ steps.get_version.outputs.version }}
-          release_name: BaGMTool
-          body: ${{ steps.get_commit_message.outputs.commit_message }}
-          draft: false
-          prerelease: false
-
-      - name: 上传绿色版构建产物到 Release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: src-tauri/target/release/bundle/portable/*.exe
-          asset_name: BlueArchiveGM.exe
-          asset_content_type: application/octet-stream
+          name: tauri-app
+          path: src-tauri/target/release/*.exe  # 修改为实际的 EXE 路径
