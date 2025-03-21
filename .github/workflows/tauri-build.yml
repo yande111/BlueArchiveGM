@@ -13,14 +13,6 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 读取 package.json 版本号
-        id: package_version
-        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
-
-      - name: 获取最新提交信息
-        id: commit_message
-        run: echo "MESSAGE=$(git log -1 --pretty=format:%s)" >> $GITHUB_ENV
-
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
@@ -56,11 +48,11 @@ jobs:
       - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v${{ env.VERSION }}"
-          name: "BaGMTool v${{ env.VERSION }}"
-          body: "${{ env.MESSAGE }}"
-          draft: false
-          prerelease: true  # 标记为预发布版本
-          files: src-tauri/target/release/BlueArchiveGM.exe
+          tag_name: "v1.0.3"  # 你可以根据需要指定发布版本号
+          name: "BlueArchiveGM Release v1.0.3"  # 发布名称
+          body: "修复某些情况出现在线版无法进行 GM 情况，修复某些样式不统一，剩下的可以查看新版源代码。"  # 发布说明
+          draft: false  # 不作为草稿版本
+          prerelease: false  # 这不是预发布版本
+          files: src-tauri/target/release/BlueArchiveGM.exe  # 指定要上传的文件路径
         env:
-          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}  # GitHub API 访问令牌
