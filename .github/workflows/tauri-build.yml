@@ -3,7 +3,7 @@ name: Build Tauri App
 on:
   push:
     branches:
-      - master  # 触发构建的分支，修改为你的主分支名称
+      - master  # 触发构建的分支
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -13,11 +13,19 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
+      - name: 读取 package.json 版本号
+        id: package_version
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+
+      - name: 获取最新提交信息
+        id: commit_message
+        run: echo "MESSAGE=$(git log -1 --pretty=format:%s)" >> $GITHUB_ENV
+
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20  # 你可以改成你项目的 Node 版本
-          cache: 'npm'  # 如果你用 npm，改成 'npm'
+          cache: 'npm'
 
       - name: 安装 Rust (MSVC)
         uses: dtolnay/rust-toolchain@stable
@@ -28,7 +36,7 @@ jobs:
         run: npm install
 
       - name: 构建前端
-        run: npm run build  # 如果你的前端需要构建
+        run: npm run build
 
       - name: 安装 Tauri
         run: npm install tauri
@@ -36,8 +44,23 @@ jobs:
       - name: 构建 Tauri
         run: npx tauri build
 
+      - name: 重命名 EXE
+        run: mv src-tauri/target/release/*.exe src-tauri/target/release/BlueArchiveGM.exe
+
       - name: 上传 EXE 作为构建产物
         uses: actions/upload-artifact@v4
         with:
           name: tauri-app
-          path: src-tauri/target/release/*.exe  # 修改为实际的 EXE 路径
+          path: src-tauri/target/release/BlueArchiveGM.exe
+
+      - name: 创建 GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "v${{ env.VERSION }}"
+          name: "BaGMTool v${{ env.VERSION }}"
+          body: "${{ env.MESSAGE }}"
+          draft: false
+          prerelease: false
+          files: src-tauri/target/release/BlueArchiveGM.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
