@@ -31,8 +31,8 @@ jobs:
         run: npm run build  # 确保前端代码已经编译
 
       - name: 安装 Tauri CLI
-        run: npm install tauri-app@latest
-
+        run: npm install tauri
+        
       - name: 构建 Tauri 
         run: npx tauri build
 
