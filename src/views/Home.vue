@@ -10,7 +10,7 @@
       <div class="input-container">
         <el-input
           v-model="serverAddress"
-          placeholder="服务器地址（例：http://127.0.0.1:5000）"
+          placeholder="办公室地址（例：http://127.0.0.1:5000）"
           clearable
         >
           <template #prefix>
@@ -20,7 +20,12 @@
       </div>
 
       <div class="input-container">
-        <el-input v-model="serverAuthKey" placeholder="认证密钥（可选）" show-password clearable>
+        <el-input
+          v-model="serverAuthKey"
+          placeholder="老师的认证密钥（可选）"
+          show-password
+          clearable
+        >
           <template #prefix>
             <el-icon><Key /></el-icon>
           </template>
@@ -75,7 +80,7 @@
           </div>
           <el-skeleton :loading="loading" animated :rows="5">
             <el-descriptions :column="2" border>
-              <el-descriptions-item label="在线玩家数量">
+              <el-descriptions-item label="在线的老师数量">
                 {{ serverData.playerNum }}
               </el-descriptions-item>
               <el-descriptions-item label="TPS">

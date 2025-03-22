@@ -172,7 +172,7 @@ export default {
         parcel_info_list: [],
       },
       typeOptions: [
-        { value: 0, label: '无' },
+        // { value: 0, label: '无' },
         { value: 1, label: '学生' },
         { value: 2, label: '货币' },
         { value: 3, label: '装备' },

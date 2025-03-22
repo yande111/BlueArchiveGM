@@ -3,8 +3,8 @@
     <el-card class="card" shadow="hover">
       <h2>设置学生属性</h2>
       <el-form label-width="120px">
-        <el-form-item label="玩家ID">
-          <el-input v-model="uid" placeholder="请输入玩家游戏ID"></el-input>
+        <el-form-item label="老师UID">
+          <el-input v-model="uid" placeholder="请输入老师的游戏UID"></el-input>
         </el-form-item>
         <el-form-item label="学生ID">
           <el-input v-model="id" placeholder="请输入学生ID"></el-input>

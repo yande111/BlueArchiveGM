@@ -1,9 +1,9 @@
 <template>
   <el-card class="function-card" shadow="hover">
-    <h2>获取玩家信息（开发中）</h2>
+    <h2>获取老师信息（开发中）</h2>
     <el-form :model="form" label-width="100px">
-      <el-form-item label="玩家ID">
-        <el-input v-model="form.uid" placeholder="请输入玩家ID">
+      <el-form-item label="老师UID">
+        <el-input v-model="form.uid" placeholder="请输入老师的UID">
           <template #prefix>
             <el-icon><User /></el-icon>
           </template>
