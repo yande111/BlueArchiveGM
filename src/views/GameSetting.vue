@@ -34,8 +34,8 @@
     </el-form>
 
     <!-- 响应信息 -->
-    <div v-if="response" class="set-card">
-      <div class="set-card-container">
+    <div v-if="response" class="respond-card">
+      <div class="respond-card-container">
         <div class="header">
           <img class="header-image" :src="banner1" alt="Header Image" />
         </div>
@@ -130,7 +130,7 @@ export default {
         }
       } catch (error) {
         const errMsg = error.response?.data?.message || error.message
-        this.response = '请求错误：' + errMsg
+        this.response = errMsg
         this.$message.error(this.response)
       } finally {
         this.isSubmitting = false
@@ -164,14 +164,14 @@ export default {
 .submit-btn:hover {
   transform: translateY(-1px);
 }
-.set-card {
+.respond-card {
   display: flex;
   align-items: center;
   padding: 8px;
   color: #666;
   font-size: 14px;
 }
-.set-card-container {
+.respond-card-container {
   width: 500px;
   margin: 0 auto;
   border: 1px solid #ee9ea8;
@@ -198,12 +198,14 @@ export default {
   color: #333;
 }
 .code {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #ee9ea8;
   background: white;
   padding: 10px 20px;
   border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
 .footer {
   display: flex;

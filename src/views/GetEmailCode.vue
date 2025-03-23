@@ -38,12 +38,12 @@
               </template>
             </div>
             <div class="footer">
-              <div class="copyright">
+              <!-- <div class="copyright">
                 Copyright © {{ currentYear }}<br />
                 <a>KitanoSakura</a>. All Rights Reserved
-              </div>
-              <p class="description">若验证码失效请重新获取</p>
-              <p class="more">有任何问题可前往 [关于] 进行获取联系方式反馈</p>
+              </div> -->
+              <!-- <p class="description">若验证码失效请重新获取</p>
+              <p class="more">有任何问题可前往 [关于] 进行获取联系方式反馈</p> -->
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
 
 <script>
 import axios from 'axios'
-import banner1 from '@/assets/20231108192254169944257455380.jpg' // 使用 Vue 的图片引入格式
+import banner1 from '@/assets/bg1.ccb168ef.jpg' // 引入图片
 
 export default {
   name: 'GetEmailCode',
@@ -107,7 +107,7 @@ export default {
         }
       } catch (error) {
         const errMsg = error.response?.data?.message || error.message
-        this.response = '请求错误：' + errMsg
+        this.response = errMsg
         this.$message.error(this.response)
       } finally {
         this.isSubmitting = false
@@ -235,11 +235,11 @@ export default {
 .message-text {
   font-size: 16px;
   color: #333;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .code {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #ee9ea8;
   background: white;

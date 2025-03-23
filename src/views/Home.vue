@@ -272,13 +272,19 @@ export default {
     },
 
     handleUpdateError(error, silent) {
-      let message = '状态更新失败: '
-      if (error.response) {
-        message += `服务器错误 (${error.response.status})`
-      } else if (error.request) {
-        message += '无法连接到服务器'
+      let message = ''
+      // 如果返回401，则替换为自定义错误提示
+      if (error.response && error.response.status === 401) {
+        message = '老师！您貌似没有认证密钥哦，请检查首页认证密钥是否输入正确！'
       } else {
-        message += error.message
+        message = '状态更新失败: '
+        if (error.response) {
+          message += `服务器错误 (${error.response.status})`
+        } else if (error.request) {
+          message += '无法连接到服务器'
+        } else {
+          message += error.message
+        }
       }
       this.serverError = message // 保存错误原因以便在状态卡片中显示
       this.clearCountdown() // 更新失败时停止倒计时

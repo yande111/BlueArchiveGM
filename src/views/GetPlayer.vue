@@ -74,7 +74,7 @@ export default {
       } catch (error) {
         this.responseType = 'error'
         const errorMsg = error.response?.data?.message || error.message
-        this.response = '请求错误：' + errorMsg
+        this.response = errorMsg
         this.$message.error(this.response)
       }
     },

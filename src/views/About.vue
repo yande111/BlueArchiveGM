@@ -9,7 +9,7 @@
         <h2>关于 BlueArchiveGM</h2>
       </div>
       <div class="about-content">
-        <p><strong>版本：</strong> 1.0.3</p>
+        <p><strong>版本：</strong> 1.0.5</p>
         <p><strong>开发者：</strong> KitanoSakura（北野桜奈）</p>
         <p>
           <strong>项目基于：</strong>
@@ -51,6 +51,13 @@
     <el-card class="timeline-card" shadow="hover">
       <h3>Update log</h3>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h4>2025-03-23</h4>
+            <p>1.0.5 新增响应处理，修复某些UI问题，修复在某些情况出现本地无法连接问题，优化文案</p>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
