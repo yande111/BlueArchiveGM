@@ -114,7 +114,7 @@ export default {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
-      const authKey = localStorage.getItem('authKey')
+      const authKey = localStorage.getItem('serverAuthKey')
       const headers = authKey ? { Authorization: authKey } : {}
 
       this.isSubmitting = true
