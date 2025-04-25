@@ -280,7 +280,7 @@
     },
     {
         "Id": 2101,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
         "Name": "观叶植物",
@@ -325,7 +325,7 @@
     },
     {
         "Id": 2104,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "R",
         "Name": "红色街机",
@@ -334,7 +334,7 @@
     },
     {
         "Id": 2105,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "R",
         "Name": "紫色街机",
@@ -343,7 +343,7 @@
     },
     {
         "Id": 2106,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "R",
         "Name": "蓝色街机",
@@ -388,7 +388,7 @@
     },
     {
         "Id": 2202,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "彩色自动售货机",
@@ -397,7 +397,7 @@
     },
     {
         "Id": 2203,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "多功能彩电",
@@ -406,7 +406,7 @@
     },
     {
         "Id": 2204,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "果冻抓娃娃机",
@@ -415,7 +415,7 @@
     },
     {
         "Id": 2301,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "桌上冰球游戏机",
@@ -424,7 +424,7 @@
     },
     {
         "Id": 2302,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "竞速游戏机",
@@ -433,7 +433,7 @@
     },
     {
         "Id": 2303,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "跳舞机",
@@ -757,7 +757,7 @@
     },
     {
         "Id": 4201,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "复古音乐扩音器",
@@ -1081,7 +1081,7 @@
     },
     {
         "Id": 6102,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "R",
         "Name": "温泉水豚抽奖机",
@@ -1180,7 +1180,7 @@
     },
     {
         "Id": 6200,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "高级按摩椅",
@@ -1207,7 +1207,7 @@
     },
     {
         "Id": 6203,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "饮料保温柜",
@@ -1297,7 +1297,7 @@
     },
     {
         "Id": 7106,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "R",
         "Name": "灯油暖炉和糯米糕",
@@ -1594,7 +1594,7 @@
     },
     {
         "Id": 9104,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "R",
         "Name": "冷饮冰箱",
@@ -1711,7 +1711,7 @@
     },
     {
         "Id": 9300,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "冰&酷冰淇淋冰箱",
@@ -1828,7 +1828,7 @@
     },
     {
         "Id": 10108,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
         "Name": "大运动会的天蓝色垫子",
@@ -1837,7 +1837,7 @@
     },
     {
         "Id": 10109,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
         "Name": "大运动会的蓝色垫子",
@@ -1846,7 +1846,7 @@
     },
     {
         "Id": 10110,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
         "Name": "大运动会的米色垫子",
@@ -2395,7 +2395,7 @@
     },
     {
         "Id": 11304,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "阿拜多斯讲堂贩卖机",
@@ -2638,7 +2638,7 @@
     },
     {
         "Id": 12203,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "游戏用屏幕",
@@ -2728,7 +2728,7 @@
     },
     {
         "Id": 12301,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "游戏机用木质屏幕",
@@ -2737,7 +2737,7 @@
     },
     {
         "Id": 12302,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "游戏开发部的地毯",
@@ -2776,8 +2776,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光和谐花盆",
-        "Desc": "散发出清爽花香的和谐花盆。明亮的色调让心情变得更好。",
+        "Name": "阳光合奏曲花盆",
+        "Desc": "洋溢着清新香气的合奏曲花盆。明亮的色调能让心情昂扬。",
         "Icon": "my_sunshineresort_01_basket_01"
     },
     {
@@ -2785,8 +2785,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光标志",
-        "Desc": "花饰引人注目的标志。接下来要前往何方，现在开始决定就好。",
+        "Name": "阳光标志",
+        "Desc": "以花卉装饰引人目光的标志。要去哪，之后再决定就行了。",
         "Icon": "my_sunshineresort_01_signboard_01"
     },
     {
@@ -2794,8 +2794,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光花盆展示架",
-        "Desc": "多彩花饰给人优雅印象的花盆展示架。装饰完毕的瞬间空间就会变得明亮。",
+        "Name": "阳光花盆展示架",
+        "Desc": "以缤纷多彩的花卉装饰给人优雅印象的花盆展示架。装饰的瞬间会使整个空间变得亮眼。",
         "Icon": "my_sunshineresort_01_flowerpot_01"
     },
     {
@@ -2803,8 +2803,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光阿罗哈花盆",
-        "Desc": "小小的可爱阿罗哈花盆。会给看到它的人打招呼。",
+        "Name": "阳光阿罗哈花盆",
+        "Desc": "小巧可爱的阿罗哈花盆。会向见到的人打招呼。",
         "Icon": "my_sunshineresort_01_plantpot_01"
     },
     {
@@ -2812,8 +2812,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光藤灯组",
-        "Desc": "营造出朦胧氛围的藤灯。平稳地照亮黑暗的空间。",
+        "Name": "阳光藤编灯套装",
+        "Desc": "营造幽静氛围的藤编灯。温柔地照亮昏暗的空间。",
         "Icon": "my_sunshineresort_01_woodenpot_01"
     },
     {
@@ -2821,8 +2821,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光热带篮",
-        "Desc": "装满了热带水果的热带风篮子。甜甜的香气蔓延开来。",
+        "Name": "阳光热带篮",
+        "Desc": "装满热带水果的热带篮。散发着香甜的气味。",
         "Icon": "my_sunshineresort_01_fruitsbox_01"
     },
     {
@@ -2830,8 +2830,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光隔板",
-        "Desc": "用清爽的白色木材制成的隔板。以稳定的结构分隔周围的空间。",
+        "Name": "阳光隔板",
+        "Desc": "采用清爽的白色木材的隔板。以稳定的结构划分周围的空间。",
         "Icon": "my_sunshineresort_01_partition_01"
     },
     {
@@ -2839,8 +2839,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "R",
-        "Name": "日光热带花盆",
-        "Desc": "凉爽地伸展开来的叶子令人影响深刻的热带风花盆。能感觉到清爽的空气。",
+        "Name": "阳光热带花盆",
+        "Desc": "以伸展的叶子给人深刻印象的热带花盆。能感觉到凉爽的空气。",
         "Icon": "my_sunshineresort_01_plantpot_02"
     },
     {
@@ -2848,8 +2848,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "R",
-        "Name": "日光小型窗",
-        "Desc": "装饰有可爱花饰的小型窗户。从小缝隙之间漏进的光照亮空间。",
+        "Name": "阳光迷你窗户",
+        "Desc": "饰有可爱花卉装饰的迷你窗户。从小小缝隙中泄出的阳光照亮了整个空间。",
         "Icon": "my_sunshineresort_01_window_01"
     },
     {
@@ -2857,8 +2857,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "R",
-        "Name": "日光热带油画",
-        "Desc": "给人清爽印象的热带油画。挂上后会自然地融入环境之中。",
+        "Name": "阳光热带绘画",
+        "Desc": "给人凉爽印象的热带风情画。不管挂在哪里都能自然地融入整个空间。",
         "Icon": "my_sunshineresort_01_picture_01"
     },
     {
@@ -2866,8 +2866,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "R",
-        "Name": "日光阿罗哈壁挂花盆",
-        "Desc": "绚丽的粉红色花如同落水一样绽放的阿罗哈壁挂花盆。散发出清甜的花香。",
+        "Name": "阳光阿罗哈壁挂",
+        "Desc": "粉红色的华丽花朵彷佛从墙上流泄而下，自然垂落绽放的阿罗哈壁挂。散发着甜美的香气。",
         "Icon": "my_sunshineresort_01_wallacc_01"
     },
     {
@@ -2875,8 +2875,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "R",
-        "Name": "日光阿罗哈壁挂三照明",
-        "Desc": "造型优雅，带有金属装饰的阿罗哈壁挂照明。挂在墙上后能照亮四周。",
+        "Name": "阳光阿罗哈照明",
+        "Desc": "具有金属装饰和优雅造型的阿罗哈照明。挂在墙上可照亮四周。",
         "Icon": "my_sunshineresort_01_lamp_02"
     },
     {
@@ -2884,8 +2884,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "R",
-        "Name": "日光阿罗哈壁挂照明",
-        "Desc": "拥有优雅造型的阿罗哈壁挂照明。给周围带来朦胧的光照。",
+        "Name": "阳光阿罗哈壁挂照明",
+        "Desc": "造型优雅的阿罗哈壁挂照明。可为周围带来微弱的光芒。",
         "Icon": "my_sunshineresort_01_lamp_01"
     },
     {
@@ -2893,8 +2893,8 @@
         "Category": "Decorations",
         "SubCategory": "FloorDecoration",
         "Rarity": "R",
-        "Name": "日光图案垫",
-        "Desc": "重复排列同样图案的图案垫。给看到它的人带来奇怪的安定感。",
+        "Name": "阳光印花地垫",
+        "Desc": "具有重复均匀图案的印花踏垫。给人一种微妙的安定感。",
         "Icon": "my_sunshineresort_01_carpet_02"
     },
     {
@@ -2902,8 +2902,8 @@
         "Category": "Decorations",
         "SubCategory": "FloorDecoration",
         "Rarity": "R",
-        "Name": "日光方格图案垫",
-        "Desc": "重复排列粉色方格图案的方格图案垫。给人可爱的感觉。",
+        "Name": "阳光钻石印花地垫",
+        "Desc": "具有重复粉红钻石印花图案的踏垫。给人一种可爱的感觉。",
         "Icon": "my_sunshineresort_01_carpet_03"
     },
     {
@@ -2911,8 +2911,8 @@
         "Category": "Decorations",
         "SubCategory": "FloorDecoration",
         "Rarity": "R",
-        "Name": "日光天然垫",
-        "Desc": "较多地使用了自然原料制成的天然垫。透气性好，重量轻，到哪去都想带着。",
+        "Name": "阳光天然地垫",
+        "Desc": "使用了多种天然素材的地垫。透气且轻便，让人想随身携带着。",
         "Icon": "my_sunshineresort_01_carpet_04"
     },
     {
@@ -2920,8 +2920,8 @@
         "Category": "Decorations",
         "SubCategory": "FloorDecoration",
         "Rarity": "R",
-        "Name": "日光藤垫",
-        "Desc": "使用藤原料制成的圆形垫。能很好地与其他家具相搭配。",
+        "Name": "阳光藤编地垫",
+        "Desc": "用藤素材编成的圆形地垫。不管和什么家具都很相配。",
         "Icon": "my_sunshineresort_01_carpet_05"
     },
     {
@@ -2929,8 +2929,8 @@
         "Category": "Furnitures",
         "SubCategory": "Chair",
         "Rarity": "SR",
-        "Name": "日光早午餐沙发",
-        "Desc": "一起放有水果与果汁的早午餐沙发。带来舒适与甜蜜的休息时刻。",
+        "Name": "阳光早午餐沙发",
+        "Desc": "摆放了水果和果汁的早午餐沙发。让人能得到舒适及甜美的休息时光。",
         "Icon": "my_sunshineresort_01_bed_01"
     },
     {
@@ -2938,8 +2938,8 @@
         "Category": "Furnitures",
         "SubCategory": "Chair",
         "Rarity": "SR",
-        "Name": "日光沙发",
-        "Desc": "放有各种形状的靠枕的有魅力的沙发。清爽的色彩与温暖给人带来安定感。",
+        "Name": "阳光沙发",
+        "Desc": "摆放了各种靠枕的迷人沙发。清爽的配色与暖和的温度，给人一种安定感。",
         "Icon": "my_sunshineresort_01_sofa_01"
     },
     {
@@ -2947,8 +2947,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SR",
-        "Name": "日光热带桌",
-        "Desc": "准备了热带水果与餐食的热带风桌子。只是看着就能让内心变得满足。",
+        "Name": "阳光热带桌",
+        "Desc": "摆放了热带水果及餐点的热带桌子。光是看着就能让心里感到富足。",
         "Icon": "my_sunshineresort_01_table_01"
     },
     {
@@ -2956,8 +2956,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SR",
-        "Name": "日光果汁桌",
-        "Desc": "摆满了甜水果与清爽果汁的果汁桌。暑气似乎渐渐消去。",
+        "Name": "阳光果汁桌",
+        "Desc": "摆放了香甜水果和清爽果汁的果汁桌。暑气似乎消退了不少。",
         "Icon": "my_sunshineresort_01_table_02"
     },
     {
@@ -2965,8 +2965,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SR",
-        "Name": "日光花喷泉",
-        "Desc": "盛开着粉红色的花的花喷泉。能同时感受到清爽与清甜花香。",
+        "Name": "阳光花喷泉",
+        "Desc": "粉红花朵盛开的花喷泉。能同时感受到清爽感与甜美香气。",
         "Icon": "my_sunshineresort_01_fountain_01"
     },
     {
@@ -2974,8 +2974,8 @@
         "Category": "Furnitures",
         "SubCategory": "Chair",
         "Rarity": "SR",
-        "Name": "日光条纹沙发",
-        "Desc": "舒适的遮阳沙发。很适合休息一下。",
+        "Name": "阳光条纹沙发",
+        "Desc": "配有遮阳棚的条纹沙发。适合追求舒适之人。",
         "Icon": "my_sunshineresort_01_chair_01"
     },
     {
@@ -2983,8 +2983,8 @@
         "Category": "Furnitures",
         "SubCategory": "Bed",
         "Rarity": "SR",
-        "Name": "日光日光浴椅-白",
-        "Desc": "能沐浴温暖阳光的日光浴椅。清爽的白色令人印象深刻。",
+        "Name": "阳光白色日光浴床",
+        "Desc": "能沐浴在温暖阳光下的日光浴床。清爽的白色令人印象深刻。",
         "Icon": "my_sunshineresort_01_sunbed_01"
     },
     {
@@ -2992,8 +2992,8 @@
         "Category": "Furnitures",
         "SubCategory": "Bed",
         "Rarity": "SR",
-        "Name": "日光日光浴椅-柠檬",
-        "Desc": "能沐浴温暖阳光的日光浴椅。可爱的柠檬色引人注目。",
+        "Name": "阳光柠檬日光浴床",
+        "Desc": "能沐浴在温暖阳光下的日光浴床。可爱的柠檬色十分亮眼。",
         "Icon": "my_sunshineresort_01_sunbed_02"
     },
     {
@@ -3001,8 +3001,8 @@
         "Category": "Furnitures",
         "SubCategory": "Closet",
         "Rarity": "SR",
-        "Name": "日光展示架",
-        "Desc": "使用了高级木材制成的展示架。附上一朵白花，感觉很优雅。",
+        "Name": "阳光展示架",
+        "Desc": "使用高级木材制成的展示架。以白色花朵点缀，增添了优雅氛围。",
         "Icon": "my_sunshineresort_01_shelf_01"
     },
     {
@@ -3010,8 +3010,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SR",
-        "Name": "日光椰子树",
-        "Desc": "白花盛开的椰子树。摆下后能感受到清爽的空气。",
+        "Name": "阳光棕榈树",
+        "Desc": "白色花朵盛开的棕榈树。摆在那里就能感受到清新的空气。",
         "Icon": "my_sunshineresort_01_plantpot_03"
     },
     {
@@ -3019,8 +3019,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SR",
-        "Name": "日光白花花盆",
-        "Desc": "白花盛开的花盆。为每个放置的场所带来活力。",
+        "Name": "阳光白花盆",
+        "Desc": "白色花朵盛开的盆栽。能为摆放的空间注入活力。",
         "Icon": "my_sunshineresort_01_plantpot_04"
     },
     {
@@ -3028,8 +3028,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "SR",
-        "Name": "日光观海窗",
-        "Desc": "能看到外面大海的日光观海窗。两侧的白花增添清爽感。",
+        "Name": "阳光海景窗",
+        "Desc": "能俯瞰大海的海景窗。两侧点缀的白花更增清爽感。",
         "Icon": "my_sunshineresort_01_window_02"
     },
     {
@@ -3037,8 +3037,8 @@
         "Category": "Furnitures",
         "SubCategory": "FloorDecoration",
         "Rarity": "SR",
-        "Name": "日光沙滩垫",
-        "Desc": "能感受到大海凉爽的沙滩垫。为空间提升清爽感。",
+        "Name": "阳光沙滩垫",
+        "Desc": "能感受到大海的凉爽感的沙滩垫。能为空间增添清爽感。",
         "Icon": "my_sunshineresort_01_carpet_01"
     },
     {
@@ -3046,8 +3046,8 @@
         "Category": "Interiors",
         "SubCategory": "Wallpaper",
         "Rarity": "SR",
-        "Name": "日光可爱壁纸",
-        "Desc": "浅褐色调的配色令人印象深刻的可爱壁纸。朦胧的花纹给人带来安定感。",
+        "Name": "阳光迷人壁纸",
+        "Desc": "以米色色调配令人印象深刻的可爱壁纸。若隐若现的印花给人一种安定感。",
         "Icon": "my_sunshineresort_01_wall_right"
     },
     {
@@ -3055,8 +3055,8 @@
         "Category": "Interiors",
         "SubCategory": "Floor",
         "Rarity": "SR",
-        "Name": "日光天然地板",
-        "Desc": "把各种高级木材做成图案制成的天然地板。非常光滑。",
+        "Name": "阳光天然地板",
+        "Desc": "使用了各种高级木材拼成图案的天然地板。非常光滑。",
         "Icon": "my_sunshineresort_01_tile"
     },
     {
@@ -3064,8 +3064,8 @@
         "Category": "Interiors",
         "SubCategory": "Background",
         "Rarity": "SR",
-        "Name": "日光度假村背景",
-        "Desc": "将充满活力的心境和夏日的心跳就这样隐藏起来的度假村背景。似乎能感受到加速的心跳。",
+        "Name": "阳光度假胜地背景",
+        "Desc": "将度假胜地的活力和夏日悸动保存下来的背景。好像传来了心跳声。",
         "Icon": "sunshineresortbg"
     },
     {
@@ -3073,8 +3073,8 @@
         "Category": "Furnitures",
         "SubCategory": "Chair",
         "Rarity": "SSR",
-        "Name": "日光顶蓬沙发",
-        "Desc": "带有优雅花边和可爱装饰的顶蓬沙发。好想就这样一直躺着。",
+        "Name": "阳光顶蓬沙发",
+        "Desc": "带有优雅蕾丝和可爱装饰的顶蓬沙发。想就这样一直躺着。",
         "Icon": "my_sunshineresort_01_bed_02"
     },
     {
@@ -3082,8 +3082,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "日光饮料柜台",
-        "Desc": "准备了各种口味饮料的饮料柜台。四周装饰的五颜六色的花让饮料的味道更为显著。",
+        "Name": "阳光饮料吧",
+        "Desc": "提供各种口味饮品的饮料吧。周围饰以缤纷的花朵，衬托出饮品的风味。",
         "Icon": "my_sunshineresort_01_drinkstall_01"
     },
     {
@@ -3091,8 +3091,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "日光花泳池",
-        "Desc": "有着绚丽花饰的花泳池。风吹过后花瓣散落在水波之间，非常美丽。",
+        "Name": "阳光花水池",
+        "Desc": "设有华丽花朵装饰的花朵水池。风一吹，花瓣便落在水波之间，美极了。",
         "Icon": "my_sunshineresort_01_pool_01"
     },
     {
@@ -3100,8 +3100,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "日光热带泳池",
-        "Desc": "带有热带水果托盘的热带风泳池。同时享受凉爽与甘甜。",
+        "Name": "阳光热带泳池",
+        "Desc": "摆放了热带水果托盘的热带泳池。能同时享受凉爽与甜蜜。",
         "Icon": "my_sunshineresort_01_pool_02"
     },
     {
@@ -3109,8 +3109,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "日光花边桌",
-        "Desc": "带有遮阳伞的花边桌子。摆有浅褐色调的木制桌椅。",
+        "Name": "阳光蕾丝桌",
+        "Desc": "附有遮阳伞的蕾丝桌。摆放了米色色调的木制桌椅。",
         "Icon": "my_sunshineresort_01_parasol_01"
     },
     {
@@ -3118,8 +3118,8 @@
         "Category": "Decorations",
         "SubCategory": "WallDecoration",
         "Rarity": "SSR",
-        "Name": "日光阿罗哈窗",
-        "Desc": "能一睹窗外景色的阿罗哈窗。传递清凉的空气。",
+        "Name": "阳光阿罗哈窗户",
+        "Desc": "可将外头景色尽收眼底的阿罗哈窗户。传来阵阵凉爽的空气。",
         "Icon": "my_sunshineresort_01_terrace_01"
     },
     {
@@ -3376,7 +3376,7 @@
     },
     {
         "Id": 14206,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "商场现代互动式信息服务站",
@@ -3520,7 +3520,7 @@
     },
     {
         "Id": 14305,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "商场波浪猫自动售货机",
@@ -4276,7 +4276,7 @@
     },
     {
         "Id": 17206,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "演唱会音响组",
@@ -4366,7 +4366,7 @@
     },
     {
         "Id": 17304,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "DJ打碟舞台",
@@ -5104,7 +5104,7 @@
     },
     {
         "Id": 19207,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "千年制按摩椅",
@@ -5140,7 +5140,7 @@
     },
     {
         "Id": 19211,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SR",
         "Name": "千年塔休息室自动售货机",
@@ -5221,7 +5221,7 @@
     },
     {
         "Id": 19304,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "休息室引导无人机",
@@ -5230,7 +5230,7 @@
     },
     {
         "Id": 19305,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "休息室引导机器人",
@@ -5254,6 +5254,357 @@
         "Name": "双人用千年桌",
         "Desc": "双人用的桌子。集中力也能变成2倍！……怎么可能呢。",
         "Icon": "my_millenniumlounge_01_desk_02"
+    },
+    {
+        "Id": 20100,
+        "Category": "Decorations",
+        "SubCategory": "WallDecoration",
+        "Rarity": "R",
+        "Name": "高原众时刻表",
+        "Desc": "告知下个目的地与发车时刻的时刻表。经常坏，所以得定期检查。",
+        "Icon": "my_highlander_01_ad_01"
+    },
+    {
+        "Id": 20101,
+        "Category": "Furnitures",
+        "SubCategory": "Chair",
+        "Rarity": "R",
+        "Name": "高原众候车室长椅",
+        "Desc": "能够坐下多人的长椅。躺在上面和坐在上面两腿乱伸都很没礼貌！",
+        "Icon": "my_highlander_01_bench_01"
+    },
+    {
+        "Id": 20102,
+        "Category": "Decorations",
+        "SubCategory": "FloorDecoration",
+        "Rarity": "R",
+        "Name": "高原众点形导盲砖",
+        "Desc": "仅凭脚上的触感就能够明白该往哪走的铺设材料。高原众规定必须铺设这种砖。",
+        "Icon": "my_highlander_01_brailleblock_01"
+    },
+    {
+        "Id": 20103,
+        "Category": "Furnitures",
+        "SubCategory": "Closet",
+        "Rarity": "R",
+        "Name": "高原众普通锁柜",
+        "Desc": "支付信用点，就能在一定时间内存放物品。使用方便。",
+        "Icon": "my_highlander_01_cabinet_01"
+    },
+    {
+        "Id": 20104,
+        "Category": "Furnitures",
+        "SubCategory": "Closet",
+        "Rarity": "R",
+        "Name": "高原众高级锁柜",
+        "Desc": "价格比普通锁柜要高，但差别只有涂装。可神奇的是，据说这种锁柜比普通锁柜的使用率要更高……",
+        "Icon": "my_highlander_01_cabinet_02"
+    },
+    {
+        "Id": 20105,
+        "Category": "Decorations",
+        "SubCategory": "FloorDecoration",
+        "Rarity": "R",
+        "Name": "高原众普通地毯",
+        "Desc": "令人安心的茶色地毯。经常用在普通列车中。",
+        "Icon": "my_highlander_01_carpet_01"
+    },
+    {
+        "Id": 20106,
+        "Category": "Decorations",
+        "SubCategory": "FloorDecoration",
+        "Rarity": "R",
+        "Name": "高原众高级地毯",
+        "Desc": "绣有优美刺绣，具有高级感的地毯。经常用在高级列车中。",
+        "Icon": "my_highlander_01_carpet_02"
+    },
+    {
+        "Id": 20107,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "R",
+        "Name": "高原众围绳隔断",
+        "Desc": "用在整理队列和确保乘客安全等地方的绳索隔断。但是，似乎有很多人会无视直接跨过去……",
+        "Icon": "my_highlander_01_fence_02"
+    },
+    {
+        "Id": 20108,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "R",
+        "Name": "高原众玻璃护栏",
+        "Desc": "特点在于透明与简练设计。主要安设在高楼层，提高美观度。",
+        "Icon": "my_highlander_01_fence_03"
+    },
+    {
+        "Id": 20109,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "R",
+        "Name": "高原众车站地图",
+        "Desc": "显示了车站内的设施和线路分布等信息的地图。细心的话，能看到上面有一道被什么东西砸出的裂痕。",
+        "Icon": "my_highlander_01_informationboard_01"
+    },
+    {
+        "Id": 20110,
+        "Category": "Decorations",
+        "SubCategory": "WallDecoration",
+        "Rarity": "R",
+        "Name": "高原众壁灯",
+        "Desc": "挂在车站内的壁灯。朦胧的灯光营造出合适的氛围。",
+        "Icon": "my_highlander_01_light_01"
+    },
+    {
+        "Id": 20111,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "R",
+        "Name": "高原众列车壁隔断A",
+        "Desc": "做成了列车车体主题的隔断。车窗不能开关，但也是别有一番趣味。",
+        "Icon": "my_highlander_01_partition_01"
+    },
+    {
+        "Id": 20112,
+        "Category": "Furnitures",
+        "SubCategory": "Chair",
+        "Rarity": "R",
+        "Name": "高原众乘客座椅",
+        "Desc": "高铁的座椅。但是便宜货，坐久了似乎腰会痛。",
+        "Icon": "my_highlander_01_seat_01"
+    },
+    {
+        "Id": 20113,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "R",
+        "Name": "高原众广告面板",
+        "Desc": "安装在车站内的广告面板。申请广告的方法似乎因车站而异。",
+        "Icon": "my_highlander_01_signboard_01"
+    },
+    {
+        "Id": 20114,
+        "Category": "Decorations",
+        "SubCategory": "WallDecoration",
+        "Rarity": "R",
+        "Name": "高原众铁道学园校徽",
+        "Desc": "根据高原众铁道学园的校徽设计而成的墙面装饰品。仅装饰在高原众管辖下的车站。",
+        "Icon": "my_highlander_01_symbol_01"
+    },
+    {
+        "Id": 20115,
+        "Category": "Furnitures",
+        "SubCategory": "Table",
+        "Rarity": "R",
+        "Name": "高原众餐车桌",
+        "Desc": "餐车的桌子。非常适合在此享用便当等食物。",
+        "Icon": "my_highlander_01_table_02"
+    },
+    {
+        "Id": 20116,
+        "Category": "Decorations",
+        "SubCategory": "WallDecoration",
+        "Rarity": "R",
+        "Name": "高原众铁道学园Logo",
+        "Desc": "做成高原众校名形状的墙饰。偶尔会因为不良学生的恶作剧少几个字母。",
+        "Icon": "my_highlander_01_word_01"
+    },
+    {
+        "Id": 20201,
+        "Category": "Furnitures",
+        "SubCategory": "Table",
+        "Rarity": "SR",
+        "Name": "高原众餐车订餐柜台",
+        "Desc": "能够在此购买便当和饮料的区域。总是人头攒动。",
+        "Icon": "my_highlander_01_bar_01"
+    },
+    {
+        "Id": 20202,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SR",
+        "Name": "高原众高级围绳隔断",
+        "Desc": "为了保障乘客安全而安设的，看上去那叫一个高级的围绳隔断。但，似乎经常被用在跳高还有跳凌波舞上……",
+        "Icon": "my_highlander_01_fence_01"
+    },
+    {
+        "Id": 20203,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SR",
+        "Name": "高原众列车壁隔断B",
+        "Desc": "做成了列车车体主题的隔断。车窗比A型的更厚。",
+        "Icon": "my_highlander_01_partition_02"
+    },
+    {
+        "Id": 20204,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SR",
+        "Name": "高原众拱形柱",
+        "Desc": "在高原众的车站里能见到的柱子。优雅的拱形外观，让人感受到经典。",
+        "Icon": "my_highlander_01_pillar_01"
+    },
+    {
+        "Id": 20205,
+        "Category": "Furnitures",
+        "SubCategory": "Chair",
+        "Rarity": "SR",
+        "Name": "高原众头等座椅",
+        "Desc": "头等座的座椅。除去设计，那仿佛要把人吸走的舒适坐感备受好评。",
+        "Icon": "my_highlander_01_seat_02"
+    },
+    {
+        "Id": 20206,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SR",
+        "Name": "高原众车站路标",
+        "Desc": "在车站内能见到的路标。经典设计，乘客也对此表示好评。",
+        "Icon": "my_highlander_01_signboard_02"
+    },
+    {
+        "Id": 20207,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SR",
+        "Name": "高原众手提箱样品",
+        "Desc": "高原众生产、出售的手提箱。卖点说是轻便结实，可实际情况会是…………？",
+        "Icon": "my_highlander_01_suitcase_01"
+    },
+    {
+        "Id": 20208,
+        "Category": "Furnitures",
+        "SubCategory": "Table",
+        "Rarity": "SR",
+        "Name": "高原众高级餐车桌",
+        "Desc": "头等座专用的餐车桌。竟然还能点全套西餐！",
+        "Icon": "my_highlander_01_table_01"
+    },
+    {
+        "Id": 20209,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SR",
+        "Name": "高原众车厢售货推车",
+        "Desc": "车厢售货的推车。使命是为乘客带去片刻欢乐时光。",
+        "Icon": "my_highlander_01_trolley_01"
+    },
+    {
+        "Id": 20210,
+        "Category": "Decorations",
+        "SubCategory": "HomeAppliance",
+        "Rarity": "SR",
+        "Name": "高原众车厢自动售货机",
+        "Desc": "能够在车厢内使用的自动售货机。售价稍贵。",
+        "Icon": "my_highlander_01_vendingmachine_01"
+    },
+    {
+        "Id": 20211,
+        "Category": "Decorations",
+        "SubCategory": "WallDecoration",
+        "Rarity": "SR",
+        "Name": "高原众主题窗",
+        "Desc": "透过窗户欣赏下美景吧。在哪都能仿佛置身列车之旅中。",
+        "Icon": "my_highlander_01_window_01"
+    },
+    {
+        "Id": 20212,
+        "Category": "Interiors",
+        "SubCategory": "Wallpaper",
+        "Rarity": "SR",
+        "Name": "高原众墙",
+        "Desc": "高原众的色彩引人注目的墙壁。特点在于能够同时感受到经典的氛围和清新感的配色。",
+        "Icon": "my_highlander_01_wall"
+    },
+    {
+        "Id": 20213,
+        "Category": "Interiors",
+        "SubCategory": "Floor",
+        "Rarity": "SR",
+        "Name": "高原众地板",
+        "Desc": "方格纸花纹的地板。非常适合物品对号入座。",
+        "Icon": "my_highlander_01_tile_20x20"
+    },
+    {
+        "Id": 20214,
+        "Category": "Interiors",
+        "SubCategory": "Background",
+        "Rarity": "SR",
+        "Name": "高原众背景",
+        "Desc": "让人感到如同踏上了优雅的列车之旅，令人安心的背景。",
+        "Icon": "highlanderbg"
+    },
+    {
+        "Id": 20301,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "高原众钟塔",
+        "Desc": "高原众中央站的地标。有名的见面地点。",
+        "Icon": "my_highlander_01_clocktower_01"
+    },
+    {
+        "Id": 20302,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "等身大吉祥物·修宝（站务人员）",
+        "Desc": "高原众的吉祥物人偶「修宝」。经常被用作拍照圣地。",
+        "Icon": "my_highlander_01_mascot_01"
+    },
+    {
+        "Id": 20303,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "等身大吉祥物·修宝（CCC）",
+        "Desc": "高原众的吉祥物人偶「修宝」。据说偶尔会成为不良学生试枪的靶子……",
+        "Icon": "my_highlander_01_mascot_02"
+    },
+    {
+        "Id": 20304,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "高原众问事处",
+        "Desc": "无人问事处。摆了很多宣传册之类的东西。",
+        "Icon": "my_highlander_01_newsstand_01"
+    },
+    {
+        "Id": 20305,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "高原众车站便利店",
+        "Desc": "高原众车站内的便利店。最畅销的，果不其然是零食。",
+        "Icon": "my_highlander_01_newsstand_02"
+    },
+    {
+        "Id": 20306,
+        "Category": "Decorations",
+        "SubCategory": "WallDecoration",
+        "Rarity": "SSR",
+        "Name": "高原众车辆基地",
+        "Desc": "用于容纳列车的车辆基地。太危险了，还是不要进去为好。",
+        "Icon": "my_highlander_01_platform_01"
+    },
+    {
+        "Id": 20307,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "哐哧哐哧！微型列车套装",
+        "Desc": "巨细无遗还原的铁轨与列车。只要有地方放，也许还能当成室内名胜在这游玩。",
+        "Icon": "my_highlander_01_toytrain"
+    },
+    {
+        "Id": 20308,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "高原众自动检票机",
+        "Desc": "有绕过检票机逃票的乘客，所以不得不得在车厢内检票。似乎偶尔会被不良学生踹上两脚，经常出问题。",
+        "Icon": "my_event079_ticketbarrier"
     },
     {
         "Id": 100000,
@@ -5800,8 +6151,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "N",
-        "Name": "额我略（室内战）青铜奖杯",
-        "Desc": "歌颂额我略（室内战）荣誉的青铜奖杯。",
+        "Name": "格里高利（室内战）青铜奖杯",
+        "Desc": "格里高利（室内战）的青铜奖杯",
         "Icon": "my_trophy_en0005_indoor_bronze"
     },
     {
@@ -5809,8 +6160,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "R",
-        "Name": "额我略（室内战）青铜奖杯",
-        "Desc": "歌颂额我略（室内战）荣誉的青铜奖杯。",
+        "Name": "格里高利（室内战）白银奖杯",
+        "Desc": "格里高利（室内战）的白银奖杯",
         "Icon": "my_trophy_en0005_indoor_silver"
     },
     {
@@ -5818,8 +6169,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "SR",
-        "Name": "额我略（室内战）青铜奖杯",
-        "Desc": "歌颂额我略（室内战）荣誉的青铜奖杯。",
+        "Name": "格里高利（室内战）黄金奖杯",
+        "Desc": "格里高利（室内战）的黄金奖杯",
         "Icon": "my_trophy_en0005_indoor_gold"
     },
     {
@@ -5827,8 +6178,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "SSR",
-        "Name": "额我略（室内战）青铜奖杯",
-        "Desc": "歌颂额我略（室内战）荣誉的青铜奖杯。",
+        "Name": "格里高利（室内战）铂金奖杯",
+        "Desc": "格里高利（室内战）的铂金奖杯",
         "Icon": "my_trophy_en0005_indoor_platinum"
     },
     {
@@ -5836,8 +6187,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "N",
-        "Name": "戈兹（室外战）青铜奖杯。",
-        "Desc": "歌颂戈兹（室外战）荣誉的青铜奖杯。",
+        "Name": "格兹（野外战）青铜奖杯",
+        "Desc": "格兹（野外战）的青铜奖杯",
         "Icon": "my_trophy_goz_outdoor_bronze"
     },
     {
@@ -5845,8 +6196,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "R",
-        "Name": "戈兹（室外战）白银奖杯。",
-        "Desc": "歌颂戈兹（室外战）荣誉的白银奖杯。",
+        "Name": "格兹（野外战）白银奖杯",
+        "Desc": "格兹（野外战）的白银奖杯",
         "Icon": "my_trophy_goz_outdoor_silver"
     },
     {
@@ -5854,8 +6205,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "SR",
-        "Name": "戈兹（室外战）黄金奖杯。",
-        "Desc": "歌颂戈兹（室外战）荣誉的黄金奖杯。",
+        "Name": "格兹（野外战）黄金奖杯",
+        "Desc": "格兹（野外战）的黄金奖杯",
         "Icon": "my_trophy_goz_outdoor_gold"
     },
     {
@@ -5863,8 +6214,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "SSR",
-        "Name": "戈兹（室外战）白金奖杯。",
-        "Desc": "歌颂戈兹（室外战）荣誉的白金奖杯。",
+        "Name": "格兹（野外战）铂金奖杯",
+        "Desc": "格兹（野外战）的铂金奖杯",
         "Icon": "my_trophy_goz_outdoor_platinum"
     },
     {
@@ -5872,8 +6223,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "N",
-        "Name": "灾厄之狐（室外战）青铜奖杯",
-        "Desc": "歌颂灾厄之狐（室外战）荣誉的青铜奖杯。",
+        "Name": "气垫船（野外战）青铜奖杯",
+        "Desc": "气垫船（野外战）的青铜奖杯",
         "Icon": "my_trophy_wakamo_swimsuit_outdoor_bronze"
     },
     {
@@ -5881,8 +6232,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "R",
-        "Name": "灾厄之狐（室外战）白银奖杯",
-        "Desc": "歌颂灾厄之狐（室外战）荣誉的白银奖杯。",
+        "Name": "气垫船（野外战）白银奖杯",
+        "Desc": "气垫船（野外战）的白银奖杯",
         "Icon": "my_trophy_wakamo_swimsuit_outdoor_silver"
     },
     {
@@ -5890,8 +6241,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "SR",
-        "Name": "灾厄之狐（室外战）黄金奖杯",
-        "Desc": "歌颂灾厄之狐（室外战）荣誉的黄金奖杯。",
+        "Name": "气垫船（野外战）黄金奖杯",
+        "Desc": "气垫船（野外战）的黄金奖杯",
         "Icon": "my_trophy_wakamo_swimsuit_outdoor_gold"
     },
     {
@@ -5899,8 +6250,8 @@
         "Category": "Furnitures",
         "SubCategory": "FurnitureEtc",
         "Rarity": "SSR",
-        "Name": "灾厄之狐（室外战）白金奖杯",
-        "Desc": "歌颂灾厄之狐（室外战）荣誉的白金奖杯。",
+        "Name": "气垫船（野外战）铂金奖杯",
+        "Desc": "气垫船（野外战）的铂金奖杯",
         "Icon": "my_trophy_wakamo_swimsuit_outdoor_platinum"
     },
     {
@@ -5977,7 +6328,7 @@
     },
     {
         "Id": 200301,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "崔尼蒂西式喷泉",
@@ -5995,7 +6346,7 @@
     },
     {
         "Id": 202301,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "闪耀的圣诞树",
@@ -6013,7 +6364,7 @@
     },
     {
         "Id": 203301,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "蓝色新复古唱盘",
@@ -6022,7 +6373,7 @@
     },
     {
         "Id": 203302,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "百夜堂移动式店铺",
@@ -6058,7 +6409,7 @@
     },
     {
         "Id": 206301,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "全息立方体唱盘",
@@ -6157,7 +6508,7 @@
     },
     {
         "Id": 207311,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "三一管风琴",
@@ -6193,7 +6544,7 @@
     },
     {
         "Id": 208301,
-        "Category": "Decorations",
+        "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "D.U.白鸟区立体透视模型",
@@ -6287,7 +6638,7 @@
         "SubCategory": "Prop",
         "Rarity": "SSR",
         "Name": "新鲜！鱼箱",
-        "Desc": "装了一大堆鱼的鱼箱。不小心把鱼拿起来的话可能会给它跑了！？",
+        "Desc": "装满鱼的鱼箱。如果不小心拿起来的话，鱼可能会逃跑！？",
         "Icon": "my_event057_fishbox"
     },
     {
@@ -6295,8 +6646,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "水肺潜水装备保管架",
-        "Desc": "保管着进行水肺潜水时必要装备的架子。时刻下潜准备就绪！",
+        "Name": "潜水装备保管架",
+        "Desc": "保管潜水所需装备的架子。随时准备好跳水！",
         "Icon": "my_event057_scubapack"
     },
     {
@@ -6304,8 +6655,8 @@
         "Category": "Furnitures",
         "SubCategory": "Closet",
         "Rarity": "SSR",
-        "Name": "淋浴隔间",
-        "Desc": "冷水和热水都能出的淋浴隔间。感觉神清气爽！",
+        "Name": "淋浴间",
+        "Desc": "可以同时提供冷水与热水的淋浴间。使人心情舒畅！",
         "Icon": "my_event057_showerbooth"
     },
     {
@@ -6331,8 +6682,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "经典旅行手提箱",
-        "Desc": "花纹经典的优雅与实用性兼备的旅行手提箱。非常适合优雅的旅行。",
+        "Name": "经典印花行李箱",
+        "Desc": "兼具经典印花的优雅与实用性的行李箱。非常适合优雅的旅途。",
         "Icon": "my_event058_suitcase"
     },
     {
@@ -6340,8 +6691,8 @@
         "Category": "Furnitures",
         "SubCategory": "Bed",
         "Rarity": "SSR",
-        "Name": "小板凳与日光浴椅",
-        "Desc": "摆有清爽果汁的小板凳与日光浴椅。配上格子花纹靠枕更为舒适。",
+        "Name": "迷你凳子和日光浴床",
+        "Desc": "摆放了清爽果汁的迷你凳子和日光浴床。条纹靠枕更增舒适感。",
         "Icon": "my_event058_parasolandsunbed"
     },
     {
@@ -6349,8 +6700,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SSR",
-        "Name": "冰激凌桌",
-        "Desc": "放有甜蜜冰激凌的冰激凌桌。吃上一口夏天就溶解了。",
+        "Name": "冰淇淋桌",
+        "Desc": "摆放了香甜冰淇淋的冰淇淋桌。夏天在你的嘴里融化。",
         "Icon": "my_event058_icecreamtableset"
     },
     {
@@ -6358,8 +6709,8 @@
         "Category": "Furnitures",
         "SubCategory": "Prop",
         "Rarity": "SSR",
-        "Name": "日光柠檬树",
-        "Desc": "结满了酸爽柠檬的日光柠檬树。打开水龙头，爽快感On！",
+        "Name": "阳光柠檬树",
+        "Desc": "长满了清爽柠檬的阳光柠檬树。打开水龙头，顿时神清气爽！",
         "Icon": "my_event058_lemontree"
     },
     {
@@ -6368,7 +6719,7 @@
         "SubCategory": "Table",
         "Rarity": "SSR",
         "Name": "桌游桌",
-        "Desc": "摆满了旧地图、棋子和骰子的桌游桌。愉快的游戏似乎开始了。",
+        "Desc": "摆放了旧地图、棋子、骰子的桌游桌。一场快乐的游戏即将开始。",
         "Icon": "my_event058_boardgametable"
     },
     {
@@ -6376,8 +6727,8 @@
         "Category": "Furnitures",
         "SubCategory": "Chair",
         "Rarity": "SSR",
-        "Name": "图书馆经典椅",
-        "Desc": "坐感的舒适与复古感达成绝妙平衡的图书馆的椅子。喜欢看书的人都梦想拥有的椅子。",
+        "Name": "图书馆的经典椅子",
+        "Desc": "在舒适性和怀旧感之间达到完美平衡的图书馆椅子。每个爱书人都梦想拥有的椅子。",
         "Icon": "my_event059_chair"
     },
     {
@@ -6385,8 +6736,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SSR",
-        "Name": "原稿桌",
-        "Desc": "帮助身为了不起的作家的你，在截稿之前爆肝的最棒的友人！给我燃起斗志来！",
+        "Name": "原稿用工作桌",
+        "Desc": "是身为杰出作家的你最好的朋友，帮助你赶上截稿的时间！燃烧热情吧！",
         "Icon": "my_event059_workdesk"
     },
     {
@@ -6436,7 +6787,7 @@
     },
     {
         "Id": 210325,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "古风烹饪台",
@@ -6697,7 +7048,7 @@
     },
     {
         "Id": 210354,
-        "Category": "Furnitures",
+        "Category": "Decorations",
         "SubCategory": "HomeAppliance",
         "Rarity": "SSR",
         "Name": "演唱会舞台",
@@ -6763,8 +7114,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SSR",
-        "Name": "おせち料理セットテーブル",
-        "Desc": "新年を迎え、豪華なおせち料理が準備された特別なテーブル。とある食の探求者の、真心が込められている。",
+        "Name": "年菜料理桌",
+        "Desc": "迎接新年到来，准备了丰盛的年菜料理的特别桌子。承载着某位食物探求者的诚意。",
         "Icon": "my_event077_table_01"
     },
     {
@@ -6772,8 +7123,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SSR",
-        "Name": "パンケーキ・ティーテーブル",
-        "Desc": "ジュリのアフタヌーンティーテーブル。おしゃれだが、たまに恐ろしいイベントが起きる、かも……？",
+        "Name": "松饼茶桌",
+        "Desc": "茱莉的下午茶茶桌。很华丽，但也许……偶尔会发生可怕的事件？",
         "Icon": "my_event077_table_02"
     },
     {
@@ -6781,9 +7132,36 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SSR",
-        "Name": "救急箱ホワイトテーブル",
-        "Desc": "場所を選ばず展開できるセナのテーブル。お世話にならないよう、怪我には気を付けよう。",
+        "Name": "急救箱白桌",
+        "Desc": "在任何地点都能展开的濑名的桌子。不想被照顾？注意别受伤。",
         "Icon": "my_event077_table_03"
+    },
+    {
+        "Id": 210364,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "千年制发球机",
+        "Desc": "以直线球为首，还可以完美投出不低于8种曲线球的最新型发球机。但这台机器的性能和千年棒球部的实力相比似乎对不上号……",
+        "Icon": "my_event078_battingmachine"
+    },
+    {
+        "Id": 210365,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "引体向上辅助器",
+        "Desc": "为引体向上提供辅助的锻炼器材。不借助辅助使用也是一种用法。",
+        "Icon": "my_event078_pullupmachine"
+    },
+    {
+        "Id": 210366,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "豪华全身镜",
+        "Desc": "映照出整个身体的大镜子。平时为了防止积尘，上面会盖着白色的帘子。",
+        "Icon": "my_event078_mirror"
     },
     {
         "Id": 301001,

@@ -611,32 +611,32 @@
         "Id": 220,
         "Category": "Material",
         "Rarity": "N",
-        "Name": "金线束",
-        "Desc": "用从闪耀着光辉的罕见金绵羊身上得到的羊毛制成的丝线束。用于制造及强化。",
+        "Name": "黄金毛线",
+        "Desc": "用金光闪闪的羊身上的毛制成的毛线。用于各种制造和强化。",
         "Icon": "item_icon_material_goldenfleece_0"
     },
     {
         "Id": 221,
         "Category": "Material",
         "Rarity": "R",
-        "Name": "金线轴",
-        "Desc": "缠满了金羊毛制成的丝线的线轴。用于制造及强化。",
+        "Name": "黄金毛线卷",
+        "Desc": "用黄金羊毛制成的毛线卷。用于各种制造和强化。",
         "Icon": "item_icon_material_goldenfleece_1"
     },
     {
         "Id": 222,
         "Category": "Material",
         "Rarity": "SR",
-        "Name": "金线团",
-        "Desc": "用许多金羊毛制成的丝线缠成的线团。用于制造及强化。",
+        "Name": "黄金毛线团",
+        "Desc": "用黄金羊毛制成的厚实的毛线团。用于各种制造和强化。",
         "Icon": "item_icon_material_goldenfleece_2"
     },
     {
         "Id": 223,
         "Category": "Material",
         "Rarity": "SSR",
-        "Name": "金布匹",
-        "Desc": "使用金羊毛制成的丝线编织而成的高级布匹。用于制造及强化。",
+        "Name": "黄金布料",
+        "Desc": "用黄金羊毛制成的高级布料。用于各种制造和强化。",
         "Icon": "item_icon_material_goldenfleece_3"
     },
     {
@@ -740,7 +740,7 @@
         "Category": "Material",
         "Rarity": "N",
         "Name": "罗马十二面体碎片",
-        "Desc": "罗马十二面体的损坏碎片。用于制造及强化。",
+        "Desc": "罗马十二面体的破裂碎片。用于各种制造和强化。",
         "Icon": "item_icon_material_romandice_0"
     },
     {
@@ -748,23 +748,23 @@
         "Category": "Material",
         "Rarity": "R",
         "Name": "破损的罗马十二面体",
-        "Desc": "破损到难以看出原本形态的罗马十二面体。用于制造及强化。",
+        "Desc": "破损到难以辨认形状的罗马十二面体。用于各种制造和强化。",
         "Icon": "item_icon_material_romandice_1"
     },
     {
         "Id": 262,
         "Category": "Material",
         "Rarity": "SR",
-        "Name": "修复中的罗马十二面体",
-        "Desc": "拼合碎片修复中的罗马十二面体。用于制造及强化。",
+        "Name": "修好的罗马十二面体",
+        "Desc": "组合碎片而修好的罗马十二面体。用于各种制造和强化。",
         "Icon": "item_icon_material_romandice_2"
     },
     {
         "Id": 263,
         "Category": "Material",
         "Rarity": "SSR",
-        "Name": "完好的罗马十二面体",
-        "Desc": "状态完好的罗马十二面体。用于制造及强化。",
+        "Name": "完整的罗马十二面体",
+        "Desc": "完整状态的罗马十二面体。用于各种制造和强化。",
         "Icon": "item_icon_material_romandice_3"
     },
     {
@@ -1176,6 +1176,38 @@
         "Icon": "item_icon_material_exskill_valkyrie_3"
     },
     {
+        "Id": 3090,
+        "Category": "Material",
+        "Rarity": "N",
+        "Name": "初级战术教育BD（高原众）",
+        "Desc": "通过视频形式记录了高原众学生战术行动的教学用BD。",
+        "Icon": "item_icon_material_exskill_highlander_0"
+    },
+    {
+        "Id": 3091,
+        "Category": "Material",
+        "Rarity": "R",
+        "Name": "中级战术教育BD（高原众）",
+        "Desc": "通过视频形式记录了高原众学生战术行动的教学用BD。",
+        "Icon": "item_icon_material_exskill_highlander_1"
+    },
+    {
+        "Id": 3092,
+        "Category": "Material",
+        "Rarity": "SR",
+        "Name": "高级战术教育BD（高原众）",
+        "Desc": "通过视频形式记录了高原众学生战术行动的教学用BD。",
+        "Icon": "item_icon_material_exskill_highlander_2"
+    },
+    {
+        "Id": 3093,
+        "Category": "Material",
+        "Rarity": "SSR",
+        "Name": "最高级战术教育BD（高原众）",
+        "Desc": "通过视频形式记录了高原众学生战术行动的教学用BD。",
+        "Icon": "item_icon_material_exskill_highlander_3"
+    },
+    {
         "Id": 4000,
         "Category": "Material",
         "Rarity": "N",
@@ -1462,6 +1494,38 @@
         "Name": "特级技术笔记\n（瓦尔基丽）",
         "Desc": "总结了瓦尔基丽核心战术的秘密笔记。",
         "Icon": "item_icon_skillbook_valkyrie_3"
+    },
+    {
+        "Id": 4090,
+        "Category": "Material",
+        "Rarity": "N",
+        "Name": "初级技术笔记（高原众）",
+        "Desc": "汇集总结了高原众铁道学园战术精粹的笔记。",
+        "Icon": "item_icon_skillbook_highlander_0"
+    },
+    {
+        "Id": 4091,
+        "Category": "Material",
+        "Rarity": "R",
+        "Name": "中级技术笔记（高原众）",
+        "Desc": "汇集总结了高原众铁道学园战术精粹的笔记。",
+        "Icon": "item_icon_skillbook_highlander_1"
+    },
+    {
+        "Id": 4092,
+        "Category": "Material",
+        "Rarity": "SR",
+        "Name": "高级技术笔记（高原众）",
+        "Desc": "汇集总结了高原众铁道学园战术精粹的笔记。",
+        "Icon": "item_icon_skillbook_highlander_2"
+    },
+    {
+        "Id": 4093,
+        "Category": "Material",
+        "Rarity": "SSR",
+        "Name": "最高级技术笔记（高原众）",
+        "Desc": "汇集总结了高原众铁道学园战术精粹的笔记。",
+        "Icon": "item_icon_skillbook_highlander_3"
     },
     {
         "Id": 5000,
@@ -2492,7 +2556,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "宫子（泳装）的神名文字",
-        "Desc": "宫子（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "宫子（泳装）的神名文字，蕴含着宫子（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0215"
     },
     {
@@ -2500,7 +2564,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "咲（泳装）的神名文字",
-        "Desc": "咲（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "咲（泳装）的神名文字，蕴含着咲（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0217"
     },
     {
@@ -2508,7 +2572,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "忧（泳装）的神名文字",
-        "Desc": "忧（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "忧（泳装）的神名文字，蕴含着忧（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0204"
     },
     {
@@ -2524,15 +2588,15 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "芽留的神名文字",
-        "Desc": "蕴含着芽留的神秘的神名文字。",
+        "Desc": "芽留的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0124"
     },
     {
         "Id": 10076,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "琴里(应援团)神名文字",
-        "Desc": "蕴含着琴里(应援团)神秘的神名文字。",
+        "Name": "琴里（应援团）的神名文字",
+        "Desc": "琴里（应援团）的神名文字，蕴含着琴里（应援团）的神秘。",
         "Icon": "item_icon_secretstone_ch0185"
     },
     {
@@ -2635,8 +2699,8 @@
         "Id": 10089,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "阿露（礼服）的神名文字",
-        "Desc": "阿露（礼服）的神名文字，其中充满着她的神秘。",
+        "Name": "爱露（礼服）的神名文字",
+        "Desc": "爱露（礼服）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0240"
     },
     {
@@ -2691,8 +2755,8 @@
         "Id": 10096,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "环奈（泳装）的神名文字",
-        "Desc": "环奈（泳装）的神名文字，其中充满着她的神秘。",
+        "Name": "康娜（泳装）的神名文字",
+        "Desc": "康娜（泳装）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0260"
     },
     {
@@ -2739,8 +2803,8 @@
         "Id": 10103,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "玛利娜（旗袍）的神名文字",
-        "Desc": "玛利娜（旗袍）的神名文字，其中充满着她的神秘。",
+        "Name": "真里奈（旗袍）的神名文字",
+        "Desc": "真里奈（旗袍）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0270"
     },
     {
@@ -2803,8 +2867,8 @@
         "Id": 10111,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "尼露（制服）的神名文字",
-        "Desc": "尼露（制服）的神名文字，其中充满着她的神秘。",
+        "Name": "妮露（制服）的神名文字",
+        "Desc": "妮露（制服）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0280"
     },
     {
@@ -2819,17 +2883,49 @@
         "Id": 10113,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "セナ（私服）の神名文字",
-        "Desc": "セナ（私服）の神秘が詰まった神名文字。",
+        "Name": "濑名（便服）的神名文字",
+        "Desc": "濑名（便服）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0082"
     },
     {
         "Id": 10114,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "ジュリ（アルバイト）の神名文字",
-        "Desc": "ジュリ（アルバイト）の神秘が詰まった神名文字。",
+        "Name": "朱莉（打工）的神名文字",
+        "Desc": "朱莉（打工）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0286"
+    },
+    {
+        "Id": 10115,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "丽的神名文字",
+        "Desc": "丽的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0245"
+    },
+    {
+        "Id": 10116,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "纱织（礼服）的神名文字",
+        "Desc": "纱织（礼服）的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0259"
+    },
+    {
+        "Id": 10117,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "光的神名文字",
+        "Desc": "光的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0242"
+    },
+    {
+        "Id": 10118,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "望的神名文字",
+        "Desc": "望的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0243"
     },
     {
         "Id": 13000,
@@ -3052,7 +3148,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "小春（泳装）的神名文字",
-        "Desc": "小春（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "小春（泳装）的神名文字，蕴含着小春（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0205"
     },
     {
@@ -3078,6 +3174,14 @@
         "Name": "美祢（偶像）的神名文字",
         "Desc": "美祢（偶像）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0275"
+    },
+    {
+        "Id": 16017,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "青叶的神名文字",
+        "Desc": "青叶的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0288"
     },
     {
         "Id": 20000,
@@ -3300,7 +3404,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "白子（泳装）的神名文字",
-        "Desc": "白子（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "白子（泳装）的神名文字，蕴含着白子（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0188"
     },
     {
@@ -3308,7 +3412,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "日向（泳装）的神名文字",
-        "Desc": "日向（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "日向（泳装）的神名文字，蕴含着日向（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0210"
     },
     {
@@ -3316,7 +3420,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "三森（泳装）的神名文字",
-        "Desc": "三森（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "三森（泳装）的神名文字，蕴含着三森（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0183"
     },
     {
@@ -3387,8 +3491,8 @@
         "Id": 20038,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "智惠（旗袍）的神名文字",
-        "Desc": "智惠（旗袍）的神名文字，其中充满着她的神秘。",
+        "Name": "巴（旗袍）的神名文字",
+        "Desc": "巴（旗袍）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0271"
     },
     {
@@ -3422,6 +3526,22 @@
         "Name": "真纪（露营）的神名文字",
         "Desc": "真纪（露营）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0235"
+    },
+    {
+        "Id": 20043,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "泉（正月）的神名文字",
+        "Desc": "泉（正月）的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0197"
+    },
+    {
+        "Id": 20044,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "堇（打工）的神名文字",
+        "Desc": "堇（打工）的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0287"
     },
     {
         "Id": 23000,
@@ -3580,7 +3700,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "美游（泳装）的神名文字",
-        "Desc": "美游（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "美游（泳装）的神名文字，蕴含着美游（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0218"
     },
     {
@@ -4403,16 +4523,16 @@
         "Id": 80260,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "冻虾",
-        "Desc": "捕捞后立即冷冻，保持了鲜度的虾。这些冻虾是夜户浦村的特产，供给D.U.的虾似乎基本上都是这里来的。",
+        "Name": "冷冻虾",
+        "Desc": "捕获后马上冷冻，新鲜保存的虾。是夜户浦村的特产，交付给D.U.的虾几乎都是在夜户浦村捕获的。",
         "Icon": "item_icon_event_token_0_s29"
     },
     {
         "Id": 80261,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "卵石",
-        "Desc": "海岸上很常见的小卵石。第一眼看上去再平常不过，但那被海浪冲刷形成的光滑外表与被海水浸润后的光泽，让人如此着迷。",
+        "Name": "小石头",
+        "Desc": "海岸上常见的小石子。乍看很普通，但由于长时间被海浪及砂土打磨，沾水后的色泽令人深深着迷。",
         "Icon": "item_icon_event_token_1_s29"
     },
     {
@@ -4420,63 +4540,63 @@
         "Category": "Coin",
         "Rarity": "N",
         "Name": "贝壳",
-        "Desc": "海岸上很常见的小贝壳。第一眼看上去都没什么不同，但细小的花纹和形状之类特征完全一样的贝壳1个也没有。",
+        "Desc": "海岸上常见的小贝壳。乍看很平凡，但每一个的花纹及形状都是独一无二的。",
         "Icon": "item_icon_event_token_2_s29"
     },
     {
         "Id": 80263,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "干海星",
-        "Desc": "被丢在码头上的又干又硬的海星。吃不了又烂得慢，对村民们来说是个麻烦家伙，但似乎美游对这海星感到了微妙的的亲近感。",
+        "Name": "晒干的海星",
+        "Desc": "放在码头上的干燥海星。因为不能吃，又不容易腐烂，村民们对它们感到很头痛，但美游似乎对这些海星有着莫名的亲近感。",
         "Icon": "item_icon_event_token_3_s29"
     },
     {
         "Id": 80265,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "骰子1点确定券",
-        "Desc": "能够让骰子投出指定点数的联票。选择1点投出后联票将被消耗。",
+        "Name": "骰子1确定券",
+        "Desc": "可查看掷骰赛跑结果的票券。若在查看结果骰子时选择1的面，将消耗票券。",
         "Icon": "item_icon_event_object_1_s29"
     },
     {
         "Id": 80266,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "骰子2点确定券",
-        "Desc": "能够让骰子投出指定点数的联票。选择2点投出后联票将被消耗。",
+        "Name": "骰子2确定券",
+        "Desc": "可查看掷骰赛跑结果的票券。若在查看结果骰子时选择2的面，将消耗票券。",
         "Icon": "item_icon_event_object_2_s29"
     },
     {
         "Id": 80267,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "骰子3点确定券",
-        "Desc": "能够让骰子投出指定点数的联票。选择3点投出后联票将被消耗。",
+        "Name": "骰子3确定券",
+        "Desc": "可查看掷骰赛跑结果的票券。若在查看结果骰子时选择3的面，将消耗票券。",
         "Icon": "item_icon_event_object_3_s29"
     },
     {
         "Id": 80268,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "骰子4点确定券",
-        "Desc": "能够让骰子投出指定点数的联票。选择4点投出后联票将被消耗。",
+        "Name": "骰子4确定券",
+        "Desc": "可查看掷骰赛跑结果的票券。若在查看结果骰子时选择4的面，将消耗票券。",
         "Icon": "item_icon_event_object_4_s29"
     },
     {
         "Id": 80269,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "骰子5点确定券",
-        "Desc": "能够让骰子投出指定点数的联票。选择5点投出后联票将被消耗。",
+        "Name": "骰子5确定券",
+        "Desc": "可查看掷骰赛跑结果的票券。若在查看结果骰子时选择5的面，将消耗票券。",
         "Icon": "item_icon_event_object_5_s29"
     },
     {
         "Id": 80270,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "骰子6点确定券",
-        "Desc": "能够让骰子投出指定点数的联票。选择6点投出后联票将被消耗。",
+        "Name": "骰子6确定券",
+        "Desc": "可查看掷骰赛跑结果的票券。若在查看结果骰子时选择6的面，将消耗票券。",
         "Icon": "item_icon_event_object_6_s29"
     },
     {
@@ -4484,7 +4604,7 @@
         "Category": "Coin",
         "Rarity": "N",
         "Name": "活动积分",
-        "Desc": "在活动中可获取的积分。获取大量积分可换取各种的报酬。",
+        "Desc": "每当进行活动时可获得的点数。获得越多即可得到多样奖励。",
         "Icon": "item_icon_event_item_0"
     },
     {
@@ -4492,7 +4612,7 @@
         "Category": "Coin",
         "Rarity": "N",
         "Name": "羊皮纸碎片",
-        "Desc": "老旧羊皮纸的碎片。把所有的碎片都收集起来的话感觉能拼成同一张。",
+        "Desc": "老旧的羊皮纸碎片。全部集齐的话，似乎能拼凑出一个完整的形状。",
         "Icon": "item_icon_event_token_0_s30"
     },
     {
@@ -4500,15 +4620,15 @@
         "Category": "Coin",
         "Rarity": "N",
         "Name": "柠檬",
-        "Desc": "岛上到处都结着的柠檬。",
+        "Desc": "遍布岛上的柠檬果实。",
         "Icon": "item_icon_event_token_1_s30"
     },
     {
         "Id": 80293,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "旧钥匙",
-        "Desc": "在各处都能发现的旧钥匙。似乎能打开箱子和橱柜之类的东西。",
+        "Name": "古老钥匙",
+        "Desc": "在各个地方发现的古老钥匙。好像可以打开箱子或柜子之类的东西。",
         "Icon": "item_icon_event_token_2_s30"
     },
     {
@@ -5019,33 +5139,97 @@
         "Id": 80570,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "パフェ交換券",
-        "Desc": "パフェには「完全な」という意味がある。何かを達成した後は、パフェを食べて完全な安らぎの時を過ごそう。",
+        "Name": "芭菲兑换券",
+        "Desc": "据说芭菲有着「圆满」的意思。做成了些什么后吃份芭菲，度过圆满的安宁时光吧。",
         "Icon": "item_icon_event_token_0_s46"
     },
     {
         "Id": 80571,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "試食用パンケーキ",
-        "Desc": "カフェの魅力が伝わる、試食用パンケーキ。一口で満足できないなら、お店にどうぞ。",
+        "Name": "试吃用松饼",
+        "Desc": "能够传递出芭菲的魅力的试吃用松饼。一口没法满足的话，欢迎进店选购。",
         "Icon": "item_icon_event_token_1_s46"
     },
     {
         "Id": 80572,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "救急医学部の特製薬",
-        "Desc": "どんな病気にも効くという万能薬。とはいえ、過信と過剰摂取は禁物！",
+        "Name": "急救医学部的特制药",
+        "Desc": "据说对什么疾病都有效的万灵药。但是，严禁过度依赖和过量摄取！",
         "Icon": "item_icon_event_token_2_s46"
     },
     {
         "Id": 80573,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "使い切りタイプの洗剤",
-        "Desc": "携帯性に優れた洗剤で、少量でも汚れがよく落ちる。怪しげな粘液を洗い流すのには最適だ。",
+        "Name": "一次性洗涤剂",
+        "Desc": "便于携带，清污性强的洗涤剂。最适合用来洗掉可疑的黏液。",
         "Icon": "item_icon_event_token_3_s46"
+    },
+    {
+        "Id": 80590,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "活动积分",
+        "Desc": "在活动中可获取的积分。获取大量积分可获得各种的报酬。",
+        "Icon": "item_icon_event_item_0"
+    },
+    {
+        "Id": 80591,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "应援气球",
+        "Desc": "应援用的长条气球。双手拿着边声援边敲吧！幸好拿久了手也不会痛。",
+        "Icon": "item_icon_event_token_1_s47"
+    },
+    {
+        "Id": 80592,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "蛋白质饮料",
+        "Desc": "口渴了可没法应援。快热死的时候就来上一杯补充补充营养。让身子和脑袋都凉快凉快吧！",
+        "Icon": "item_icon_event_token_2_s47"
+    },
+    {
+        "Id": 80593,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "抽奖券",
+        "Desc": "如你所见的抽奖券。多收集些以1等奖为目标吧！",
+        "Icon": "item_icon_event_token_3_s47"
+    },
+    {
+        "Id": 80600,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "高原众纪念贴纸",
+        "Desc": "乘坐高原众列车时能够得到的纪念品。画有可爱的吉祥物。",
+        "Icon": "item_icon_event_token_0_s48"
+    },
+    {
+        "Id": 80601,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "货运列车路线图",
+        "Desc": "记录了货运列车的路线的地图。「通常的情况」下，会按照路线图上画的路线走。",
+        "Icon": "item_icon_event_token_1_s48"
+    },
+    {
+        "Id": 80602,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "神秘货物",
+        "Desc": "装着货物的木箱。很好奇里面装了什么，但不可随意打开。",
+        "Icon": "item_icon_event_token_2_s48"
+    },
+    {
+        "Id": 80603,
+        "Category": "Coin",
+        "Rarity": "N",
+        "Name": "铁扳手",
+        "Desc": "修理用的铁扳手。大部分的机械用这敲两下就能……修……好？",
+        "Icon": "item_icon_event_token_3_s48"
     },
     {
         "Id": 100000,
@@ -5384,6 +5568,14 @@
         "Icon": "item_icon_furniture_random_3"
     },
     {
+        "Id": 150045,
+        "Category": "Consumable",
+        "Rarity": "N",
+        "Name": "T9装备设计图自选袋",
+        "Desc": "装有T9装备设计图的自选袋。使用时可任意选择1种T9图纸兑换。",
+        "Icon": "equipment_icon_selection_tier9_piece"
+    },
+    {
         "Id": 151000,
         "Category": "Consumable",
         "Rarity": "N",
@@ -5542,6 +5734,14 @@
         "Name": "千年塔休息室系列家具自选箱",
         "Desc": "千年塔休息室系列家具的自选箱。使用时可任意选择1种千年塔休息室系列的家具兑换。",
         "Icon": "item_icon_furniture_selection_group118"
+    },
+    {
+        "Id": 151020,
+        "Category": "Consumable",
+        "Rarity": "SSR",
+        "Name": "高原众列车系列家具自选箱",
+        "Desc": "高原众列车系列家具的自选箱。使用时可任意选择1种高原众列车系列的家具兑换。",
+        "Icon": "item_icon_furniture_selection_group119"
     },
     {
         "Id": 151991,
@@ -6838,6 +7038,14 @@
         "Name": "千年塔休息室系列家具抽选箱",
         "Desc": "装有千年塔休息室系列家具的抽选箱。使用时可以相同概率随机获得1种千年塔休息室系列的家具。",
         "Icon": "item_icon_furniture_random_group118"
+    },
+    {
+        "Id": 191020,
+        "Category": "Consumable",
+        "Rarity": "SSR",
+        "Name": "高原众列车系列家具抽选箱",
+        "Desc": "装有高原众列车系列家具的抽选箱。使用时可以相同概率随机获得1种高原众列车系列的家具。",
+        "Icon": "item_icon_furniture_random_group119"
     },
     {
         "Id": 191991,
