@@ -25,13 +25,20 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["msi", "deb", "appimage"],
+    "identifier": "com.KitanoSakura.BaGMTool",
     "icon": [
       "./icons/app.ico",
-      "./icons/app.ico",
-      "./icons/app.ico",
-      "./icons/app.ico",
-      "./icons/app.ico"
-    ]
+      "./icons/app.jpg"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "http://timestamp.digicert.com"
+    },
+    "linux": {
+      "category": "Utility",
+      "desktopTemplate": "default"
+    }
   }
 }
