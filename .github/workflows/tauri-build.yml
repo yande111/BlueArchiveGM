@@ -38,11 +38,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libwebkit2gtk-4.0-dev \
             build-essential \
-            curl wget \
+            curl \
+            wget \
             libssl-dev \
             libgtk-3-dev \
+            libwebkit2gtk-4.1-dev \
             libayatana-appindicator3-dev \
             librsvg2-dev \
             patchelf
@@ -83,7 +84,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "v1.0.5-1"
-          name: "BlueArchiveGM Release v1.0.5-1 多平台"
+          name: "BlueArchiveGM Release v1.0.5-1 多平台支持"
           body: |
             本次发布修复了以下内容：
 
