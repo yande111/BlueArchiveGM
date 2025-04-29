@@ -1,16 +1,15 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "package": {
-    "productName": "BlueArchiveGM",
-    "version": "1.0.5"
-  },
+  "identifier": "com.sakura.bluearchivegm",
+  "productName": "BlueArchiveGM",
+  "version": "1.0.5",
   "build": {
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
-    "devPath": "http://localhost:5173",
-    "distDir": "../dist"
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
   },
-  "tauri": {
+  "app": {
     "security": {
       "csp": null
     },
@@ -22,19 +21,20 @@
         "resizable": true,
         "fullscreen": false
       }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "deb", "appimage"],
+    "icon": [
+      "./icons/app.ico",
+      "./icons/app.jpg"
     ],
-    "bundle": {
-      "active": true,
-      "targets": ["msi", "deb", "appimage"],
-      "icon": [
-        "./icons/app.ico",
-        "./icons/app.jpg"
-      ],
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": "http://timestamp.digicert.com"
-      }
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "http://timestamp.digicert.com"
     }
-  }
+  },
+  "plugins": {}
 }
