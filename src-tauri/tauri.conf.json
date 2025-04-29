@@ -1,15 +1,19 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "BlueArchiveGM",
-  "version": "1.0.5",
-  "identifier": "com.KitanoSakura.BaGMTool",
-  "build": {
-    "frontendDist": "../dist",
-    "devUrl": "http://localhost:5173",
-    "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build"
+  "package": {
+    "productName": "BlueArchiveGM",
+    "version": "1.0.5"
   },
-  "app": {
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  },
+  "tauri": {
+    "security": {
+      "csp": null
+    },
     "windows": [
       {
         "title": "BlueArchiveGM",
@@ -19,26 +23,18 @@
         "fullscreen": false
       }
     ],
-    "security": {
-      "csp": null
-    }
-  },
-  "bundle": {
-    "active": true,
-    "targets": ["msi", "deb", "appimage"],
-    "identifier": "com.KitanoSakura.BaGMTool",
-    "icon": [
-      "./icons/app.ico",
-      "./icons/app.jpg"
-    ],
-    "windows": {
-      "certificateThumbprint": null,
-      "digestAlgorithm": "sha256",
-      "timestampUrl": "http://timestamp.digicert.com"
-    },
-    "linux": {
-      "category": "Utility",
-      "desktopTemplate": "default"
+    "bundle": {
+      "active": true,
+      "targets": ["msi", "deb", "appimage"],
+      "icon": [
+        "./icons/app.ico",
+        "./icons/app.jpg"
+      ],
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "http://timestamp.digicert.com"
+      }
     }
   }
 }
