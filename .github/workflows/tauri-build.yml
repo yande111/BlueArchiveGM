@@ -48,17 +48,14 @@ jobs:
             librsvg2-dev \
             patchelf
 
-      - name: 清理并安装依赖
-        run: |
-          npm cache clean --force
-          rm -rf node_modules package-lock.json
-          npm install --legacy-peer-deps
-
-      - name: 安装 Tauri CLI
-        run: npm install --save-dev @tauri-apps/cli
+      - name: 安装依赖
+        run: npm install
 
       - name: 构建前端
         run: npm run build
+
+      - name: 安装 Tauri CLI
+        run: npm install tauri
 
       - name: 构建 Tauri 应用
         run: npx tauri build
@@ -66,6 +63,7 @@ jobs:
       - name: 搜集构建产物路径
         id: get-artifacts
         run: |
+          set -e
           mkdir -p artifacts
 
           if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
