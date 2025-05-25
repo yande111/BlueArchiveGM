@@ -3,21 +3,12 @@ name: Build Tauri App
 on:
   push:
     branches:
-      - master
-  workflow_dispatch:
+      - master  # 触发构建的分支
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
-        include:
-          - os: windows-latest
-            target: x86_64-pc-windows-msvc
-          - os: ubuntu-latest
-            target: x86_64-unknown-linux-gnu
-
+    runs-on: windows-latest  # 使用 Windows 服务器
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -25,28 +16,13 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20  # 你可以改成你项目的 Node 版本
           cache: 'npm'
 
-      - name: 安装 Rust
+      - name: 安装 Rust (MSVC)
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.target }}
-
-      - name: 安装 Linux 构建依赖（仅限 Linux）
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            build-essential \
-            curl \
-            wget \
-            libssl-dev \
-            libgtk-3-dev \
-            libwebkit2gtk-4.1-dev \
-            libayatana-appindicator3-dev \
-            librsvg2-dev \
-            patchelf
+          targets: x86_64-pc-windows-msvc  # 使用 MSVC 工具链
 
       - name: 安装依赖
         run: npm install
@@ -54,46 +30,29 @@ jobs:
       - name: 构建前端
         run: npm run build
 
-      - name: 安装 Tauri CLI
+      - name: 安装 Tauri
         run: npm install tauri
 
-      - name: 构建 Tauri 应用
+      - name: 构建 Tauri
         run: npx tauri build
 
-      - name: 搜集构建产物路径
-        id: get-artifacts
-        run: |
-          set -e
-          mkdir -p artifacts
+      - name: 重命名 EXE
+        run: mv src-tauri/target/release/*.exe src-tauri/target/release/BlueArchiveGM.exe
 
-          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            cp src-tauri/target/release/bundle/msi/*.msi artifacts/installer-windows.msi
-            cp src-tauri/target/release/*.exe artifacts/portable-windows.exe
-          else
-            cp src-tauri/target/release/bundle/deb/*.deb artifacts/installer-linux.deb
-            cp src-tauri/target/release/bundle/appimage/*.AppImage artifacts/portable-linux.AppImage
-          fi
-
-      - name: 上传构建产物
+      - name: 上传 EXE 作为构建产物
         uses: actions/upload-artifact@v4
         with:
-          name: tauri-artifacts-${{ matrix.os }}
-          path: artifacts/
+          name: tauri-app
+          path: src-tauri/target/release/BlueArchiveGM.exe
 
-      - name: 发布 GitHub Release（每个平台）
+      - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v1.0.5-1"
-          name: "BlueArchiveGM Release v1.0.5-1 多平台支持"
-          body: |
-            本次发布修复了以下内容：
-
-            - 🛠️ 修复设置学生属性时报“无 Key”问题。
-            - 💻 构建支持：Windows（安装版 + 绿色版），Linux（.deb 安装包 + .AppImage）。
-
-            感谢使用！
-          draft: false
-          prerelease: false
-          files: artifacts/*
+          tag_name: "v1.0.5-AR"  # 你可以根据需要指定发布版本号
+          name: "BlueArchiveGM Release v1.0.5-AR 紧急修复"  # 发布名称
+          body: "修复在设置学生属性时，首页填入了key但是提示无Key"  # 发布说明
+          draft: false  # 不作为草稿版本
+          prerelease: false  # 这不是预发布版本
+          files: src-tauri/target/release/BlueArchiveGM.exe  # 指定要上传的文件路径
         env:
-          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.KITANO_GM_TOKEN }}  # GitHub API 访问令牌
