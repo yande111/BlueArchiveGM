@@ -1948,7 +1948,7 @@
         "Category": "Material",
         "Rarity": "SSR",
         "Name": "1次招募券",
-        "Desc": "使用本道具可进行1次招募。",
+        "Desc": "1次招募票券。",
         "Icon": "item_icon_recruitticket_normal_1"
     },
     {
@@ -1956,7 +1956,7 @@
         "Category": "Material",
         "Rarity": "SSR",
         "Name": "10次招募券",
-        "Desc": "使用本道具可进行10次招募。",
+        "Desc": "10次招募票券。",
         "Icon": "item_icon_recruitticket_normal_10"
     },
     {
@@ -2580,15 +2580,15 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "花子（泳装）的神名文字",
-        "Desc": "花子（泳装）的神名文字，其中充满着她的神秘。",
+        "Desc": "花子（泳装）的神名文字，蕴含着花子（泳装）的神秘。",
         "Icon": "item_icon_secretstone_ch0209"
     },
     {
         "Id": 10075,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "芽留的神名文字",
-        "Desc": "芽留的神名文字，其中充满着她的神秘。",
+        "Name": "芽瑠的神名文字",
+        "Desc": "芽瑠的神名文字，蕴含着芽瑠的神秘。",
         "Icon": "item_icon_secretstone_ch0124"
     },
     {
@@ -2928,6 +2928,14 @@
         "Icon": "item_icon_secretstone_ch0243"
     },
     {
+        "Id": 10119,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "名草的神名文字",
+        "Desc": "名草的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0222"
+    },
+    {
         "Id": 13000,
         "Category": "SecretStone",
         "Rarity": "N",
@@ -3036,7 +3044,7 @@
         "Category": "SecretStone",
         "Rarity": "N",
         "Name": "红叶的神名文字",
-        "Desc": "红叶的神名文字，其中充满着她的神秘。",
+        "Desc": "红叶的神名文字，蕴含着红叶的神秘。",
         "Icon": "item_icon_secretstone_momiji_default"
     },
     {
@@ -3427,8 +3435,8 @@
         "Id": 20030,
         "Category": "SecretStone",
         "Rarity": "N",
-        "Name": "晴奈（运动服）的神名文字",
-        "Desc": "晴奈（运动服）的神名文字，其中充满着她的神秘。",
+        "Name": "晴奈（体操服）的神名文字",
+        "Desc": "晴奈（体操服）的神名文字，蕴含着晴奈（体操服）的神秘。",
         "Icon": "item_icon_secretstone_ch0193"
     },
     {
@@ -3542,6 +3550,22 @@
         "Name": "堇（打工）的神名文字",
         "Desc": "堇（打工）的神名文字，其中充满着她的神秘。",
         "Icon": "item_icon_secretstone_ch0287"
+    },
+    {
+        "Id": 20045,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "菲娜（导游）的神名文字",
+        "Desc": "菲娜（导游）的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0257"
+    },
+    {
+        "Id": 20046,
+        "Category": "SecretStone",
+        "Rarity": "N",
+        "Name": "妮娅的神名文字",
+        "Desc": "妮娅的神名文字，其中充满着她的神秘。",
+        "Icon": "item_icon_secretstone_ch0109"
     },
     {
         "Id": 23000,
@@ -4635,32 +4659,32 @@
         "Id": 80300,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "月之塔罗牌",
-        "Desc": "由爱好特定领域的粉丝们制作的塔罗牌。据说收集一堆这样的牌，就能进行某种游戏。",
+        "Name": "LUNA塔罗牌",
+        "Desc": "喜欢特定题材的粉丝群体之间当作周边商品制作的塔罗牌。听说收集很多的话可以玩某款游戏。",
         "Icon": "item_icon_event_token_0_s31"
     },
     {
         "Id": 80301,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "墨水瓶",
-        "Desc": "上墨水时使用的消耗品。沾在手还是衣服上的话很难去掉，还请注意。",
+        "Name": "墨盒",
+        "Desc": "用来供应墨水的消耗品。一旦沾到就很难擦干净，使用时要小心。",
         "Icon": "item_icon_event_token_1_s31"
     },
     {
         "Id": 80302,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "触控笔",
-        "Desc": "说明书上说，这东西用起来就跟用真的纸和笔写起来感觉一样……吗。",
+        "Name": "平板电脑触控笔",
+        "Desc": "能够带给使用者如同真实纸笔的使用感，说明书上是这么写的……",
         "Icon": "item_icon_event_token_2_s31"
     },
     {
         "Id": 80303,
         "Category": "Coin",
         "Rarity": "N",
-        "Name": "小型专题展入场券",
-        "Desc": "参加小型专题（Petit Only）展时必须出示的票。请注意不要遗失。",
+        "Name": "Only展入场券",
+        "Desc": "进入会场时须出示的票券。请小心保管，谨防假冒。",
         "Icon": "item_icon_event_token_3_s31"
     },
     {
@@ -7198,6 +7222,14 @@
         "Name": "阿拜多斯学生证（1年级）",
         "Desc": "证明阿拜多斯高级中学1年级学生的这一身份的学生证。",
         "Icon": "collectible_icon_guidemission_s41"
+    },
+    {
+        "Id": 20000013,
+        "Category": "Collectible",
+        "Rarity": "N",
+        "Name": "千世喵人偶",
+        "Desc": "在阴阳部做的千世喵人偶。",
+        "Icon": "collectible_icon_guidemission_s49"
     },
     {
         "Id": 20001000,

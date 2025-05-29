@@ -1,0 +1,304 @@
+{
+    "ja-jp": {
+        "blueArchiveGM": {
+            "sidebar": {
+                "home": "S.C.H.A.L.E ホーム",
+                "giveItem": "アイテム付与",
+                "giveAllItems": "全アイテム付与",
+                "getTeacherInfo": "先生情報取得",
+                "sendMail": "メール送信",
+                "getEmailCode": "認証コード取得",
+                "setStudentStats": "生徒ステータス設定",
+                "scahleSettings": "S.C.H.A.L.E 設定",
+                "getItemList": "アイテムリスト取得",
+                "about": "About"
+            },
+            "consoleTitle": "BlueArchiveGM コンソール",
+            "welcomeMessage": "BlueArchiveGM コンソールへようこそ。サーバー接続情報を設定してください",
+            "serverAddressPlaceholder": "オフィスアドレス（例：http://127.0.0.1:5000）",
+            "serverAuthKeyPlaceholder": "認証キー（任意）",
+            "saveConfigButton": "設定保存",
+            "updateConfigButton": "設定更新",
+            "updateServerStatusButton": "サーバーステータス更新",
+            "updating": "更新中...",
+            "serverStatusTitle": "サーバーステータス",
+            "offlineStatus": "オフライン",
+            "errorReason": "エラー原因：",
+            "lastUpdate": "最終更新：",
+            "autoSyncStatus": {
+                "active": "30秒間隔で自動同期",
+                "paused": "バックグラウンド更新停止"
+            },
+            "onlineTeacherCount": "オンライン先生数",
+            "tps": "TPS",
+            "rt": "RT",
+            "clientVersion": "クライアントバージョン",
+            "serverVersion": "サーバーバージョン",
+            "cpuStatus": "CPU 状態",
+            "memoryStatus": "メモリ使用量",
+            "noData": "サーバーデータなし",
+            "messages": {
+                "invalidAddress": "http/httpsプロトコルが必要です",
+                "cannotConnect": "サーバー接続失敗：設定を確認してください",
+                "configSaved": "設定保存成功",
+                "configUpdated": "設定更新成功",
+                "statusUpdated": "ステータス更新成功",
+                "operationFailed": "操作失敗: ",
+                "unauthorized": "認証キーが正しくありません！設定を確認してください",
+                "serverError": "サーバーエラー",
+                "cannotConnectServer": "サーバー接続不可",
+                "autoSyncFailed": "自動同期失敗: "
+            },
+            "giveSingleItem": {
+                "title": "単一アイテム付与",
+                "form": {
+                    "teacherUID": "先生UID",
+                    "teacherUIDPlaceholder": "先生UIDを入力してください",
+                    "itemType": "アイテム種別",
+                    "itemTypePlaceholder": "アイテム種別を選択",
+                    "itemID": "アイテムID",
+                    "itemIDPlaceholder": "アイテムIDを入力",
+                    "quantity": "数量",
+                    "submit": "送信"
+                },
+                "responseCard": {
+                    "header": "操作結果：",
+                    "footer": "反映状況を確認してください"
+                },
+                "messages": {
+                    "noServerAddress": "サーバーアドレスを設定してください",
+                    "giveSuccess": "アイテム付与成功！",
+                    "giveFailed": "失敗：{error}",
+                    "checkResponse": "詳細はレスポンスを確認",
+                    "configError": "設定エラー"
+                }
+            },
+            "giveAllItems": {
+                "title": "全アイテム一括付与",
+                "form": {
+                    "teacherUID": "先生UID",
+                    "teacherUIDPlaceholder": "先生UIDを入力",
+                    "itemType": "アイテム種別",
+                    "itemTypePlaceholder": "種別を選択",
+                    "quantity": "数量",
+                    "submit": "一括付与"
+                },
+                "responseCard": {
+                    "header": "操作結果：",
+                    "footer": "反映状況を確認"
+                },
+                "messages": {
+                    "noServerAddress": "サーバーアドレスを設定してください",
+                    "giveSuccess": "一括付与成功！",
+                    "giveFailed": "失敗：{error}",
+                    "checkResponse": "エラー詳細を確認",
+                    "configError": "設定エラー"
+                }
+            },
+            "getPlayer": {
+                "title": "先生情報取得（開発中）",
+                "form": {
+                    "teacherUID": "先生UID",
+                    "teacherUIDPlaceholder": "UIDを入力",
+                    "binaryOutput": "バイナリ出力",
+                    "submit": "送信"
+                },
+                "description": "現在データパケットのみ出力可能です（機能未実装）",
+                "alert": {
+                    "title": "レスポンス"
+                },
+                "messages": {
+                    "noServerAddress": "サーバーアドレスを設定してください",
+                    "getPlayerSuccess": "情報取得成功",
+                    "getPlayerFailure": "取得失敗：{error}",
+                    "checkResponse": "エラー詳細を確認"
+                }
+            },
+            "mailSender": {
+                "title": "メール送信",
+                "form": {
+                    "mailOptions": "メール設定",
+                    "playerType": {
+                        "global": "全体",
+                        "private": "個人"
+                    },
+                    "uid": "UID",
+                    "uidPlaceholder": "プレイヤーUIDを入力",
+                    "sender": "差出人",
+                    "senderPlaceholder": "差出人名を入力",
+                    "mailContent": "本文",
+                    "mailContentPlaceholder": "メール内容を入力",
+                    "sendTime": "送信時間",
+                    "expireTime": "有効期限",
+                    "attachmentList": "添付リスト",
+                    "attachment": {
+                        "type": "添付タイプ",
+                        "typeTooltip": "タイプ選択（0=無指定）",
+                        "itemId": "アイテムID",
+                        "itemIdTooltip": "ゲーム内ID（0=無指定）",
+                        "quantity": "数量",
+                        "quantityTooltip": "0以上の整数"
+                    },
+                    "addAttachment": "添付追加",
+                    "submitButton": {
+                        "default": "送信",
+                        "submitting": "送信中..."
+                    }
+                },
+                "responseCard": {
+                    "headerMessage": "操作結果：",
+                    "footerMessage": "反映を確認"
+                },
+                "messages": {
+                    "invalidAttachment": "無効な添付設定があります",
+                    "privateMailNeedUID": "個人メールにはUID必須",
+                    "sendSuccess": "送信成功",
+                    "sendFailure": "送信失敗"
+                }
+            },
+            "getEmailCode": {
+                "title": "認証コード取得",
+                "form": {
+                    "accountLabel": "メールアカウント",
+                    "accountPlaceholder": "アカウントを入力",
+                    "submitButton": {
+                        "default": "送信",
+                        "submitting": "処理中..."
+                    }
+                },
+                "emailCard": {
+                    "success": {
+                        "message1": "認証コード：",
+                        "message2": "ご利用ください"
+                    },
+                    "error": {
+                        "message1": "エラーが発生しました：",
+                        "message2": "問題が続く場合は報告してください"
+                    }
+                },
+                "messages": {
+                    "noServerAddress": "サーバーアドレスを設定してください",
+                    "getSuccess": "取得成功",
+                    "getFailure": "取得失敗"
+                }
+            },
+            "character": {
+                "title": "生徒設定",
+                "form": {
+                    "teacherUID": "先生UID",
+                    "teacherUIDPlaceholder": "ゲームUIDを入力",
+                    "studentID": "生徒ID",
+                    "studentIDPlaceholder": "生徒IDを入力",
+                    "maxConfig": "一括最大設定",
+                    "switch": {
+                        "on": "ON",
+                        "off": "OFF"
+                    },
+                    "starSwitch": "レア度設定",
+                    "star": "レア度",
+                    "starPlaceholder": "数値入力",
+                    "levelSwitch": "レベル設定",
+                    "level": "レベル",
+                    "levelPlaceholder": "数値入力",
+                    "favorSwitch": "好感度設定",
+                    "favor": "好感度",
+                    "favorPlaceholder": "数値入力",
+                    "submit": {
+                        "default": "送信",
+                        "submitting": "処理中..."
+                    }
+                },
+                "responseCard": {
+                    "header": "操作結果：",
+                    "footer": "反映を確認"
+                },
+                "messages": {
+                    "noServerAddress": "サーバーアドレスを設定してください",
+                    "operationSuccess": "成功",
+                    "operationFailed": "失敗",
+                    "requestError": "リクエストエラー：{error}"
+                }
+            },
+            "setGame": {
+                "title": "S.C.H.A.L.E設定",
+                "form": {
+                    "playerUID": {
+                        "label": "プレイヤーUID",
+                        "placeholder": "UIDを入力"
+                    },
+                    "type": {
+                        "label": "タイプ",
+                        "placeholder": "選択してください",
+                        "options": {
+                            "AccountLevel": "アカウントレベル設定",
+                            "Toast": "通知設定"
+                        }
+                    },
+                    "sub1": {
+                        "defaultLabel": "なし",
+                        "accountLevel": {
+                            "label": "レベル",
+                            "placeholder": "数値入力"
+                        },
+                        "toast": {
+                            "label": "通知内容",
+                            "placeholder": "テキスト入力"
+                        }
+                    },
+                    "submitButton": {
+                        "default": "送信",
+                        "submitting": "処理中..."
+                    }
+                },
+                "responseCard": {
+                    "header": "操作結果：",
+                    "footer": "反映を確認"
+                },
+                "messages": {
+                    "noServerAddress": "サーバーアドレスを設定してください",
+                    "incompleteInfo": "情報が不足しています",
+                    "operationSuccess": "成功",
+                    "operationFailed": "失敗"
+                }
+            },
+            "idList": {
+                "title": "アイテムリスト",
+                "tip": "TIP: クリックでIDコピー可能",
+                "search": {
+                    "placeholder": "アイテム検索（名称/説明/ID）"
+                },
+                "sidebar": {
+                    "combined": "総合",
+                    "Material": "素材",
+                    "Character": "生徒",
+                    "Equipment": "装備",
+                    "Furniture": "家具",
+                    "Favor": "贈り物",
+                    "Emblem": "称号",
+                    "Other": "その他"
+                },
+                "item": {
+                    "idLabel": "ID: ",
+                    "categoryLabel": "カテゴリ:"
+                },
+                "messages": {
+                    "copySuccess": "ID {id} をコピーしました！",
+                    "copyFailure": "コピー失敗"
+                }
+            },
+            "about_blue_archive": "BlueArchiveGMについて",
+            "version": "バージョン",
+            "developer": "開発者",
+            "project_based_on": "ベースプロジェクト",
+            "issues_feedback": "不具合報告はIssuesへ",
+            "open_source_agreement": "オープンソースライセンスを遵守してください",
+            "usage_agreement": "改変は自由ですが、二次販売禁止・クレジット表記必須です",
+            "update_log": "更新履歴",
+            "update_1_0_5": "1.0.5 レスポンス処理追加・UI改善・接続問題修正",
+            "update_1_0_4": "1.0.4 ゲーム設定追加・認証コードUI改善",
+            "update_1_0_3": "1.0.3 画像表示最適化・アイテム種別不具合修正",
+            "update_1_0_2": "1.0.2 アイコン更新・生徒ステータス調整機能追加",
+            "update_1_0_1": "1.0.1 キー認証システム最適化"
+        }
+    }
+}

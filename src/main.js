@@ -1,15 +1,17 @@
+// src/main.js
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import * as ElIcons from '@element-plus/icons-vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import './assets/styles.css' // 自定义样式
+import '@/assets/css/styles.css' // 自定义样式
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import './assets/documentation-tips.css'
+import '@/assets/css/documentation-tips.css'
+
 import axios from 'axios'
 
-// 添加响应拦截器，统一处理401错误
+// 添加 axios 响应拦截器，统一处理 401 错误
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -22,7 +24,7 @@ axios.interceptors.response.use(
 
 const app = createApp(App)
 
-// 注册所有图标
+// 注册所有 Element Plus 图标
 for (const [key, component] of Object.entries(ElIcons)) {
   app.component(key, component)
 }

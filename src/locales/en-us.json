@@ -1,0 +1,304 @@
+{
+    "en": {
+        "blueArchiveGM": {
+            "sidebar": {
+                "home": "S.C.H.A.L.E Home",
+                "giveItem": "Grant Item",
+                "giveAllItems": "Grant All Items",
+                "getSen SeiInfo": "Get Sen Sei Info",
+                "sendMail": "Send Mail",
+                "getEmailCode": "Get Verification Code",
+                "setStudentStats": "Set Student Stats",
+                "scahleSettings": "S.C.H.A.L.E Settings",
+                "getItemList": "Item List",
+                "about": "About"
+            },
+            "consoleTitle": "BlueArchiveGM Console",
+            "welcomeMessage": "Welcome to BlueArchiveGM Console, please configure server connection",
+            "serverAddressPlaceholder": "Office Address (e.g. http://127.0.0.1:5000)",
+            "serverAuthKeyPlaceholder": "Sen Sei Auth Key (optional)",
+            "saveConfigButton": "Save Configuration",
+            "updateConfigButton": "Update Configuration",
+            "updateServerStatusButton": "Refresh Server Status",
+            "updating": "Updating...",
+            "serverStatusTitle": "Server Status",
+            "offlineStatus": "Offline",
+            "errorReason": "Error Reason: ",
+            "lastUpdate": "Last Updated: ",
+            "autoSyncStatus": {
+                "active": "Auto-sync every 30s",
+                "paused": "Background sync paused"
+            },
+            "onlineSen SeiCount": "Online Sen Seis",
+            "tps": "TPS",
+            "rt": "RT",
+            "clientVersion": "Client Version",
+            "serverVersion": "Server Version",
+            "cpuStatus": "CPU Status",
+            "memoryStatus": "Memory Usage",
+            "noData": "No server data available",
+            "messages": {
+                "invalidAddress": "Address must include http/https protocol",
+                "cannotConnect": "Connection failed: check configuration",
+                "configSaved": "Configuration saved",
+                "configUpdated": "Configuration updated",
+                "statusUpdated": "Status updated",
+                "operationFailed": "Operation failed: ",
+                "unauthorized": "Invalid auth key detected! Please verify settings",
+                "serverError": "Server Error",
+                "cannotConnectServer": "Server unavailable",
+                "autoSyncFailed": "Auto-sync failed: "
+            },
+            "giveSingleItem": {
+                "title": "Grant Single Item",
+                "form": {
+                    "Sen SeiUID": "Sen Sei UID",
+                    "Sen SeiUIDPlaceholder": "Enter Sen Sei UID",
+                    "itemType": "Item Type",
+                    "itemTypePlaceholder": "Select item type",
+                    "itemID": "Item ID",
+                    "itemIDPlaceholder": "Enter item ID",
+                    "quantity": "Quantity",
+                    "submit": "Submit"
+                },
+                "responseCard": {
+                    "header": "Operation Result:",
+                    "footer": "Verify effectiveness"
+                },
+                "messages": {
+                    "noServerAddress": "Set server address first",
+                    "giveSuccess": "Item granted!",
+                    "giveFailed": "Failed: {error}",
+                    "checkResponse": "Check response for details",
+                    "configError": "Configuration error"
+                }
+            },
+            "giveAllItems": {
+                "title": "Bulk Grant Items",
+                "form": {
+                    "Sen SeiUID": "Sen Sei UID",
+                    "Sen SeiUIDPlaceholder": "Enter Sen Sei UID",
+                    "itemType": "Item Type",
+                    "itemTypePlaceholder": "Select type",
+                    "quantity": "Quantity",
+                    "submit": "Grant All"
+                },
+                "responseCard": {
+                    "header": "Operation Result:",
+                    "footer": "Verify effectiveness"
+                },
+                "messages": {
+                    "noServerAddress": "Set server address first",
+                    "giveSuccess": "Bulk grant success!",
+                    "giveFailed": "Failed: {error}",
+                    "checkResponse": "Check error details",
+                    "configError": "Configuration error"
+                }
+            },
+            "getPlayer": {
+                "title": "Get Sen Sei Info (Dev)",
+                "form": {
+                    "Sen SeiUID": "Sen Sei UID",
+                    "Sen SeiUIDPlaceholder": "Enter UID",
+                    "binaryOutput": "Binary Output",
+                    "submit": "Submit"
+                },
+                "description": "Currently outputs raw data packets only (feature WIP)",
+                "alert": {
+                    "title": "Response"
+                },
+                "messages": {
+                    "noServerAddress": "Set server address first",
+                    "getPlayerSuccess": "Info retrieved",
+                    "getPlayerFailure": "Failed: {error}",
+                    "checkResponse": "Check error details"
+                }
+            },
+            "mailSender": {
+                "title": "Send Mail",
+                "form": {
+                    "mailOptions": "Mail Options",
+                    "playerType": {
+                        "global": "Global",
+                        "private": "Private"
+                    },
+                    "uid": "UID",
+                    "uidPlaceholder": "Enter player UID",
+                    "sender": "Sender",
+                    "senderPlaceholder": "Enter sender name",
+                    "mailContent": "Content",
+                    "mailContentPlaceholder": "Enter mail content",
+                    "sendTime": "Send Time",
+                    "expireTime": "Expiry Time",
+                    "attachmentList": "Attachments",
+                    "attachment": {
+                        "type": "Attachment Type",
+                        "typeTooltip": "Select type (0=unspecified)",
+                        "itemId": "Item ID",
+                        "itemIdTooltip": "In-game ID (0=unspecified)",
+                        "quantity": "Quantity",
+                        "quantityTooltip": "Integer ≥0"
+                    },
+                    "addAttachment": "Add Attachment",
+                    "submitButton": {
+                        "default": "Send",
+                        "submitting": "Sending..."
+                    }
+                },
+                "responseCard": {
+                    "headerMessage": "Operation Result:",
+                    "footerMessage": "Verify effectiveness"
+                },
+                "messages": {
+                    "invalidAttachment": "Invalid attachment config",
+                    "privateMailNeedUID": "Private mail requires UID",
+                    "sendSuccess": "Sent",
+                    "sendFailure": "Failed"
+                }
+            },
+            "getEmailCode": {
+                "title": "Get Auth Code",
+                "form": {
+                    "accountLabel": "Email Account",
+                    "accountPlaceholder": "Enter account",
+                    "submitButton": {
+                        "default": "Submit",
+                        "submitting": "Processing..."
+                    }
+                },
+                "emailCard": {
+                    "success": {
+                        "message1": "Your auth code: ",
+                        "message2": "Enjoy your game!"
+                    },
+                    "error": {
+                        "message1": "Error occurred: ",
+                        "message2": "Report if issue persists"
+                    }
+                },
+                "messages": {
+                    "noServerAddress": "Set server address first",
+                    "getSuccess": "Success",
+                    "getFailure": "Failed"
+                }
+            },
+            "character": {
+                "title": "Student Configuration",
+                "form": {
+                    "Sen SeiUID": "Sen Sei UID",
+                    "Sen SeiUIDPlaceholder": "Enter game UID",
+                    "studentID": "Student ID",
+                    "studentIDPlaceholder": "Enter student ID",
+                    "maxConfig": "Max Config",
+                    "switch": {
+                        "on": "ON",
+                        "off": "OFF"
+                    },
+                    "starSwitch": "Rarity",
+                    "star": "Rarity",
+                    "starPlaceholder": "Enter value",
+                    "levelSwitch": "Level",
+                    "level": "Level",
+                    "levelPlaceholder": "Enter value",
+                    "favorSwitch": "Favor",
+                    "favor": "Favor",
+                    "favorPlaceholder": "Enter value",
+                    "submit": {
+                        "default": "Submit",
+                        "submitting": "Processing..."
+                    }
+                },
+                "responseCard": {
+                    "header": "Operation Result:",
+                    "footer": "Verify effectiveness"
+                },
+                "messages": {
+                    "noServerAddress": "Set server address first",
+                    "operationSuccess": "Success",
+                    "operationFailed": "Failed",
+                    "requestError": "Request error: {error}"
+                }
+            },
+            "setGame": {
+                "title": "S.C.H.A.L.E Settings",
+                "form": {
+                    "playerUID": {
+                        "label": "Player UID",
+                        "placeholder": "Enter UID"
+                    },
+                    "type": {
+                        "label": "Type",
+                        "placeholder": "Select type",
+                        "options": {
+                            "AccountLevel": "Set Level",
+                            "Toast": "Set Notification"
+                        }
+                    },
+                    "sub1": {
+                        "defaultLabel": "None",
+                        "accountLevel": {
+                            "label": "Level",
+                            "placeholder": "Enter level"
+                        },
+                        "toast": {
+                            "label": "Message",
+                            "placeholder": "Enter text"
+                        }
+                    },
+                    "submitButton": {
+                        "default": "Submit",
+                        "submitting": "Processing..."
+                    }
+                },
+                "responseCard": {
+                    "header": "Operation Result:",
+                    "footer": "Verify effectiveness"
+                },
+                "messages": {
+                    "noServerAddress": "Set server address first",
+                    "incompleteInfo": "Incomplete info",
+                    "operationSuccess": "Success",
+                    "operationFailed": "Failed"
+                }
+            },
+            "idList": {
+                "title": "Item List",
+                "tip": "TIP: Click card to copy ID",
+                "search": {
+                    "placeholder": "Search items (name/desc/ID)"
+                },
+                "sidebar": {
+                    "combined": "General",
+                    "Material": "Materials",
+                    "Character": "Students",
+                    "Equipment": "Gear",
+                    "Furniture": "Furniture",
+                    "Favor": "Gifts",
+                    "Emblem": "Titles",
+                    "Other": "Others"
+                },
+                "item": {
+                    "idLabel": "ID: ",
+                    "categoryLabel": "Category:"
+                },
+                "messages": {
+                    "copySuccess": "ID {id} copied!",
+                    "copyFailure": "Copy failed"
+                }
+            },
+            "about_blue_archive": "About BlueArchiveGM",
+            "version": "Version",
+            "developer": "Developer",
+            "project_based_on": "Project based on",
+            "issues_feedback": "Report issues at GitHub",
+            "open_source_agreement": "Comply with open-source licenses",
+            "usage_agreement": "Modification allowed but resale prohibited. Keep credits visible.",
+            "update_log": "Changelog",
+            "update_1_0_5": "1.0.5 Response handling added, UI fixes, connection issues resolved",
+            "update_1_0_4": "1.0.4 Game settings added, auth code UI improved",
+            "update_1_0_3": "1.0.3 Image display optimized, item type bug fixed",
+            "update_1_0_2": "1.0.2 Local icons added, student stats adjustment feature implemented",
+            "update_1_0_1": "1.0.1 Key auth system optimized"
+        }
+    }
+}

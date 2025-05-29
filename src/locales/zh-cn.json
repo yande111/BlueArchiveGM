@@ -1,0 +1,304 @@
+{
+    "zh-cn": {
+        "blueArchiveGM": {
+            "sidebar": {
+                "home": "S.C.H.A.L.E 首页",
+                "giveItem": "给予物品",
+                "giveAllItems": "给予全部物品",
+                "getTeacherInfo": "获取老师信息",
+                "sendMail": "发送邮件",
+                "getEmailCode": "获取邮箱验证码",
+                "setStudentStats": "设置学生数值",
+                "scahleSettings": "S.C.H.A.L.E 设置",
+                "getItemList": "获取物品列表",
+                "about": "关于"
+            },
+            "consoleTitle": "BlueArchiveGM 控制台",
+            "welcomeMessage": "欢迎使用 BlueArchiveGM 控制台，请配置服务器连接信息",
+            "serverAddressPlaceholder": "办公室地址（例：http://127.0.0.1:5000）",
+            "serverAuthKeyPlaceholder": "老师的认证密钥（可选）",
+            "saveConfigButton": "保存配置",
+            "updateConfigButton": "更新配置",
+            "updateServerStatusButton": "更新服务器状态",
+            "updating": "更新中...",
+            "serverStatusTitle": "服务器状态",
+            "offlineStatus": "服务离线",
+            "errorReason": "错误原因：",
+            "lastUpdate": "最后更新：",
+            "autoSyncStatus": {
+                "active": "每30秒自动同步",
+                "paused": "后台暂停更新"
+            },
+            "onlineTeacherCount": "在线的老师数量",
+            "tps": "TPS",
+            "rt": "RT",
+            "clientVersion": "客户端版本",
+            "serverVersion": "服务器版本",
+            "cpuStatus": "CPU 状态",
+            "memoryStatus": "内存状态",
+            "noData": "暂无服务器状态数据",
+            "messages": {
+                "invalidAddress": "地址需包含 http/https 协议头",
+                "cannotConnect": "无法连接到服务器，请检查配置",
+                "configSaved": "配置保存成功",
+                "configUpdated": "配置更新成功",
+                "statusUpdated": "状态更新成功",
+                "operationFailed": "操作失败: ",
+                "unauthorized": "老师！您貌似没有认证密钥哦，请检查首页认证密钥是否输入正确！",
+                "serverError": "服务器错误",
+                "cannotConnectServer": "无法连接到服务器",
+                "autoSyncFailed": "自动同步失败: "
+            },
+            "giveSingleItem": {
+                "title": "给予玩家单个物品",
+                "form": {
+                    "teacherUID": "老师UID",
+                    "teacherUIDPlaceholder": "请输入的老师UID",
+                    "itemType": "物品类型",
+                    "itemTypePlaceholder": "请选择物品类型",
+                    "itemID": "物品ID",
+                    "itemIDPlaceholder": "请输入物品ID",
+                    "quantity": "数量",
+                    "submit": "提交"
+                },
+                "responseCard": {
+                    "header": "老师！这是您的操作结果：",
+                    "footer": "请检查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "请先在首页保存服务器地址",
+                    "giveSuccess": "物品授予成功！",
+                    "giveFailed": "操作失败：{error}",
+                    "checkResponse": "请查看响应获取具体错误",
+                    "configError": "操作失败，请检查配置"
+                }
+            },
+            "giveAllItems": {
+                "title": "给予玩家全部物品",
+                "form": {
+                    "teacherUID": "老师UID",
+                    "teacherUIDPlaceholder": "请输入老师的UID",
+                    "itemType": "物品类型",
+                    "itemTypePlaceholder": "请选择物品类型",
+                    "quantity": "数量",
+                    "submit": "立即授予全部"
+                },
+                "responseCard": {
+                    "header": "老师！这是您的操作结果：",
+                    "footer": "请检查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "请先在首页保存服务器地址",
+                    "giveSuccess": "物品授予成功！",
+                    "giveFailed": "操作失败：{error}",
+                    "checkResponse": "请查看响应获取具体错误",
+                    "configError": "操作失败，请检查配置"
+                }
+            },
+            "getPlayer": {
+                "title": "获取老师信息（开发中）",
+                "form": {
+                    "teacherUID": "老师UID",
+                    "teacherUIDPlaceholder": "请输入老师的UID",
+                    "binaryOutput": "二进制输出",
+                    "submit": "提交"
+                },
+                "description": "目前只会输出数据包内容，暂时还没做（懒喵~）",
+                "alert": {
+                    "title": "响应"
+                },
+                "messages": {
+                    "noServerAddress": "请先在首页保存服务器地址",
+                    "getPlayerSuccess": "获取玩家信息成功",
+                    "getPlayerFailure": "获取玩家信息失败：{error}",
+                    "checkResponse": "请查看响应获取具体错误"
+                }
+            },
+            "mailSender": {
+                "title": "发送邮件",
+                "form": {
+                    "mailOptions": "邮件选项",
+                    "playerType": {
+                        "global": "全局",
+                        "private": "私人"
+                    },
+                    "uid": "UID",
+                    "uidPlaceholder": "请输入玩家UID",
+                    "sender": "发件人",
+                    "senderPlaceholder": "请输入发件人名称",
+                    "mailContent": "邮件内容",
+                    "mailContentPlaceholder": "请输入邮件内容",
+                    "sendTime": "发送时间",
+                    "expireTime": "过期时间",
+                    "attachmentList": "附件列表",
+                    "attachment": {
+                        "type": "附件类型",
+                        "typeTooltip": "选择附件类型（0表示无类型附件）",
+                        "itemId": "物品ID",
+                        "itemIdTooltip": "输入游戏内物品ID（0表示无特定物品）",
+                        "quantity": "数量",
+                        "quantityTooltip": "必须大于等于0的整数"
+                    },
+                    "addAttachment": "添加附件",
+                    "submitButton": {
+                        "default": "发送邮件",
+                        "submitting": "提交中..."
+                    }
+                },
+                "responseCard": {
+                    "headerMessage": "老师！这是您的操作结果：",
+                    "footerMessage": "请检查是否生效"
+                },
+                "messages": {
+                    "invalidAttachment": "存在无效的附件配置，请检查",
+                    "privateMailNeedUID": "私人邮件必须填写UID",
+                    "sendSuccess": "发送成功",
+                    "sendFailure": "发送失败"
+                }
+            },
+            "getEmailCode": {
+                "title": "获取邮箱验证码",
+                "form": {
+                    "accountLabel": "邮箱账户",
+                    "accountPlaceholder": "请输入邮箱账户",
+                    "submitButton": {
+                        "default": "提交",
+                        "submitting": "提交中..."
+                    }
+                },
+                "emailCard": {
+                    "success": {
+                        "message1": "老师！这是您的邮箱验证码：",
+                        "message2": "祝老师玩得愉快！"
+                    },
+                    "error": {
+                        "message1": "老师！获取验证码异常，以下是异常信息：",
+                        "message2": "若多次提示验证码异常，请提交issues反馈"
+                    }
+                },
+                "messages": {
+                    "noServerAddress": "请先在首页保存服务器地址",
+                    "getSuccess": "获取验证码成功",
+                    "getFailure": "获取验证码失败"
+                }
+            },
+            "character": {
+                "title": "设置学生属性",
+                "form": {
+                    "teacherUID": "老师UID",
+                    "teacherUIDPlaceholder": "请输入老师的游戏UID",
+                    "studentID": "学生ID",
+                    "studentIDPlaceholder": "请输入学生ID",
+                    "maxConfig": "一键满配",
+                    "switch": {
+                        "on": "开启",
+                        "off": "关闭"
+                    },
+                    "starSwitch": "星级开关",
+                    "star": "星级",
+                    "starPlaceholder": "请输入星级",
+                    "levelSwitch": "等级开关",
+                    "level": "等级",
+                    "levelPlaceholder": "请输入等级",
+                    "favorSwitch": "好感开关",
+                    "favor": "好感",
+                    "favorPlaceholder": "请输入好感值",
+                    "submit": {
+                        "default": "提交请求",
+                        "submitting": "提交中..."
+                    }
+                },
+                "responseCard": {
+                    "header": "老师！这是您的操作结果：",
+                    "footer": "请检查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "请先在首页保存服务器地址",
+                    "operationSuccess": "操作成功",
+                    "operationFailed": "操作失败",
+                    "requestError": "请求错误：{error}"
+                }
+            },
+            "setGame": {
+                "title": "S.C.H.A.L.E 设置",
+                "form": {
+                    "playerUID": {
+                        "label": "玩家UID",
+                        "placeholder": "请输入玩家UID"
+                    },
+                    "type": {
+                        "label": "类型",
+                        "placeholder": "请选择类型",
+                        "options": {
+                            "AccountLevel": "设置玩家等级",
+                            "Toast": "设置玩家通知"
+                        }
+                    },
+                    "sub1": {
+                        "defaultLabel": "无",
+                        "accountLevel": {
+                            "label": "等级",
+                            "placeholder": "请输入玩家等级（数字）"
+                        },
+                        "toast": {
+                            "label": "通知",
+                            "placeholder": "请输入通知内容"
+                        }
+                    },
+                    "submitButton": {
+                        "default": "提交",
+                        "submitting": "提交中..."
+                    }
+                },
+                "responseCard": {
+                    "header": "老师！这是您的操作结果：",
+                    "footer": "请检查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "请先在首页保存服务器地址",
+                    "incompleteInfo": "请填写完整信息",
+                    "operationSuccess": "操作成功",
+                    "operationFailed": "操作失败"
+                }
+            },
+            "idList": {
+                "title": "物品列表",
+                "tip": "Tips：点击卡片可以复制ID哦 ~",
+                "search": {
+                    "placeholder": "搜索物品（名称、描述或ID）"
+                },
+                "sidebar": {
+                    "combined": "综合",
+                    "Material": "材料",
+                    "Character": "学生",
+                    "Equipment": "装备",
+                    "Furniture": "家具",
+                    "Favor": "礼物",
+                    "Emblem": "称号",
+                    "Other": "其他"
+                },
+                "item": {
+                    "idLabel": "ID: ",
+                    "categoryLabel": "分类："
+                },
+                "messages": {
+                    "copySuccess": "ID {id} 已复制！",
+                    "copyFailure": "复制失败"
+                }
+            },
+            "about_blue_archive": "关于 BlueArchiveGM",
+            "version": "版本",
+            "developer": "开发者",
+            "project_based_on": "项目基于",
+            "issues_feedback": "有任何问题可前往 Issues 进行反馈",
+            "open_source_agreement": "使用本工具时，请务必遵守相关的开源协议！",
+            "usage_agreement": "老师您可以修改项目内的任何代码，但是，请不要修改项目内引导至本仓库的相关入口，徽标等以及本工具在此完全免费开源，请勿二次售卖！请务必留下版权信息，非常感谢各位老师的使用！",
+            "update_log": "Update log",
+            "update_1_0_5": "1.0.5 新增响应处理，修复某些UI问题，修复在某些情况出现本地无法连接问题，优化文案",
+            "update_1_0_4": "1.0.4 新增游戏设置，优化游戏设置，获取验证码UI，着手准备做多语言版本",
+            "update_1_0_3": "1.0.3 修复图片问题，优化图片显示，修复给予物品无类型问题，优化ID列表美观度",
+            "update_1_0_2": "1.0.2 更新图标为本地，新增ID列表，取代老物品列表（未完善）新增调整学生数值，优化部分名词，优化UI，优化并更新某些奇怪的问题，修复APP白屏问题",
+            "update_1_0_1": "1.0.1 优化KEY读取，实现无key情况下也能使用GM，修复部分问题"
+        }
+    }
+}

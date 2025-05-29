@@ -3,13 +3,17 @@
     <!-- 左侧关于卡片 -->
     <el-card class="about-card" shadow="hover">
       <div class="about-logo-container">
-        <img src="@/assets/ICON_BG_CS_PV4_105_2.jpg" alt="BlueArchiveGM Logo" class="about-logo" />
+        <img
+          src="@/assets/images/ICON_BG_CS_PV4_105_2.jpg"
+          alt="BlueArchiveGM Logo"
+          class="about-logo"
+        />
       </div>
       <div class="about-header">
         <h2>关于 BlueArchiveGM</h2>
       </div>
       <div class="about-content">
-        <p><strong>版本：</strong> 1.0.5</p>
+        <p><strong>版本：</strong> 2.0.0</p>
         <p><strong>开发者：</strong> KitanoSakura（北野桜奈）</p>
         <p>
           <strong>项目基于：</strong>
@@ -51,6 +55,16 @@
     <el-card class="timeline-card" shadow="hover">
       <h3>Update log</h3>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h4>2025-05-25</h4>
+            <p>
+              2.0.0
+              跟进BaPs并删除部分功能，修复已知bug，修复在某些特定情况下会白屏，具体请查看Github
+            </p>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">

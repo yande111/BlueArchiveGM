@@ -6745,8 +6745,8 @@
         "Category": "Furnitures",
         "SubCategory": "Table",
         "Rarity": "SSR",
-        "Name": "休息用躺椅桌",
-        "Desc": "使用轻而坚固的原料制成，摆在任何地方都能很好融入环境的休息躺椅桌。",
+        "Name": "休息用长桌椅",
+        "Desc": "采用轻盈坚实的材料制成的长桌椅，无论放在哪里都不突兀。",
         "Icon": "my_event059_benchtable"
     },
     {
@@ -7162,6 +7162,33 @@
         "Name": "豪华全身镜",
         "Desc": "映照出整个身体的大镜子。平时为了防止积尘，上面会盖着白色的帘子。",
         "Icon": "my_event078_mirror"
+    },
+    {
+        "Id": 210367,
+        "Category": "Furnitures",
+        "SubCategory": "Prop",
+        "Rarity": "SSR",
+        "Name": "游船人工水池",
+        "Desc": "能在其中乘小船游水的室内人工水池。凝望平静的水面，内心便会自然地平静下来。",
+        "Icon": "my_event078_indoorpond"
+    },
+    {
+        "Id": 210368,
+        "Category": "Decorations",
+        "SubCategory": "HomeAppliance",
+        "Rarity": "SSR",
+        "Name": "录像电视机",
+        "Desc": "适合用来观看老电影的古董电视机。无法兼容现行的电视广播规范，但能完美读取录像带。",
+        "Icon": "my_event078_videotelevision"
+    },
+    {
+        "Id": 210369,
+        "Category": "Furnitures",
+        "SubCategory": "Table",
+        "Rarity": "SSR",
+        "Name": "阴阳部活动室和室桌",
+        "Desc": "工作总是堆积如山。似乎有人会叹息着拿走长时间堆在上面的文件。",
+        "Icon": "my_event080_workdesk"
     },
     {
         "Id": 301001,

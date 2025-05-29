@@ -1,6 +1,6 @@
 <template>
   <el-card class="function-card" shadow="hover">
-    <h2>S.C.H.A.L.E 设置</h2>
+    <h2>游戏设置</h2>
     <el-form :model="form" label-width="120px">
       <!-- 玩家UID -->
       <el-form-item label="玩家UID">
@@ -61,7 +61,7 @@
 
 <script>
 import axios from 'axios'
-import banner1 from '@/assets/bg1.ccb168ef.jpg' // 引入图片
+import banner1 from '@/assets/images/bg1.ccb168ef.jpg' // 引入图片
 
 export default {
   name: 'SetGame',

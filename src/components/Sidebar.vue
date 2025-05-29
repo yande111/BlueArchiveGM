@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="sidebar-content">
       <div class="logo-wrapper">
-        <img src="@/assets/logo.png" alt="Logo" class="sidebar-logo" />
+        <img src="@/assets/images/logo.png" alt="Logo" class="sidebar-logo" />
       </div>
       <el-menu
         class="el-menu-vertical-demo"
@@ -13,31 +13,43 @@
         active-text-color="#1E90FF"
       >
         <el-menu-item index="/" class="menu-item">
-          <i class="bi bi-house-door"></i> S.C.H.A.L.E 首页
+          <i class="bi bi-house-door"></i> 首页
         </el-menu-item>
-        <el-menu-item index="/give" class="menu-item">
+        <!-- <el-menu-item index="/give" class="menu-item">
           <i class="bi bi-gift"></i> 给予物品
+        </el-menu-item> -->
+        <el-menu-item index="/GiveAll" class="menu-item">
+          <i class="bi bi-gift"></i> 给予全部物品
         </el-menu-item>
-        <el-menu-item index="/give-all" class="menu-item">
-          <i class="bi bi-gift-fill"></i> 给予全部物品
-        </el-menu-item>
-        <el-menu-item index="/get-player" class="menu-item">
+        <el-menu-item index="/GetPlayer" class="menu-item">
           <i class="bi bi-person"></i> 获取老师信息
         </el-menu-item>
-        <el-menu-item index="/mail" class="menu-item">
-          <i class="bi bi-envelope"></i> 发送邮件
+        <el-menu-item index="/GameMail" class="menu-item">
+          <i class="bi bi-envelope"></i> 发送游戏邮件
         </el-menu-item>
-        <el-menu-item index="/get-email-code" class="menu-item">
+        <!-- <el-menu-item index="/get-email-code" class="menu-item">
           <i class="bi bi-envelope-open"></i> 获取邮箱验证码
-        </el-menu-item>
-        <el-menu-item index="/character" class="menu-item">
+        </el-menu-item> -->
+        <el-menu-item index="/Character" class="menu-item">
           <i class="bi bi-person-gear"></i> 设置学生数值
         </el-menu-item>
-        <el-menu-item index="/setting" class="menu-item">
-          <i class="bi bi-person-gear"></i> S.C.H.A.L.E 设置
+        <el-menu-item index="/Mail" class="menu-item">
+          <i class="bi bi-envelope-at"></i> 发送用户邮件
         </el-menu-item>
-        <el-menu-item index="/id-list" class="menu-item">
+        <el-menu-item index="/MailCode" class="menu-item">
+          <i class="bi bi-123"></i> 验证码设置
+        </el-menu-item>
+        <!-- <el-menu-item index="/command" class="menu-item">
+          <i class="bi bi-terminal"></i> 命令生成器
+        </el-menu-item> -->
+        <el-menu-item index="/ConfigMaker" class="menu-item">
+          <i class="bi bi-sliders2"></i> 配置生成器
+        </el-menu-item>
+        <el-menu-item index="/IdList" class="menu-item">
           <i class="bi bi-list-nested"></i> 获取物品列表
+        </el-menu-item>
+        <el-menu-item index="/Setting" class="menu-item">
+          <i class="bi bi-person-gear"></i> 用户设置
         </el-menu-item>
         <!-- <el-sub-menu index="1" popper-class="custom-submenu">
           <template #title>
@@ -53,7 +65,10 @@
             <span class="menu-text">暂未开发</span>
           </el-menu-item>
         </el-sub-menu> -->
-        <el-menu-item index="/about" class="menu-item">
+        <!-- <el-menu-item index="/chat" class="menu-item">
+          <i class="bi bi-chat-heart"></i> 基沃托斯聊天室
+        </el-menu-item> -->
+        <el-menu-item index="/About" class="menu-item">
           <i class="bi bi-info-circle"></i> 关于
         </el-menu-item>
       </el-menu>

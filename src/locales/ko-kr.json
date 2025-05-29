@@ -1,0 +1,304 @@
+{
+    "ko-KR": {
+        "blueArchiveGM": {
+            "sidebar": {
+                "home": "S.C.H.A.L.E 홈",
+                "giveItem": "아이템 지급",
+                "giveAllItems": "전체 아이템 지급",
+                "getTeacherInfo": "교사 정보 조회",
+                "sendMail": "메일 전송",
+                "getEmailCode": "인증 코드 획득",
+                "setStudentStats": "학생 스탯 설정",
+                "scahleSettings": "S.C.H.A.L.E 설정",
+                "getItemList": "아이템 목록",
+                "about": "정보"
+            },
+            "consoleTitle": "BlueArchiveGM 콘솔",
+            "welcomeMessage": "BlueArchiveGM 콘솔에 오신 것을 환영합니다. 서버 연결 정보를 설정해주세요",
+            "serverAddressPlaceholder": "서버 주소 (예: http://127.0.0.1:5000)",
+            "serverAuthKeyPlaceholder": "교사 인증 키 (선택사항)",
+            "saveConfigButton": "설정 저장",
+            "updateConfigButton": "설정 업데이트",
+            "updateServerStatusButton": "서버 상태 갱신",
+            "updating": "업데이트 중...",
+            "serverStatusTitle": "서버 상태",
+            "offlineStatus": "오프라인",
+            "errorReason": "오류 원인:",
+            "lastUpdate": "마지막 업데이트:",
+            "autoSyncStatus": {
+                "active": "30초 간격 자동 동기화",
+                "paused": "백그라운드 동기화 일시정지"
+            },
+            "onlineTeacherCount": "온라인 교사 수",
+            "tps": "TPS",
+            "rt": "RT",
+            "clientVersion": "클라이언트 버전",
+            "serverVersion": "서버 버전",
+            "cpuStatus": "CPU 상태",
+            "memoryStatus": "메모리 사용량",
+            "noData": "서버 데이터 없음",
+            "messages": {
+                "invalidAddress": "http/https 프로토콜이 필요합니다",
+                "cannotConnect": "서버 연결 실패: 설정 확인 필요",
+                "configSaved": "설정 저장 완료",
+                "configUpdated": "설정 업데이트 완료",
+                "statusUpdated": "상태 업데이트 완료",
+                "operationFailed": "작업 실패: ",
+                "unauthorized": "유효한 인증 키가 없습니다! 설정을 확인해주세요",
+                "serverError": "서버 오류",
+                "cannotConnectServer": "서버 연결 불가",
+                "autoSyncFailed": "자동 동기화 실패: "
+            },
+            "giveSingleItem": {
+                "title": "단일 아이템 지급",
+                "form": {
+                    "teacherUID": "교사 UID",
+                    "teacherUIDPlaceholder": "교사 UID 입력",
+                    "itemType": "아이템 유형",
+                    "itemTypePlaceholder": "유형 선택",
+                    "itemID": "아이템 ID",
+                    "itemIDPlaceholder": "아이템 ID 입력",
+                    "quantity": "수량",
+                    "submit": "제출"
+                },
+                "responseCard": {
+                    "header": "작업 결과:",
+                    "footer": "적용 여부 확인 필요"
+                },
+                "messages": {
+                    "noServerAddress": "서버 주소를 먼저 설정하세요",
+                    "giveSuccess": "아이템 지급 성공!",
+                    "giveFailed": "실패: {error}",
+                    "checkResponse": "상세 내용 확인",
+                    "configError": "설정 오류"
+                }
+            },
+            "giveAllItems": {
+                "title": "전체 아이템 일괄 지급",
+                "form": {
+                    "teacherUID": "교사 UID",
+                    "teacherUIDPlaceholder": "교사 UID 입력",
+                    "itemType": "아이템 유형",
+                    "itemTypePlaceholder": "유형 선택",
+                    "quantity": "수량",
+                    "submit": "일괄 지급"
+                },
+                "responseCard": {
+                    "header": "작업 결과:",
+                    "footer": "적용 여부 확인"
+                },
+                "messages": {
+                    "noServerAddress": "서버 주소를 먼저 설정하세요",
+                    "giveSuccess": "일괄 지급 성공!",
+                    "giveFailed": "실패: {error}",
+                    "checkResponse": "오류 상세 확인",
+                    "configError": "설정 오류"
+                }
+            },
+            "getPlayer": {
+                "title": "교사 정보 조회 (개발중)",
+                "form": {
+                    "teacherUID": "교사 UID",
+                    "teacherUIDPlaceholder": "UID 입력",
+                    "binaryOutput": "바이너리 출력",
+                    "submit": "제출"
+                },
+                "description": "현재 데이터 패킷만 출력 가능 (기능 미구현)",
+                "alert": {
+                    "title": "응답"
+                },
+                "messages": {
+                    "noServerAddress": "서버 주소를 먼저 설정하세요",
+                    "getPlayerSuccess": "정보 조회 성공",
+                    "getPlayerFailure": "실패: {error}",
+                    "checkResponse": "오류 상세 확인"
+                }
+            },
+            "mailSender": {
+                "title": "메일 전송",
+                "form": {
+                    "mailOptions": "메일 옵션",
+                    "playerType": {
+                        "global": "전체",
+                        "private": "개인"
+                    },
+                    "uid": "UID",
+                    "uidPlaceholder": "플레이어 UID 입력",
+                    "sender": "발신자",
+                    "senderPlaceholder": "발신자 이름 입력",
+                    "mailContent": "내용",
+                    "mailContentPlaceholder": "메일 내용 입력",
+                    "sendTime": "전송 시간",
+                    "expireTime": "만료 시간",
+                    "attachmentList": "첨부파일",
+                    "attachment": {
+                        "type": "첨부 유형",
+                        "typeTooltip": "유형 선택 (0=미지정)",
+                        "itemId": "아이템 ID",
+                        "itemIdTooltip": "게임 내 ID (0=미지정)",
+                        "quantity": "수량",
+                        "quantityTooltip": "0 이상의 정수"
+                    },
+                    "addAttachment": "첨부 추가",
+                    "submitButton": {
+                        "default": "전송",
+                        "submitting": "처리 중..."
+                    }
+                },
+                "responseCard": {
+                    "headerMessage": "작업 결과:",
+                    "footerMessage": "적용 여부 확인"
+                },
+                "messages": {
+                    "invalidAttachment": "유효하지 않은 첨부 설정",
+                    "privateMailNeedUID": "개인 메일은 UID 필수",
+                    "sendSuccess": "전송 성공",
+                    "sendFailure": "전송 실패"
+                }
+            },
+            "getEmailCode": {
+                "title": "인증 코드 획득",
+                "form": {
+                    "accountLabel": "이메일 계정",
+                    "accountPlaceholder": "계정 입력",
+                    "submitButton": {
+                        "default": "제출",
+                        "submitting": "처리 중..."
+                    }
+                },
+                "emailCard": {
+                    "success": {
+                        "message1": "인증 코드: ",
+                        "message2": "즐거운 게임 되세요!"
+                    },
+                    "error": {
+                        "message1": "오류 발생: ",
+                        "message2": "문제 지속시 리포트 요청"
+                    }
+                },
+                "messages": {
+                    "noServerAddress": "서버 주소를 먼저 설정하세요",
+                    "getSuccess": "획득 성공",
+                    "getFailure": "획득 실패"
+                }
+            },
+            "character": {
+                "title": "학생 설정",
+                "form": {
+                    "teacherUID": "교사 UID",
+                    "teacherUIDPlaceholder": "게임 UID 입력",
+                    "studentID": "학생 ID",
+                    "studentIDPlaceholder": "학생 ID 입력",
+                    "maxConfig": "최대 설정",
+                    "switch": {
+                        "on": "ON",
+                        "off": "OFF"
+                    },
+                    "starSwitch": "등급 설정",
+                    "star": "등급",
+                    "starPlaceholder": "값 입력",
+                    "levelSwitch": "레벨 설정",
+                    "level": "레벨",
+                    "levelPlaceholder": "값 입력",
+                    "favorSwitch": "호감도 설정",
+                    "favor": "호감도",
+                    "favorPlaceholder": "값 입력",
+                    "submit": {
+                        "default": "제출",
+                        "submitting": "처리 중..."
+                    }
+                },
+                "responseCard": {
+                    "header": "작업 결과:",
+                    "footer": "적용 여부 확인"
+                },
+                "messages": {
+                    "noServerAddress": "서버 주소를 먼저 설정하세요",
+                    "operationSuccess": "성공",
+                    "operationFailed": "실패",
+                    "requestError": "요청 오류: {error}"
+                }
+            },
+            "setGame": {
+                "title": "S.C.H.A.L.E 설정",
+                "form": {
+                    "playerUID": {
+                        "label": "플레이어 UID",
+                        "placeholder": "UID 입력"
+                    },
+                    "type": {
+                        "label": "유형",
+                        "placeholder": "유형 선택",
+                        "options": {
+                            "AccountLevel": "계정 레벨 설정",
+                            "Toast": "알림 설정"
+                        }
+                    },
+                    "sub1": {
+                        "defaultLabel": "없음",
+                        "accountLevel": {
+                            "label": "레벨",
+                            "placeholder": "레벨 입력"
+                        },
+                        "toast": {
+                            "label": "메시지",
+                            "placeholder": "텍스트 입력"
+                        }
+                    },
+                    "submitButton": {
+                        "default": "제출",
+                        "submitting": "처리 중..."
+                    }
+                },
+                "responseCard": {
+                    "header": "작업 결과:",
+                    "footer": "적용 여부 확인"
+                },
+                "messages": {
+                    "noServerAddress": "서버 주소를 먼저 설정하세요",
+                    "incompleteInfo": "정보 불완전",
+                    "operationSuccess": "성공",
+                    "operationFailed": "실패"
+                }
+            },
+            "idList": {
+                "title": "아이템 목록",
+                "tip": "TIP: 카드 클릭시 ID 복사 가능",
+                "search": {
+                    "placeholder": "아이템 검색 (이름/설명/ID)"
+                },
+                "sidebar": {
+                    "combined": "통합",
+                    "Material": "재료",
+                    "Character": "학생",
+                    "Equipment": "장비",
+                    "Furniture": "가구",
+                    "Favor": "선물",
+                    "Emblem": "칭호",
+                    "Other": "기타"
+                },
+                "item": {
+                    "idLabel": "ID: ",
+                    "categoryLabel": "분류:"
+                },
+                "messages": {
+                    "copySuccess": "ID {id} 복사 완료!",
+                    "copyFailure": "복사 실패"
+                }
+            },
+            "about_blue_archive": "BlueArchiveGM 정보",
+            "version": "버전",
+            "developer": "개발자",
+            "project_based_on": "기반 프로젝트",
+            "issues_feedback": "문제 리포트는 GitHub Issues로",
+            "open_source_agreement": "오픈소스 라이선스 준수 필수",
+            "usage_agreement": "수정 가능但 재판매 금지. 저작권 정보 유지 요망",
+            "update_log": "업데이트 기록",
+            "update_1_0_5": "1.0.5 응답 처리 추가, UI 문제 수정, 연결 문제 해결",
+            "update_1_0_4": "1.0.4 게임 설정 추가, 인증코드 UI 개선",
+            "update_1_0_3": "1.0.3 이미지 표시 최적화, 아이템 유형 버그 수정",
+            "update_1_0_2": "1.0.2 로컬 아이콘 추가, 학생 스탯 조정 기능 구현",
+            "update_1_0_1": "1.0.1 키 인증 시스템 최적화"
+        }
+    }
+}

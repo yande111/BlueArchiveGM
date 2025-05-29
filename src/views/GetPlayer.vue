@@ -9,14 +9,16 @@
           </template>
         </el-input>
       </el-form-item>
-      <el-form-item label="二进制输出">
-        <el-switch v-model="form.bin" active-value="1" inactive-value="0"></el-switch>
+      <el-form-item label="输出JSON">
+        <el-switch v-model="form.json" active-value="1" inactive-value="0"></el-switch>
+      </el-form-item>
+      <el-form-item label="仅基础数据">
+        <el-switch v-model="form.basis" active-value="1" inactive-value="0"></el-switch>
       </el-form-item>
       <el-form-item>
-        <el-button class="gradient-button" type="primary" @click="handleGetPlayer">提交</el-button>
+        <el-button class="gradient-button" type="primary" @click="handleGetTeacher">提交</el-button>
       </el-form-item>
     </el-form>
-    <p>目前只会输出数据包内容，暂时还没做（懒喵~）</p>
     <el-alert
       v-if="response"
       title="响应"
@@ -32,20 +34,21 @@
 import axios from 'axios'
 import { User } from '@element-plus/icons-vue'
 export default {
-  name: 'GetPlayer',
+  name: 'GetTeacher',
   components: { User },
   data() {
     return {
       form: {
         uid: '',
-        bin: '0',
+        json: '0',
+        basis: '0',
       },
       response: '',
-      responseType: '', // 'success' 或 'error'
+      responseType: '',
     }
   },
   methods: {
-    async handleGetPlayer() {
+    async handleGetTeacher() {
       const baseURL = localStorage.getItem('serverAddress')
       const authKey = localStorage.getItem('serverAuthKey')
       if (!baseURL) {
@@ -53,23 +56,21 @@ export default {
         return
       }
       try {
-        const url = `${baseURL}/cdq/api?cmd=gp&uid=${this.form.uid}&bin=${this.form.bin}`
-        // 仅在 authKey 存在时添加 Authorization 请求头
+        const url = `${baseURL}/cdq/api?cmd=getPlayer&uid=${this.form.uid}&json=${this.form.json}&basis=${this.form.basis}`
         let headers = {}
         if (authKey) {
           headers.Authorization = authKey
         }
-        const res = await axios.get(url, {
-          headers,
-        })
-        // 根据返回结果判断成功与否，这里假设 res.data.code === 0 表示成功
+        const res = await axios.get(url, { headers })
+
         if (res.data.code === 0) {
           this.responseType = 'success'
-          this.$message.success('获取玩家信息成功')
+          this.$message.success('获取老师信息成功')
         } else {
           this.responseType = 'error'
-          this.$message.error('获取玩家信息失败：' + (res.data.message || '请查看响应获取具体错误'))
+          this.$message.error('获取老师信息失败：' + (res.data.message || '请查看响应获取具体错误'))
         }
+
         this.response = JSON.stringify(res.data, null, 2)
       } catch (error) {
         this.responseType = 'error'

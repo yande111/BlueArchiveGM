@@ -86,7 +86,7 @@
 
 <script>
 import axios from 'axios'
-import banner1 from '@/assets/bg1.ccb168ef.jpg'
+import banner1 from '@/assets/images/bg1.ccb168ef.jpg'
 
 export default {
   name: 'Character',

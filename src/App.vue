@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <!-- 引入公告弹窗组件 -->
+    <AnnouncementModal ref="announcementModal" />
     <div class="container">
       <Sidebar />
       <div class="content">
@@ -15,19 +17,25 @@
 <script>
 import Sidebar from './components/Sidebar.vue'
 import TopNavBar from './components/TopNavBar.vue'
+import AnnouncementModal from './components/Announcement.vue'
 
 export default {
   name: 'App',
   components: {
     Sidebar,
     TopNavBar,
+    AnnouncementModal,
+  },
+  mounted() {
+    // 挂载后自动打开公告弹窗（可根据需求调整调用时机）
+    this.$refs.announcementModal.open()
   },
 }
 </script>
 
 <style>
 #app {
-  background-image: url('@/assets/banner1.jpg');
+  background-image: url('@/assets/images/banner1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

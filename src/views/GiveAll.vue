@@ -63,7 +63,7 @@
 <script>
 import axios from 'axios'
 import { User, CollectionTag, Coin } from '@element-plus/icons-vue'
-import banner1 from '@/assets/bg1.ccb168ef.jpg'
+import banner1 from '@/assets/images/bg1.ccb168ef.jpg'
 
 export default {
   name: 'GiveAll',
@@ -89,7 +89,6 @@ export default {
         // { value: 'GachaGroup', label: '卡池' },
         // { value: 'Product', label: '商品' },
         // { value: 'Shop', label: '商店' },
-        // { value: 'MemoryLobby', label: '记忆大厅' },
         // { value: 'AccountExp', label: '账号经验' },
         // { value: 'CharacterExp', label: '学生经验' },
         // { value: 'FavorExp', label: '好感经验' },
@@ -103,7 +102,6 @@ export default {
         // { value: 'CharacterGear', label: '学生装备' },
         // { value: 'IdCardBackground', label: '资料背景' },
         // { value: 'Emblem', label: '徽章' },
-        // { value: 'Sticker', label: '贴纸' },
         // { value: 'Costume', label: '服饰' },
         { value: 'Material', label: '材料' },
         { value: 'Character', label: '学生' },
@@ -111,6 +109,8 @@ export default {
         { value: 'Furniture', label: '家具' },
         { value: 'Favor', label: '礼物' },
         { value: 'Emblem', label: '称号' },
+        { value: 'MemoryLobby', label: '记忆大厅' },
+        { value: 'Sticker', label: '贴纸' },
       ],
       banner1: banner1,
     }

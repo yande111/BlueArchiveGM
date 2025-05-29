@@ -60,11 +60,11 @@
 </template>
 
 <script>
-import itemsData from '@/assets/items.json'
-import studentsData from '@/assets/students.json'
-import furnitureData from '@/assets/furniture.json'
-import equipmentData from '@/assets/equipment.json'
-import currencyData from '@/assets/currency.json'
+import itemsData from '@/assets/json/id/items.json'
+import studentsData from '@/assets/json/id/students.json'
+import furnitureData from '@/assets/json/id/furniture.json'
+import equipmentData from '@/assets/json/id/equipment.json'
+import currencyData from '@/assets/json/id/currency.json'
 
 export default {
   name: 'IdList',
@@ -189,7 +189,7 @@ export default {
       'CharHeightMetric',
       'CharHeightImperial',
     ]
-    // 允许的分类：注意家具 JSON 中分类为 "Furnitures"，学生默认分类改为 "Character"
+    // 允许的分类
     const allowedCategories = [
       'Material',
       'Character',

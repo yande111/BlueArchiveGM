@@ -1,0 +1,304 @@
+{
+    "zh-tw": {
+        "blueArchiveGM": {
+            "sidebar": {
+                "home": "S.C.H.A.L.E 首頁",
+                "giveItem": "給予物品",
+                "giveAllItems": "給予全部物品",
+                "getTeacherInfo": "獲取老師資訊",
+                "sendMail": "發送郵件",
+                "getEmailCode": "獲取郵箱驗證碼",
+                "setStudentStats": "設置學生數值",
+                "scahleSettings": "S.C.H.A.L.E 設定",
+                "getItemList": "獲取物品清單",
+                "about": "關於"
+            },
+            "consoleTitle": "BlueArchiveGM 控制台",
+            "welcomeMessage": "歡迎使用 BlueArchiveGM 控制台，請配置伺服器連線資訊",
+            "serverAddressPlaceholder": "辦公室地址（例：http://127.0.0.1:5000）",
+            "serverAuthKeyPlaceholder": "老師的認證密鑰（可選）",
+            "saveConfigButton": "儲存設定",
+            "updateConfigButton": "更新設定",
+            "updateServerStatusButton": "更新伺服器狀態",
+            "updating": "更新中...",
+            "serverStatusTitle": "伺服器狀態",
+            "offlineStatus": "服務離線",
+            "errorReason": "錯誤原因：",
+            "lastUpdate": "最後更新：",
+            "autoSyncStatus": {
+                "active": "每30秒自動同步",
+                "paused": "背景暫停更新"
+            },
+            "onlineTeacherCount": "在線的老師數量",
+            "tps": "TPS",
+            "rt": "RT",
+            "clientVersion": "客戶端版本",
+            "serverVersion": "伺服器版本",
+            "cpuStatus": "CPU 狀態",
+            "memoryStatus": "記憶體狀態",
+            "noData": "暫無伺服器狀態資料",
+            "messages": {
+                "invalidAddress": "地址需包含 http/https 協定標頭",
+                "cannotConnect": "無法連接到伺服器，請檢查設定",
+                "configSaved": "設定儲存成功",
+                "configUpdated": "設定更新成功",
+                "statusUpdated": "狀態更新成功",
+                "operationFailed": "操作失敗: ",
+                "unauthorized": "老師！您貌似沒有認證密鑰哦，請檢查首頁認證密鑰是否輸入正確！",
+                "serverError": "伺服器錯誤",
+                "cannotConnectServer": "無法連接到伺服器",
+                "autoSyncFailed": "自動同步失敗: "
+            },
+            "giveSingleItem": {
+                "title": "給予玩家單一物品",
+                "form": {
+                    "teacherUID": "老師UID",
+                    "teacherUIDPlaceholder": "請輸入的老師UID",
+                    "itemType": "物品類型",
+                    "itemTypePlaceholder": "請選擇物品類型",
+                    "itemID": "物品ID",
+                    "itemIDPlaceholder": "請輸入物品ID",
+                    "quantity": "數量",
+                    "submit": "提交"
+                },
+                "responseCard": {
+                    "header": "老師！這是您的操作結果：",
+                    "footer": "請檢查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "請先在首頁儲存伺服器地址",
+                    "giveSuccess": "物品授予成功！",
+                    "giveFailed": "操作失敗：{error}",
+                    "checkResponse": "請查看響應獲取具體錯誤",
+                    "configError": "操作失敗，請檢查設定"
+                }
+            },
+            "giveAllItems": {
+                "title": "給予玩家全部物品",
+                "form": {
+                    "teacherUID": "老師UID",
+                    "teacherUIDPlaceholder": "請輸入老師的UID",
+                    "itemType": "物品類型",
+                    "itemTypePlaceholder": "請選擇物品類型",
+                    "quantity": "數量",
+                    "submit": "立即授予全部"
+                },
+                "responseCard": {
+                    "header": "老師！這是您的操作結果：",
+                    "footer": "請檢查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "請先在首頁儲存伺服器地址",
+                    "giveSuccess": "物品授予成功！",
+                    "giveFailed": "操作失敗：{error}",
+                    "checkResponse": "請查看響應獲取具體錯誤",
+                    "configError": "操作失敗，請檢查設定"
+                }
+            },
+            "getPlayer": {
+                "title": "獲取老師資訊（開發中）",
+                "form": {
+                    "teacherUID": "老師UID",
+                    "teacherUIDPlaceholder": "請輸入老師的UID",
+                    "binaryOutput": "二進制輸出",
+                    "submit": "提交"
+                },
+                "description": "目前只會輸出資料包內容，暫時還沒做（懶喵~）",
+                "alert": {
+                    "title": "響應"
+                },
+                "messages": {
+                    "noServerAddress": "請先在首頁儲存伺服器地址",
+                    "getPlayerSuccess": "獲取玩家資訊成功",
+                    "getPlayerFailure": "獲取玩家資訊失敗：{error}",
+                    "checkResponse": "請查看響應獲取具體錯誤"
+                }
+            },
+            "mailSender": {
+                "title": "發送郵件",
+                "form": {
+                    "mailOptions": "郵件選項",
+                    "playerType": {
+                        "global": "全域",
+                        "private": "私人"
+                    },
+                    "uid": "UID",
+                    "uidPlaceholder": "請輸入玩家UID",
+                    "sender": "寄件人",
+                    "senderPlaceholder": "請輸入寄件人名稱",
+                    "mailContent": "郵件內容",
+                    "mailContentPlaceholder": "請輸入郵件內容",
+                    "sendTime": "發送時間",
+                    "expireTime": "過期時間",
+                    "attachmentList": "附件清單",
+                    "attachment": {
+                        "type": "附件類型",
+                        "typeTooltip": "選擇附件類型（0表示無類型附件）",
+                        "itemId": "物品ID",
+                        "itemIdTooltip": "輸入遊戲內物品ID（0表示無特定物品）",
+                        "quantity": "數量",
+                        "quantityTooltip": "必須大於等於0的整數"
+                    },
+                    "addAttachment": "新增附件",
+                    "submitButton": {
+                        "default": "發送郵件",
+                        "submitting": "提交中..."
+                    }
+                },
+                "responseCard": {
+                    "headerMessage": "老師！這是您的操作結果：",
+                    "footerMessage": "請檢查是否生效"
+                },
+                "messages": {
+                    "invalidAttachment": "存在無效的附件配置，請檢查",
+                    "privateMailNeedUID": "私人郵件必須填寫UID",
+                    "sendSuccess": "發送成功",
+                    "sendFailure": "發送失敗"
+                }
+            },
+            "getEmailCode": {
+                "title": "獲取郵箱驗證碼",
+                "form": {
+                    "accountLabel": "郵箱帳戶",
+                    "accountPlaceholder": "請輸入郵箱帳戶",
+                    "submitButton": {
+                        "default": "提交",
+                        "submitting": "提交中..."
+                    }
+                },
+                "emailCard": {
+                    "success": {
+                        "message1": "老師！這是您的郵箱驗證碼：",
+                        "message2": "祝老師玩得愉快！"
+                    },
+                    "error": {
+                        "message1": "老師！獲取驗證碼異常，以下是異常訊息：",
+                        "message2": "若多次提示驗證碼異常，請提交issues回報"
+                    }
+                },
+                "messages": {
+                    "noServerAddress": "請先在首頁儲存伺服器地址",
+                    "getSuccess": "獲取驗證碼成功",
+                    "getFailure": "獲取驗證碼失敗"
+                }
+            },
+            "character": {
+                "title": "設置學生屬性",
+                "form": {
+                    "teacherUID": "老師UID",
+                    "teacherUIDPlaceholder": "請輸入老師的遊戲UID",
+                    "studentID": "學生ID",
+                    "studentIDPlaceholder": "請輸入學生ID",
+                    "maxConfig": "一鍵滿配",
+                    "switch": {
+                        "on": "開啟",
+                        "off": "關閉"
+                    },
+                    "starSwitch": "星級開關",
+                    "star": "星級",
+                    "starPlaceholder": "請輸入星級",
+                    "levelSwitch": "等級開關",
+                    "level": "等級",
+                    "levelPlaceholder": "請輸入等級",
+                    "favorSwitch": "好感開關",
+                    "favor": "好感",
+                    "favorPlaceholder": "請輸入好感值",
+                    "submit": {
+                        "default": "提交請求",
+                        "submitting": "提交中..."
+                    }
+                },
+                "responseCard": {
+                    "header": "老師！這是您的操作結果：",
+                    "footer": "請檢查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "請先在首頁儲存伺服器地址",
+                    "operationSuccess": "操作成功",
+                    "operationFailed": "操作失敗",
+                    "requestError": "請求錯誤：{error}"
+                }
+            },
+            "setGame": {
+                "title": "S.C.H.A.L.E 設定",
+                "form": {
+                    "playerUID": {
+                        "label": "玩家UID",
+                        "placeholder": "請輸入玩家UID"
+                    },
+                    "type": {
+                        "label": "類型",
+                        "placeholder": "請選擇類型",
+                        "options": {
+                            "AccountLevel": "設定玩家等級",
+                            "Toast": "設定玩家通知"
+                        }
+                    },
+                    "sub1": {
+                        "defaultLabel": "無",
+                        "accountLevel": {
+                            "label": "等級",
+                            "placeholder": "請輸入玩家等級（數字）"
+                        },
+                        "toast": {
+                            "label": "通知",
+                            "placeholder": "請輸入通知內容"
+                        }
+                    },
+                    "submitButton": {
+                        "default": "提交",
+                        "submitting": "提交中..."
+                    }
+                },
+                "responseCard": {
+                    "header": "老師！這是您的操作結果：",
+                    "footer": "請檢查是否生效"
+                },
+                "messages": {
+                    "noServerAddress": "請先在首頁儲存伺服器地址",
+                    "incompleteInfo": "請填寫完整資訊",
+                    "operationSuccess": "操作成功",
+                    "operationFailed": "操作失敗"
+                }
+            },
+            "idList": {
+                "title": "物品清單",
+                "tip": "小提示：點擊卡片可以複製ID哦 ~",
+                "search": {
+                    "placeholder": "搜尋物品（名稱、描述或ID）"
+                },
+                "sidebar": {
+                    "combined": "綜合",
+                    "Material": "材料",
+                    "Character": "學生",
+                    "Equipment": "裝備",
+                    "Furniture": "傢俱",
+                    "Favor": "禮物",
+                    "Emblem": "稱號",
+                    "Other": "其他"
+                },
+                "item": {
+                    "idLabel": "ID: ",
+                    "categoryLabel": "分類："
+                },
+                "messages": {
+                    "copySuccess": "ID {id} 已複製！",
+                    "copyFailure": "複製失敗"
+                }
+            },
+            "about_blue_archive": "關於 BlueArchiveGM",
+            "version": "版本",
+            "developer": "開發者",
+            "project_based_on": "專案基於",
+            "issues_feedback": "有任何問題可前往 Issues 進行回報",
+            "open_source_agreement": "使用本工具時，請務必遵守相關的開源協定！",
+            "usage_agreement": "老師您可以修改專案內的任何程式碼，但是，請不要修改專案內引導至本倉庫的相關入口，徽標等以及本工具在此完全免費開源，請勿二次售賣！請務必留下版權資訊，非常感謝各位老師的使用！",
+            "update_log": "更新日誌",
+            "update_1_0_5": "1.0.5 新增響應處理，修復某些UI問題，修復在某些情況出現本地無法連線問題，最佳化文案",
+            "update_1_0_4": "1.0.4 新增遊戲設定，最佳化遊戲設定，獲取驗證碼UI，著手準備做多語言版本",
+            "update_1_0_3": "1.0.3 修復圖片問題，最佳化圖片顯示，修復給予物品無類型問題，最佳化ID清單美觀度",
+            "update_1_0_2": "1.0.2 更新圖示為本地，新增ID清單，取代老物品清單（未完善）新增調整學生數值，最佳化部分名詞，最佳化UI，最佳化並更新某些奇怪的問題，修復APP白屏問題",
+            "update_1_0_1": "1.0.1 最佳化KEY讀取，實現無key情況下也能使用GM，修復部分問題"
+        }
+    }
+}

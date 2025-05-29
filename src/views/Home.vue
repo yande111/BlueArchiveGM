@@ -1,7 +1,7 @@
 <template>
   <el-card class="home-card" shadow="hover">
     <div class="logo-container">
-      <img src="@/assets/logo.png" alt="Logo" class="logo" />
+      <img src="@/assets/images/logo.png" alt="Logo" class="logo" />
       <h2>BlueArchiveGM 控制台</h2>
       <p class="description">欢迎使用 BlueArchiveGM 控制台，请配置服务器连接信息</p>
     </div>
@@ -265,8 +265,9 @@ export default {
       tempData.memoryOc = parsedData.memoryOc || '未知'
       this.serverData = { ...tempData }
       this.lastUpdate = this.getCurrentTime()
-      // 每次成功更新后重置并启动倒计时
+      // 重置进度条：清除倒计时、更新 key 后重置 countdown 并启动倒计时
       this.clearCountdown()
+      this.progressKey++ // 强制重置进度条动画
       this.countdown = 30
       this.startCountdown()
     },

@@ -54,7 +54,7 @@
 
 <script>
 import axios from 'axios'
-import banner1 from '@/assets/bg1.ccb168ef.jpg' // 引入图片
+import banner1 from '@/assets/images/bg1.ccb168ef.jpg' // 引入图片
 
 export default {
   name: 'GetEmailCode',
