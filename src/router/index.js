@@ -13,6 +13,7 @@ import GameSetting from '../views/GameSetting.vue'
 import ConfigMaker from '../views/ConfigMaker.vue'
 import Mail from '../views/Mail.vue'
 import MailCode from '@/views/MailCode.vue'
+import Account from '@/views/Account.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -29,6 +30,7 @@ const routes = [
   { path: '/ConfigMaker', name: 'ConfigMaker', component: ConfigMaker },
   { path: '/Mail', name: 'Mail', component: Mail },
   { path: '/MailCode', name: 'MailCode', component: MailCode },
+  { path: '/Account', name: 'Account', component: Account },
 ]
 
 const router = createRouter({

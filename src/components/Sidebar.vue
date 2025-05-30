@@ -49,7 +49,10 @@
           <i class="bi bi-list-nested"></i> 获取物品列表
         </el-menu-item>
         <el-menu-item index="/Setting" class="menu-item">
-          <i class="bi bi-person-gear"></i> 用户设置
+          <i class="bi bi-person-gear"></i> 玩家设置
+        </el-menu-item>
+        <el-menu-item index="/Account" class="menu-item">
+          <i class="bi bi-person"></i> 账户设置
         </el-menu-item>
         <!-- <el-sub-menu index="1" popper-class="custom-submenu">
           <template #title>

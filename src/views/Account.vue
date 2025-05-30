@@ -1,29 +1,25 @@
 <template>
   <el-card class="function-card" shadow="hover">
-    <h2>验证码设置</h2>
+    <h2>账户设置</h2>
     <el-form :model="form" label-width="120px">
-      <!-- 目标邮箱 -->
-      <el-form-item label="目标邮箱">
-        <el-input v-model="form.account" placeholder="请输入目标邮箱" />
+      <!-- 账户昵称 -->
+      <el-form-item label="账户昵称">
+        <el-input v-model="form.name" placeholder="请输入账户昵称" />
       </el-form-item>
 
       <!-- 操作类型 -->
       <el-form-item label="操作类型">
         <el-select v-model="form.opType" placeholder="请选择操作类型">
-          <el-option label="设置" value="set" />
-          <el-option label="获取" value="get" />
-          <el-option label="删除" value="del" />
+          <el-option label="注册" value="login" />
+          <el-option label="封禁" value="ban" />
+          <el-option label="解除封禁" value="unban" />
+          <el-option label="获取详情" value="get" />
         </el-select>
       </el-form-item>
 
-      <!-- 验证码 (仅设置时) -->
-      <el-form-item v-if="form.opType === 'set'" label="验证码">
-        <el-input-number
-          v-model="form.code"
-          :min="0"
-          controls-position="right"
-          placeholder="请输入验证码"
-        />
+      <!-- 封禁原因 (仅封禁时) -->
+      <el-form-item v-if="form.opType === 'ban'" label="封禁原因">
+        <el-input type="textarea" v-model="form.banMsg" placeholder="请输入封禁原因" :rows="2" />
       </el-form-item>
 
       <!-- 提交按钮 -->
@@ -56,13 +52,13 @@ import axios from 'axios'
 import banner from '@/assets/images/bg1.ccb168ef.jpg'
 
 export default {
-  name: 'EmailCodeManager',
+  name: 'AccountManager',
   data() {
     return {
       form: {
-        account: '',
+        name: '',
         opType: '',
-        code: null,
+        banMsg: '',
       },
       isSubmitting: false,
       response: '',
@@ -72,24 +68,26 @@ export default {
   methods: {
     async handleSubmit() {
       // 校验必填
-      if (!this.form.account || !this.form.opType) {
-        this.$message.error('邮箱和操作类型为必填项')
+      if (!this.form.name || !this.form.opType) {
+        this.$message.error('账户昵称和操作类型为必填项')
         return
       }
-      // 校验 code
-      if (this.form.opType === 'set' && (this.form.code === null || this.form.code < 0)) {
-        this.$message.error('请填写有效的验证码')
+      // ban 时校验原因
+      if (this.form.opType === 'ban' && !this.form.banMsg) {
+        this.$message.error('请填写封禁原因')
         return
       }
 
       this.isSubmitting = true
       try {
         const params = {
-          cmd: 'emailCode',
-          account: this.form.account,
+          cmd: 'account',
+          name: this.form.name,
           type: this.form.opType,
         }
-        if (this.form.opType === 'set') params.code = this.form.code
+        if (this.form.opType === 'ban') {
+          params.banMsg = this.form.banMsg
+        }
 
         const baseURL = localStorage.getItem('serverAddress')
         const authKey = localStorage.getItem('serverAuthKey')
@@ -116,11 +114,11 @@ export default {
 </script>
 
 <style scoped>
-/* 功能卡片通用样式 */
+/* 通用功能卡片 */
 .function-card {
   max-width: 780px;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(24px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
@@ -163,12 +161,16 @@ export default {
   letter-spacing: 0.5px;
 }
 .el-input__inner,
-.el-input-number__input {
+.el-input-number__input,
+.el-textarea__inner,
+.el-select {
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 .el-input__inner:focus,
-.el-input-number__input:focus {
+.el-input-number__input:focus,
+.el-textarea__inner:focus,
+.el-select:focus {
   border-color: #4facfe;
   box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
 }
@@ -184,7 +186,6 @@ export default {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px -4px rgba(79, 172, 254, 0.4);
 }
-/* 响应卡片样式 */
 .respond-card {
   margin-top: 24px;
   display: flex;
