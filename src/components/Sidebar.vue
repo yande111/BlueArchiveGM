@@ -24,9 +24,6 @@
         <el-menu-item index="/GetPlayer" class="menu-item">
           <i class="bi bi-person"></i> 获取老师信息
         </el-menu-item>
-        <el-menu-item index="/GameMail" class="menu-item">
-          <i class="bi bi-envelope"></i> 发送游戏邮件
-        </el-menu-item>
         <!-- <el-menu-item index="/get-email-code" class="menu-item">
           <i class="bi bi-envelope-open"></i> 获取邮箱验证码
         </el-menu-item> -->
@@ -34,7 +31,7 @@
           <i class="bi bi-person-gear"></i> 设置学生数值
         </el-menu-item>
         <el-menu-item index="/Mail" class="menu-item">
-          <i class="bi bi-envelope-at"></i> 发送用户邮件
+          <i class="bi bi-envelope-at"></i> 邮件管理
         </el-menu-item>
         <el-menu-item index="/MailCode" class="menu-item">
           <i class="bi bi-123"></i> 验证码设置
