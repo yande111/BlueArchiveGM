@@ -141,7 +141,7 @@ export default {
       protocol: localStorage.getItem('protocol') || 'http://',
       serverHost: localStorage.getItem('serverHost') || '',
       serverAuthKey: localStorage.getItem('serverAuthKey') || '',
-      hasSaved: !!localStorage.getItem('serverHost'),
+      hasSaved: !!(localStorage.getItem('serverHost') || localStorage.getItem('serverAddress')),
       saving: false,
       updating: false,
       serverData: null,
@@ -197,7 +197,9 @@ export default {
       try {
         localStorage.setItem('protocol', this.protocol)
         localStorage.setItem('serverHost', this.serverHost)
+        localStorage.setItem('serverAddress', this.serverAddress)
         localStorage.setItem('serverAuthKey', this.serverAuthKey)
+        
         const success = await this.updateStatus(true)
         if (success) {
           this.hasSaved = true
@@ -265,7 +267,7 @@ export default {
     async silentUpdate() {
       try {
         const headers = this.serverAuthKey ? { Authorization: this.serverAuthKey } : {}
-        const response = await axios.get(`${this.protocol + this.serverHost}/cdq/api?cmd=ping`, { headers, timeout: 5000 })
+        const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, { headers, timeout: 5000 })
         if (response.status === 200 && response.data.code === 0) {
           await this.updateData(JSON.parse(response.data.msg))
           this.serverError = ''
