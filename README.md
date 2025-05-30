@@ -202,19 +202,19 @@ npm run tauri dev
 #### **Windows**
 
 ```sh
-npm run tauri build
+tauri build
 ```
 
 #### **macOS**
 
 ```sh
-npm run tauri build
+tauri build
 ```
 
 #### **Linux**
 
 ```sh
-npm run tauri build
+tauri build
 ```
 
 ---
