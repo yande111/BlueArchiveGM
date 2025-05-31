@@ -65,154 +65,205 @@
 
       <!-- 游戏邮件模式 -->
       <template v-else>
-        <el-form-item label="邮件选项" prop="player_type">
-          <el-radio-group v-model="form.player_type">
-            <el-radio :label="0">全局邮件</el-radio>
-            <el-radio :label="1">私人邮件</el-radio>
+        <el-form-item label="操作类型">
+          <el-radio-group v-model="mailOperation" @change="handleOperationChange">
+            <el-radio-button value="send">发送邮件</el-radio-button>
+            <el-radio-button value="delete">删除邮件</el-radio-button>
           </el-radio-group>
         </el-form-item>
 
-        <el-form-item v-if="form.player_type === 1" label="玩家UID" prop="uid">
-          <el-input v-model="form.uid" placeholder="请输入玩家UID">
-            <template #prefix>
-              <el-icon><Document /></el-icon>
-            </template>
-          </el-input>
-        </el-form-item>
-
-        <el-form-item label="发件人" prop="sender">
-          <el-input v-model="form.sender" placeholder="请输入发件人名称">
-            <template #prefix>
-              <el-icon><Message /></el-icon>
-            </template>
-          </el-input>
-        </el-form-item>
-
-        <el-form-item label="邮件内容" prop="comment">
-          <el-input
-            type="textarea"
-            v-model="form.comment"
-            placeholder="请输入邮件内容"
-            :rows="4"
-          ></el-input>
-        </el-form-item>
-
-        <el-form-item label="发送时间" prop="send_date">
-          <div class="time-selector">
-            <input
-              type="date"
-              v-model="sendDateOnly"
-              @change="updateSendDateTime"
-              class="native-date-input"
-            />
-            <input
-              type="time"
-              v-model="sendTimeOnly"
-              @change="updateSendDateTime"
-              class="native-time-input"
-            />
-            <div class="quick-buttons">
-              <el-button size="small" type="primary" plain @click="setSendTimeNow">现在</el-button>
-              <el-button size="small" type="success" plain @click="setSendTimeMorning">明天9点</el-button>
+        <!-- 删除邮件模式 -->
+        <template v-if="mailOperation === 'delete'">
+          <el-form-item label="删除范围">
+            <el-radio-group v-model="form.delete_scope">
+              <el-radio :label="0">全局邮件</el-radio>
+              <el-radio :label="1">玩家邮件</el-radio>
+            </el-radio-group>
+            <div v-if="form.delete_scope === 0" class="warning-text">
+              <el-icon><Warning /></el-icon>
+              注意：全局邮件的更新涉及数据库读写，请勿频繁大量使用
             </div>
-          </div>
-          <div class="time-preview">{{ formatDisplayTime(form.send_date) }}</div>
-        </el-form-item>
+          </el-form-item>
 
-        <el-form-item label="过期时间" prop="expire_date">
-          <div class="time-selector">
-            <input
-              type="date"
-              v-model="expireDateOnly"
-              @change="updateExpireDateTime"
-              class="native-date-input"
-            />
-            <input
-              type="time"
-              v-model="expireTimeOnly"
-              @change="updateExpireDateTime"
-              class="native-time-input"
-            />
-            <div class="quick-buttons">
-              <el-button size="small" type="warning" plain @click="setExpireTime7Days">7天后</el-button>
-              <el-button size="small" type="danger" plain @click="setExpireTimeNever">永不过期</el-button>
+          <el-form-item v-if="form.delete_scope === 1" label="玩家UID" prop="uid">
+            <el-input v-model="form.uid" placeholder="请输入玩家UID">
+              <template #prefix>
+                <el-icon><Document /></el-icon>
+              </template>
+            </el-input>
+          </el-form-item>
+
+          <el-form-item label="删除选项">
+            <el-radio-group v-model="form.delete_type">
+              <el-radio value="all">删除全部邮件</el-radio>
+              <el-radio value="specific">删除指定邮件</el-radio>
+            </el-radio-group>
+          </el-form-item>
+
+          <el-form-item v-if="form.delete_type === 'specific'" label="邮件ID">
+            <el-input v-model="form.mail_id" placeholder="请输入要删除的邮件ID">
+              <template #prefix>
+                <el-icon><Document /></el-icon>
+              </template>
+            </el-input>
+          </el-form-item>
+        </template>
+
+        <!-- 发送邮件模式 -->
+        <template v-else>
+          <el-form-item label="邮件选项" prop="player_type">
+            <el-radio-group v-model="form.player_type">
+              <el-radio :label="0">全局邮件</el-radio>
+              <el-radio :label="1">私人邮件</el-radio>
+            </el-radio-group>
+            <div v-if="form.player_type === 0" class="warning-text">
+              <el-icon><Warning /></el-icon>
+              注意：全局邮件的更新涉及数据库读写，请勿频繁大量使用
             </div>
-          </div>
-          <div class="time-preview">{{ formatDisplayTime(form.expire_date) }}</div>
-        </el-form-item>
+          </el-form-item>
 
-        <el-form-item label="附件列表">
-          <div class="attachment-list">
-            <div v-for="(item, index) in form.parcel_info_list" :key="index" class="attachment-card">
-              <div class="attachment-content">
-                <div class="field-group">
-                  <div class="field-label">
-                    附件类型
-                    <el-tooltip content="选择附件类型（0表示无类型附件）" placement="top">
-                      <el-icon class="tip-icon"><QuestionFilled /></el-icon>
-                    </el-tooltip>
-                  </div>
-                  <el-select v-model="item.type" placeholder="必填" size="small" class="type-select">
-                    <el-option
-                      v-for="option in typeOptions"
-                      :key="option.value"
-                      :label="option.label"
-                      :value="option.value"
-                    />
-                  </el-select>
-                </div>
-                <div class="field-group">
-                  <div class="field-label">
-                    物品ID
-                    <el-tooltip content="输入游戏内物品ID" placement="top">
-                      <el-icon class="tip-icon"><QuestionFilled /></el-icon>
-                    </el-tooltip>
-                  </div>
-                  <el-input-number
-                    v-model.number="item.id"
-                    :min="0"
-                    :max="99999999"
-                    class="id-input"
-                    size="small"
-                  />
-                </div>
-                <div class="field-group">
-                  <div class="field-label">
-                    数量
-                    <el-tooltip content="必须大于等于0的整数，最大999" placement="top">
-                      <el-icon class="tip-icon"><QuestionFilled /></el-icon>
-                    </el-tooltip>
-                  </div>
-                  <el-input-number
-                    v-model.number="item.num"
-                    :min="0"
-                    :max="999"
-                    class="num-input"
-                    size="small"
-                  />
-                </div>
-                <el-button
-                  type="danger"
-                  size="small"
-                  circle
-                  class="delete-btn"
-                  @click="removeAttachment(index)"
-                >
-                  <el-icon><Delete /></el-icon>
-                </el-button>
+          <el-form-item v-if="form.player_type === 1" label="玩家UID" prop="uid">
+            <el-input v-model="form.uid" placeholder="请输入玩家UID">
+              <template #prefix>
+                <el-icon><Document /></el-icon>
+              </template>
+            </el-input>
+          </el-form-item>
+
+          <el-form-item label="发件人" prop="sender">
+            <el-input v-model="form.sender" placeholder="请输入发件人名称">
+              <template #prefix>
+                <el-icon><Message /></el-icon>
+              </template>
+            </el-input>
+          </el-form-item>
+
+          <el-form-item label="邮件内容" prop="comment">
+            <el-input
+              type="textarea"
+              v-model="form.comment"
+              placeholder="请输入邮件内容"
+              :rows="4"
+            ></el-input>
+          </el-form-item>
+
+          <el-form-item label="发送时间" prop="send_date">
+            <div class="time-selector">
+              <input
+                type="date"
+                v-model="sendDateOnly"
+                @change="updateSendDateTime"
+                class="native-date-input"
+              />
+              <input
+                type="time"
+                v-model="sendTimeOnly"
+                @change="updateSendDateTime"
+                class="native-time-input"
+              />
+              <div class="quick-buttons">
+                <el-button size="small" type="primary" plain @click="setSendTimeNow">现在</el-button>
+                <el-button size="small" type="success" plain @click="setSendTimeMorning">明天9点</el-button>
               </div>
             </div>
-            <el-button type="primary" size="small" class="add-btn" @click="addAttachment">
-              <el-icon><Plus /></el-icon> 添加附件
-            </el-button>
-          </div>
-        </el-form-item>
+            <div class="time-preview">{{ formatDisplayTime(form.send_date) }}</div>
+          </el-form-item>
+
+          <el-form-item label="过期时间" prop="expire_date">
+            <div class="time-selector">
+              <input
+                type="date"
+                v-model="expireDateOnly"
+                @change="updateExpireDateTime"
+                class="native-date-input"
+              />
+              <input
+                type="time"
+                v-model="expireTimeOnly"
+                @change="updateExpireDateTime"
+                class="native-time-input"
+              />
+              <div class="quick-buttons">
+                <el-button size="small" type="warning" plain @click="setExpireTime7Days">7天后</el-button>
+                <el-button size="small" type="danger" plain @click="setExpireTimeNever">永不过期</el-button>
+              </div>
+            </div>
+            <div class="time-preview">{{ formatDisplayTime(form.expire_date) }}</div>
+          </el-form-item>
+
+          <el-form-item label="附件列表">
+            <div class="attachment-list">
+              <div v-for="(item, index) in form.parcel_info_list" :key="index" class="attachment-card">
+                <div class="attachment-content">
+                  <div class="field-group">
+                    <div class="field-label">
+                      附件类型
+                      <el-tooltip content="选择附件类型（0表示无类型附件）" placement="top">
+                        <el-icon class="tip-icon"><QuestionFilled /></el-icon>
+                      </el-tooltip>
+                    </div>
+                    <el-select v-model="item.type" placeholder="必填" size="small" class="type-select">
+                      <el-option
+                        v-for="option in typeOptions"
+                        :key="option.value"
+                        :label="option.label"
+                        :value="option.value"
+                      />
+                    </el-select>
+                  </div>
+                  <div class="field-group">
+                    <div class="field-label">
+                      物品ID
+                      <el-tooltip content="输入游戏内物品ID" placement="top">
+                        <el-icon class="tip-icon"><QuestionFilled /></el-icon>
+                      </el-tooltip>
+                    </div>
+                    <el-input-number
+                      v-model.number="item.id"
+                      :min="0"
+                      :max="99999999"
+                      class="id-input"
+                      size="small"
+                    />
+                  </div>
+                  <div class="field-group">
+                    <div class="field-label">
+                      数量
+                      <el-tooltip content="必须大于等于0的整数，最大999" placement="top">
+                        <el-icon class="tip-icon"><QuestionFilled /></el-icon>
+                      </el-tooltip>
+                    </div>
+                    <el-input-number
+                      v-model.number="item.num"
+                      :min="0"
+                      :max="999"
+                      class="num-input"
+                      size="small"
+                    />
+                  </div>
+                  <el-button
+                    type="danger"
+                    size="small"
+                    circle
+                    class="delete-btn"
+                    @click="removeAttachment(index)"
+                  >
+                    <el-icon><Delete /></el-icon>
+                  </el-button>
+                </div>
+              </div>
+              <el-button type="primary" size="small" class="add-btn" @click="addAttachment">
+                <el-icon><Plus /></el-icon> 添加附件
+              </el-button>
+            </div>
+          </el-form-item>
+        </template>
       </template>
 
       <!-- 提交按钮 -->
       <el-form-item>
         <el-button class="submit-btn" type="primary" @click="handleSubmit" :loading="isSubmitting">
-          {{ isSubmitting ? '提交中...' : '发送邮件' }}
+          {{ getSubmitButtonText() }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -225,9 +276,9 @@
         </div>
         <div class="body">
           <div class="message-box">
-            <p class="message-text">老师！邮件发送结果：</p>
+            <p class="message-text">{{ getResponseMessage() }}</p>
             <p class="code">{{ response }}</p>
-            <p class="message-text">请检查是否发送成功</p>
+            <p class="message-text">请检查操作是否成功</p>
           </div>
         </div>
       </div>
@@ -237,15 +288,16 @@
 
 <script>
 import axios from 'axios'
-import { Delete, Plus, Message, Document, QuestionFilled } from '@element-plus/icons-vue'
+import { Delete, Plus, Message, Document, QuestionFilled, Warning } from '@element-plus/icons-vue'
 import banner from '@/assets/images/bg1.ccb168ef.jpg'
 
 export default {
   name: 'MailSystem',
-  components: { Delete, Plus, Message, Document, QuestionFilled },
+  components: { Delete, Plus, Message, Document, QuestionFilled, Warning },
   data() {
     return {
       mailType: 'simple', // simple 或 game
+      mailOperation: 'send', // send 或 delete
       form: {
         // 用户邮件字段
         header: '',
@@ -259,6 +311,10 @@ export default {
         send_date: Math.floor(Date.now() / 1000),
         expire_date: Math.floor(Date.now() / 1000) + 604800, // 7天后过期
         parcel_info_list: [],
+        // 删除邮件字段
+        delete_scope: 0, // 0: 全局邮件, 1: 玩家邮件
+        delete_type: 'all', // 'all': 删除全部, 'specific': 删除指定
+        mail_id: '', // 要删除的邮件ID
       },
       typeOptions: [
         { value: 0, label: '无类型附件' },
@@ -344,7 +400,11 @@ export default {
       if (this.mailType === 'simple') {
         await this.submitSimpleMail()
       } else {
-        await this.submitGameMail()
+        if (this.mailOperation === 'send') {
+          await this.submitGameMail()
+        } else {
+          await this.submitDeleteMail()
+        }
       }
     },
 
@@ -400,11 +460,11 @@ export default {
 
           const params = {
             cmd: 'gameMail',
-            player: Boolean(this.form.player_type),
+            recipient: this.form.player_type === 0 ? 'all' : this.form.uid,
             sender: this.form.sender,
             comment: this.form.comment,
-            sendDate: this.form.send_date,
-            expireDate: this.form.expire_date,
+            sendDate: this.form.send_date.toString(),
+            expireDate: this.form.expire_date.toString(),
             parcelInfoList: JSON.stringify(
               this.form.parcel_info_list.map((item) => ({
                 type: item.type,
@@ -413,8 +473,6 @@ export default {
               })),
             ),
           }
-
-          if (this.form.player_type === 1) params.uid = this.form.uid
 
           let config = { params }
           if (authKey) config.headers = { Authorization: authKey }
@@ -430,6 +488,52 @@ export default {
           this.isSubmitting = false
         }
       })
+    },
+
+    async submitDeleteMail() {
+      // 删除邮件的逻辑
+      this.isSubmitting = true
+      try {
+        const baseURL = localStorage.getItem('serverAddress')
+        const authKey = localStorage.getItem('serverAuthKey')
+
+        const params = {
+          cmd: 'gameMail',
+          recipient: this.form.delete_scope === 0 ? 'all' : this.form.uid,
+          del: this.form.delete_type === 'all' ? 'all' : this.form.mail_id,
+        }
+
+        // 如果是删除玩家邮件但没有填写UID，提示错误
+        if (this.form.delete_scope === 1 && !this.form.uid) {
+          this.$message.error('删除玩家邮件必须填写UID')
+          this.isSubmitting = false
+          return
+        }
+
+        // 如果是删除指定邮件但没有填写邮件ID，提示错误
+        if (this.form.delete_type === 'specific' && !this.form.mail_id) {
+          this.$message.error('删除指定邮件必须填写邮件ID')
+          this.isSubmitting = false
+          return
+        }
+
+        let config = { params }
+        if (authKey) config.headers = { Authorization: authKey }
+
+        const res = await axios.get(`${baseURL}/cdq/api`, config)
+        if (res.data.code === 0) {
+          this.$message.success('邮件删除成功')
+        } else {
+          this.$message.error('删除失败')
+        }
+        this.response = res.data.msg
+      } catch (err) {
+        const msg = err.response?.data?.message || err.message
+        this.$message.error(msg)
+        this.response = msg
+      } finally {
+        this.isSubmitting = false
+      }
     },
 
     updateDateTime(dateField, timeField, targetField) {
@@ -487,6 +591,43 @@ export default {
         hour: '2-digit',
         minute: '2-digit'
       })
+    },
+
+    handleOperationChange() {
+      // 切换操作类型时重置响应信息
+      this.response = ''
+      // 重置删除相关的表单字段
+      this.form.delete_scope = 0
+      this.form.delete_type = 'all'
+      this.form.mail_id = ''
+    },
+
+    getSubmitButtonText() {
+      if (this.isSubmitting) {
+        return '提交中...'
+      }
+
+      if (this.mailType === 'simple') {
+        return '发送邮件'
+      } else {
+        if (this.mailOperation === 'send') {
+          return '发送邮件'
+        } else {
+          return '删除邮件'
+        }
+      }
+    },
+
+    getResponseMessage() {
+      if (this.mailType === 'simple') {
+        return '老师！邮件发送结果：'
+      } else {
+        if (this.mailOperation === 'send') {
+          return '老师！游戏邮件发送结果：'
+        } else {
+          return '老师！邮件删除结果：'
+        }
+      }
     },
   },
 }
@@ -767,5 +908,14 @@ export default {
 .native-time-input:focus {
   border-color: #4facfe;
   box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+}
+
+.warning-text {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 </style>
