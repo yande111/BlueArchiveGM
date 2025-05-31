@@ -15,6 +15,12 @@
         </div>
       </el-form-item>
 
+      <!-- 全局邮件警告提示 - 只在游戏邮件模式下显示 -->
+      <div v-if="shouldShowGlobalWarning" class="warning-banner">
+        <el-icon><Warning /></el-icon>
+        <span>注意：全局邮件的更新涉及数据库读写，请勿频繁大量使用</span>
+      </div>
+
       <!-- 用户邮件模式 -->
       <template v-if="mailType === 'simple'">
         <el-form-item label="邮件标题" prop="header">
@@ -79,10 +85,6 @@
               <el-radio :label="0">全局邮件</el-radio>
               <el-radio :label="1">玩家邮件</el-radio>
             </el-radio-group>
-            <div v-if="form.delete_scope === 0" class="warning-text">
-              <el-icon><Warning /></el-icon>
-              注意：全局邮件的更新涉及数据库读写，请勿频繁大量使用
-            </div>
           </el-form-item>
 
           <el-form-item v-if="form.delete_scope === 1" label="玩家UID" prop="uid">
@@ -116,10 +118,6 @@
               <el-radio :label="0">全局邮件</el-radio>
               <el-radio :label="1">私人邮件</el-radio>
             </el-radio-group>
-            <div v-if="form.player_type === 0" class="warning-text">
-              <el-icon><Warning /></el-icon>
-              注意：全局邮件的更新涉及数据库读写，请勿频繁大量使用
-            </div>
           </el-form-item>
 
           <el-form-item v-if="form.player_type === 1" label="玩家UID" prop="uid">
@@ -350,6 +348,24 @@ export default {
       sendTimeOnly: '',
       expireDateOnly: '',
       expireTimeOnly: '',
+      lastGlobalMailTime: 0, // 上次全局邮件时间
+    }
+  },
+  computed: {
+    shouldShowGlobalWarning() {
+      if (this.mailType !== 'game') return false
+
+      // 发送邮件模式：选择全局邮件时显示
+      if (this.mailOperation === 'send') {
+        return this.form.player_type === 0
+      }
+
+      // 删除邮件模式：选择删除全局邮件时显示
+      if (this.mailOperation === 'delete') {
+        return this.form.delete_scope === 0
+      }
+
+      return false
     }
   },
   created() {
@@ -393,6 +409,18 @@ export default {
     },
     removeAttachment(index) {
       this.form.parcel_info_list.splice(index, 1)
+    },
+
+    // 检查全局邮件操作频率限制
+    checkGlobalMailLimit() {
+      const now = Date.now()
+      const timeDiff = now - this.lastGlobalMailTime
+      if (timeDiff < 5000) {
+        const waitTime = Math.ceil((5000 - timeDiff) / 1000)
+        this.$message.error(`全局邮件操作过于频繁，请等待 ${waitTime} 秒`)
+        return false
+      }
+      return true
     },
 
     async handleSubmit() {
@@ -450,6 +478,11 @@ export default {
     },
 
     async submitGameMail() {
+      // 全局邮件频率限制检查
+      if (this.form.player_type === 0 && !this.checkGlobalMailLimit()) {
+        return
+      }
+
       this.$refs.mailForm.validate(async (valid) => {
         if (!valid) return
 
@@ -478,7 +511,17 @@ export default {
           if (authKey) config.headers = { Authorization: authKey }
 
           const res = await axios.get(`${baseURL}/cdq/api`, config)
-          res.data.code === 0 ? this.$message.success('游戏邮件发送成功') : this.$message.error('发送失败')
+          
+          if (res.data.code === 0) {
+            this.$message.success('游戏邮件发送成功')
+            // 更新全局邮件发送时间
+            if (this.form.player_type === 0) {
+              this.lastGlobalMailTime = Date.now()
+            }
+          } else {
+            this.$message.error('发送失败')
+          }
+          
           this.response = res.data.msg
         } catch (err) {
           const msg = err.response?.data?.message || err.message
@@ -491,6 +534,11 @@ export default {
     },
 
     async submitDeleteMail() {
+      // 全局邮件频率限制检查
+      if (this.form.delete_scope === 0 && !this.checkGlobalMailLimit()) {
+        return
+      }
+
       // 删除邮件的逻辑
       this.isSubmitting = true
       try {
@@ -521,11 +569,17 @@ export default {
         if (authKey) config.headers = { Authorization: authKey }
 
         const res = await axios.get(`${baseURL}/cdq/api`, config)
+        
         if (res.data.code === 0) {
           this.$message.success('邮件删除成功')
+          // 更新全局邮件操作时间
+          if (this.form.delete_scope === 0) {
+            this.lastGlobalMailTime = Date.now()
+          }
         } else {
           this.$message.error('删除失败')
         }
+        
         this.response = res.data.msg
       } catch (err) {
         const msg = err.response?.data?.message || err.message
@@ -910,12 +964,36 @@ export default {
   box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
 }
 
-.warning-text {
-  color: #ef4444;
-  font-size: 12px;
-  margin-top: 8px;
+.warning-banner {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 1px solid #fecaca;
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0 20px 0;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.warning-banner .el-icon {
+  font-size: 16px;
+  color: #ef4444;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
