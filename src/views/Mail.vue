@@ -164,14 +164,14 @@
                 <div class="field-group">
                   <div class="field-label">
                     物品ID
-                    <el-tooltip content="输入游戏内物品ID，最多7位数" placement="top">
+                    <el-tooltip content="输入游戏内物品ID" placement="top">
                       <el-icon class="tip-icon"><QuestionFilled /></el-icon>
                     </el-tooltip>
                   </div>
                   <el-input-number
                     v-model.number="item.id"
                     :min="0"
-                    :max="999999"
+                    :max="99999999"
                     class="id-input"
                     size="small"
                   />
