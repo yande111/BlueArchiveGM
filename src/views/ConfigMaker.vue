@@ -215,13 +215,13 @@
                     </div>
                     
                     <div v-for="(item, key, idx) in formData" :key="key" class="schedule-item">
-                      <h4>季节 {{ idx + 1 }}</h4>
+                      <h4>赛季 {{ idx + 1 }}</h4>
                       <el-form :model="item" label-width="120px" class="item-form">
                         <div class="form-row">
-                          <el-form-item label="季节ID">
+                          <el-form-item label="赛季ID">
                             <el-input-number v-model="item.SeasonId" size="small" />
                           </el-form-item>
-                          <el-form-item label="下一季节ID">
+                          <el-form-item label="下一赛季ID">
                             <el-input-number v-model="item.NextSeasonId" size="small" />
                           </el-form-item>
                         </div>
