@@ -167,12 +167,12 @@ export default {
       if (!this.serverData) return []
       return [
         { key: 'players', icon: 'User', iconClass: 'teachers-icon', value: this.serverData.playerNum || '0', label: '在线老师' },
-        { key: 'tps', icon: 'Odometer', iconClass: 'performance-icon', value: this.serverData.tps || '0', label: '服务器性能' },
+        { key: 'tps', icon: 'Odometer', iconClass: 'performance-icon', value: this.serverData.tps || '0', label: '每秒事务' },
         { key: 'rt', icon: 'Stopwatch', iconClass: 'response-icon', value: this.serverData.rt || '0ms', label: '响应时间' },
         { key: 'client', icon: 'Document', iconClass: 'version-icon', value: this.serverData.clientVersion || '未知', label: '客户端版本' },
         { key: 'server', icon: 'Setting', iconClass: 'server-icon', value: this.serverData.serverVersion || '未知', label: '服务器版本' },
         { key: 'commit', icon: 'Connection', iconClass: 'commit-icon', value: this.getCommit(), label: '提交哈希' },
-        { key: 'memory', icon: 'Files', iconClass: 'baps-memory-icon', value: this.serverData.baPsMemoryOc || '未知', label: 'BaPs内存' }
+        { key: 'memory', icon: 'Files', iconClass: 'baps-memory-icon', value: this.serverData.baPsMemoryOc || '未知', label: '占用内存' }
       ]
     },
     gauges() {
