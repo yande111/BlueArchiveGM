@@ -60,10 +60,19 @@ jobs:
       - name: 安装 Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: 安装系统依赖（Debian/Ubuntu）
+      - name: 安装系统依赖（Linux）
         run: |
           sudo apt update
-          sudo apt install -y libgtk-3-dev libwebkit2gtk-4.0-dev build-essential curl wget libayatana-appindicator3-dev librsvg2-dev
+          sudo apt install -y \
+            build-essential \
+            curl \
+            wget \
+            libgtk-3-dev \
+            libappindicator3-dev \
+            libayatana-appindicator3-dev \
+            libwebkit2gtk-4.1-dev \
+            librsvg2-dev \
+            squashfs-tools
 
       - name: 安装依赖
         run: npm install
@@ -107,14 +116,7 @@ jobs:
         with:
           tag_name: "v2.0.1"
           name: "v2.0.1"
-          body: |
-            ✅ **BlueArchiveGM v2.0.1**
-            
-            包含：
-            - Windows 版本（.exe）
-            - Linux 版本（.AppImage, .deb）
-
-            请根据你的系统下载相应版本。
+          body: "具体请查看详情"
           draft: false
           prerelease: false
           files: |
