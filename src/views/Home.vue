@@ -171,8 +171,9 @@ export default {
         { key: 'rt', icon: 'Stopwatch', iconClass: 'response-icon', value: this.serverData.rt || '0ms', label: '响应时间' },
         { key: 'client', icon: 'Document', iconClass: 'version-icon', value: this.serverData.clientVersion || '未知', label: '客户端版本' },
         { key: 'server', icon: 'Setting', iconClass: 'server-icon', value: this.serverData.serverVersion || '未知', label: '服务器版本' },
-        { key: 'commit', icon: 'Connection', iconClass: 'commit-icon', value: this.getCommit(), label: '提交哈希' },
-        { key: 'memory', icon: 'Files', iconClass: 'baps-memory-icon', value: this.serverData.baPsMemoryOc || '未知', label: '占用内存' }
+        { key: 'api', icon: 'Connection', iconClass: 'api-icon', value: this.serverData.apiVersion || '未知', label: 'API版本' },
+        { key: 'commit', icon: 'Files', iconClass: 'commit-icon', value: this.getCommit(), label: '提交哈希' },
+        { key: 'memory', icon: 'Memo', iconClass: 'baps-memory-icon', value: this.serverData.baPsMemoryOc || '未知', label: '占用内存' }
       ]
     },
     gauges() {
@@ -676,6 +677,7 @@ export default {
 .response-icon { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
 .version-icon { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
 .server-icon { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.api-icon { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
 .commit-icon { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 .baps-memory-icon { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
 
