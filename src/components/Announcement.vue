@@ -59,19 +59,16 @@ export default {
       this.close()
     },
     fetchAnnouncement() {
-      fetch('/Announcement.json')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
-          }
-          return response.json()
-        })
+      fetch('http://test.xihuannio.cn/Announcement.json')
+        .then((response) => response.json())
         .then((data) => {
+          // 假设返回的数据为数组，根据 KitanoID 按降序排序取最新的一条公告
+          // （也可以根据其它逻辑选取需要展示的公告）
           if (Array.isArray(data)) {
-            data.sort((a, b) => b.KitanoID - a.KitanoID)
+            data.sort((a, b) => b.NoticeId - a.NoticeId)
             const latest = data[0]
             this.announcement = {
-              KitanoID: latest.KitanoID,
+              KitanoID: latest.NoticeId,
               Time: latest.Time,
               Url: latest.Url,
               Title: latest.Title,
@@ -81,7 +78,7 @@ export default {
           } else {
             // 如果返回的是单个公告对象，同样做字段转换
             this.announcement = {
-              KitanoID: data.KitanoID,
+              KitanoID: data.NoticeId,
               Time: data.Time,
               Url: data.Url,
               Title: data.Title,
@@ -97,10 +94,7 @@ export default {
           this.show = true
           this.showAnimation = true
         })
-        .catch((error) => {
-          console.error('获取公告数据出错:', error)
-          // 如果获取公告失败，不显示公告而不是报错
-        })
+        .catch((error) => console.error('获取公告数据出错:', error))
     },
   },
   mounted() {

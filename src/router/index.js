@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 // import Give from '../views/Give.vue'
 import GiveAll from '../views/GiveAll.vue'
 import GetPlayer from '../views/GetPlayer.vue'
+import GameMail from '../views/GameMail.vue'
 // import GetEmailCode from '../views/GetEmailCode.vue'
 import IdList from '../views/IdList.vue'
 import Character from '../views/Character.vue'
@@ -19,6 +20,7 @@ const routes = [
   // { path: '/give', name: 'Give', component: Give },
   { path: '/GiveAll', name: 'GiveAll', component: GiveAll },
   { path: '/GetPlayer', name: 'GetPlayer', component: GetPlayer },
+  { path: '/GameMail', name: 'GameMail', component: GameMail },
   // { path: '/get-email-code', name: 'GetEmailCode', component: GetEmailCode },
   { path: '/IdList', name: 'IdList', component: IdList },
   { path: '/Character', name: 'Character', component: Character },

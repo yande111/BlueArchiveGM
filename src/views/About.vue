@@ -58,6 +58,16 @@
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
+            <h4>2025-06-02</h4>
+            <p>
+              2.0.3
+              回退，具体请查看Github
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
             <h4>2025-05-25</h4>
             <p>
               2.0.0
@@ -84,23 +94,6 @@
           <div class="timeline-content">
             <h4>2025-03-20</h4>
             <p>1.0.3 修复图片问题，优化图片显示，修复给予物品无类型问题，优化ID列表美观度</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h4>2025-03-19</h4>
-            <p>
-              1.0.2
-              更新图标为本地，新增ID列表，取代老物品列表（未完善）新增调整学生数值，优化部分名词，优化UI，优化并更新某些奇怪的问题，修复APP白屏问题，
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h4>2025-03-14</h4>
-            <p>1.0.1 优化KEY读取，实现无key情况下也能使用GM，修复部分问题</p>
           </div>
         </div>
       </div>
