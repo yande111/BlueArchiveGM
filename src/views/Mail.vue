@@ -74,7 +74,7 @@
         <el-form-item label="操作类型">
           <el-radio-group v-model="mailOperation" @change="handleOperationChange">
             <el-radio-button value="send">发送邮件</el-radio-button>
-            <el-radio-button value="delete">删除邮件</el-radio-button>
+<!--            <el-radio-button value="delete">删除邮件</el-radio-button>-->
           </el-radio-group>
         </el-form-item>
 
@@ -545,14 +545,10 @@ export default {
         const baseURL = localStorage.getItem('serverAddress')
         const authKey = localStorage.getItem('serverAuthKey')
 
-        //待后端处理： `enter.DelAllYostarMail()` 函数
+        //删除邮件暂时无法工作，等后端添加参数验证
         const params = {
           cmd: 'gameMail',
           recipient: this.form.delete_scope === 0 ? 'all' : this.form.uid,
-          sender: '系统管理员', // 删除操作使用默认发件人，后端需要此必需参数
-          comment: '删除邮件操作', // 删除操作使用默认内容，后端需要此必需参数
-          sendDate: Math.floor(Date.now() / 1000).toString(), // 删除操作使用当前时间，后端需要此必需参数
-          expireDate: Math.floor(Date.now() / 1000).toString(), // 删除操作使用当前时间，后端需要此必需参数
           del: this.form.delete_type === 'all' ? 'all' : this.form.mail_id,
         }
 
