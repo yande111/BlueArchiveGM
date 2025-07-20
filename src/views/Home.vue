@@ -7,6 +7,17 @@
     </div>
 
     <div class="form-container">
+      <!-- Lite 开关 -->
+      <div class="input-container">
+        <el-switch
+          v-model="isLite"
+          active-text="Lite 版本"
+          inactive-text="标准 版本"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
+        />
+      </div>
+
       <div class="input-container">
         <el-input
           v-model="serverAddress"
@@ -19,13 +30,9 @@
         </el-input>
       </div>
 
-      <div class="input-container">
-        <el-input
-          v-model="serverAuthKey"
-          placeholder="老师的认证密钥（可选）"
-          show-password
-          clearable
-        >
+      <!-- 仅标准版本显示 Key 输入 -->
+      <div class="input-container" v-if="!isLite">
+        <el-input v-model="serverAuthKey" placeholder="老师的认证密钥" show-password clearable>
           <template #prefix>
             <el-icon><Key /></el-icon>
           </template>
@@ -109,6 +116,7 @@ export default {
   components: { Key, Link, Refresh, Upload },
   data() {
     return {
+      isLite: localStorage.getItem('isLite') === 'false',
       serverAddress: localStorage.getItem('serverAddress') || '',
       serverAuthKey: localStorage.getItem('serverAuthKey') || '',
       hasSaved: !!localStorage.getItem('serverAddress'),
@@ -144,11 +152,12 @@ export default {
         { label: 'TPS', value: this.serverData.tps },
         { label: 'RT', value: this.serverData.rt },
         { label: '客户端版本', value: this.serverData.clientVersion },
+        { label: 'API版本', value: this.serverData.apiVersion },
         { label: '服务器版本', value: this.serverData.serverVersion },
         { label: '提交 ID', value: this.serverData.commit || '无' },
         { label: 'CPU 占用率', value: this.serverData.cpuOc },
         { label: '内存占用', value: this.serverData.memoryOc },
-        { label: 'BA PS 内存占用', value: this.serverData.baPsMemoryOc },
+        { label: 'BAPS 内存占用', value: this.serverData.baPsMemoryOc },
       ]
     },
   },
@@ -160,6 +169,7 @@ export default {
       }
       this.saving = true
       try {
+        localStorage.setItem('isLite', this.isLite)
         localStorage.setItem('serverAddress', this.serverAddress)
         localStorage.setItem('serverAuthKey', this.serverAuthKey)
         if (!this.hasSaved) {
@@ -193,14 +203,14 @@ export default {
       try {
         await new Promise((resolve) => setTimeout(resolve, 300))
         const headers = {}
-        if (this.serverAuthKey) headers.Authorization = this.serverAuthKey
+        if (!this.isLite && this.serverAuthKey) headers.Authorization = this.serverAuthKey
         const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
           headers,
           timeout: 5000,
         })
         if (response.status === 200 && response.data.code === 0) {
           const pd = JSON.parse(response.data.msg)
-          await this.applyDataUpdate(pd)
+          this.applyDataUpdate(pd)
           this.serverError = ''
           if (!silent) this.$message.success('状态更新成功')
           this.autoUpdateErrorShown = false
@@ -220,14 +230,14 @@ export default {
     async silentUpdate() {
       try {
         const headers = {}
-        if (this.serverAuthKey) headers.Authorization = this.serverAuthKey
+        if (!this.isLite && this.serverAuthKey) headers.Authorization = this.serverAuthKey
         const response = await axios.get(`${this.serverAddress}/cdq/api?cmd=ping`, {
           headers,
           timeout: 5000,
         })
         if (response.status === 200 && response.data.code === 0) {
           const pd = JSON.parse(response.data.msg)
-          await this.applyDataUpdate(pd)
+          this.applyDataUpdate(pd)
           this.serverError = ''
           this.autoUpdateErrorShown = false
         }
@@ -239,13 +249,14 @@ export default {
         this.handleUpdateError(error, true)
       }
     },
-    async applyDataUpdate(parsedData) {
+    applyDataUpdate(parsedData) {
       this.serverData = {
         playerNum: parsedData.playerNum || 0,
         tps: parsedData.tps || 0,
         rt: parsedData.rt || '0s',
         clientVersion: parsedData.clientVersion || '未知',
         serverVersion: parsedData.serverVersion || '未知',
+        apiVersion: parsedData.apiVersion || '未知',
         commit: parsedData.commit || '',
         cpuOc: parsedData.cpuOc ? parsedData.cpuOc.toFixed(2) + '%' : '未知',
         memoryOc: parsedData.memoryOc || '未知',

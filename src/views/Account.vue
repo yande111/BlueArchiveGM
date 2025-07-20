@@ -13,13 +13,21 @@
           <el-option label="注册" value="login" />
           <el-option label="封禁" value="ban" />
           <el-option label="解除封禁" value="unban" />
-          <el-option label="获取详情" value="get" />
+          <el-option label="获取详情" value="getAccount" />
+          <el-option label="设置验证码" value="setCode" />
+          <el-option label="获取验证码" value="getCode" />
+          <el-option label="删除验证码" value="delCode" />
         </el-select>
       </el-form-item>
 
-      <!-- 封禁原因 (仅封禁时) -->
+      <!-- 封禁原因 -->
       <el-form-item v-if="form.opType === 'ban'" label="封禁原因">
         <el-input type="textarea" v-model="form.banMsg" placeholder="请输入封禁原因" :rows="2" />
+      </el-form-item>
+
+      <!-- 设置验证码 -->
+      <el-form-item v-if="form.opType === 'setCode'" label="验证码">
+        <el-input v-model="form.code" placeholder="请输入验证码 (整数)" type="number" />
       </el-form-item>
 
       <!-- 提交按钮 -->
@@ -59,6 +67,7 @@ export default {
         name: '',
         opType: '',
         banMsg: '',
+        code: '',
       },
       isSubmitting: false,
       response: '',
@@ -67,14 +76,17 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      // 校验必填
+      // 必填校验
       if (!this.form.name || !this.form.opType) {
         this.$message.error('账户昵称和操作类型为必填项')
         return
       }
-      // ban 时校验原因
       if (this.form.opType === 'ban' && !this.form.banMsg) {
         this.$message.error('请填写封禁原因')
+        return
+      }
+      if (this.form.opType === 'setCode' && !this.form.code) {
+        this.$message.error('请填写验证码')
         return
       }
 
@@ -82,11 +94,14 @@ export default {
       try {
         const params = {
           cmd: 'account',
-          name: this.form.name,
+          account: this.form.name,
           type: this.form.opType,
         }
         if (this.form.opType === 'ban') {
           params.banMsg = this.form.banMsg
+        }
+        if (this.form.opType === 'setCode') {
+          params.code = Number(this.form.code)
         }
 
         const baseURL = localStorage.getItem('serverAddress')

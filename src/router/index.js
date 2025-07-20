@@ -12,7 +12,7 @@ import GameSetting from '../views/GameSetting.vue'
 // import Command from '../views/Command.vue'
 import ConfigMaker from '../views/ConfigMaker.vue'
 import Mail from '../views/Mail.vue'
-import MailCode from '@/views/MailCode.vue'
+// import MailCode from '@/views/MailCode.vue'
 import Account from '@/views/Account.vue'
 
 const routes = [
@@ -29,7 +29,7 @@ const routes = [
   // { path: '/command', name: 'Command', component: Command },
   { path: '/ConfigMaker', name: 'ConfigMaker', component: ConfigMaker },
   { path: '/Mail', name: 'Mail', component: Mail },
-  { path: '/MailCode', name: 'MailCode', component: MailCode },
+  // { path: '/MailCode', name: 'MailCode', component: MailCode },
   { path: '/Account', name: 'Account', component: Account },
 ]
 

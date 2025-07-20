@@ -52,7 +52,7 @@
     </el-card>
 
     <!-- 右侧更新时间轴卡片 -->
-    <el-card class="timeline-card" shadow="hover">
+    <!-- <el-card class="timeline-card" shadow="hover">
       <h3>Update log</h3>
       <div class="timeline">
         <div class="timeline-item">
@@ -97,7 +97,7 @@
           </div>
         </div>
       </div>
-    </el-card>
+    </el-card> -->
   </div>
 </template>
 

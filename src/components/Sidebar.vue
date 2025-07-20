@@ -36,9 +36,9 @@
         <el-menu-item index="/Mail" class="menu-item">
           <i class="bi bi-envelope-at"></i> 发送用户邮件
         </el-menu-item>
-        <el-menu-item index="/MailCode" class="menu-item">
+        <!-- <el-menu-item index="/MailCode" class="menu-item">
           <i class="bi bi-123"></i> 验证码设置
-        </el-menu-item>
+        </el-menu-item> -->
         <!-- <el-menu-item index="/command" class="menu-item">
           <i class="bi bi-terminal"></i> 命令生成器
         </el-menu-item> -->

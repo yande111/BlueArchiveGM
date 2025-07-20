@@ -116,9 +116,9 @@ jobs:
       - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v2.0.3"
-          name: "v2.0.3"
-          body: "回退并修复奇奇怪怪的问题"
+          tag_name: "v2.0.4"
+          name: "v2.0.4"
+          body: "支持Lite版，标准版互相切换，修复部分BUG"
           draft: false
           prerelease: false
           files: |

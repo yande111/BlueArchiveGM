@@ -338,74 +338,139 @@ export default {
 
 <style scoped>
 .function-card {
-  max-width: 900px;
-  margin: 20px auto;
+  max-width: 1080px;
+  margin: 40px auto;
+  padding: 24px;
   animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  background: rgba(255, 255, 255, 0.86) !important;
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
+
 :deep(h2) {
   color: #2c3e50 !important;
-  font-weight: 600;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  font-size: 24px;
+  text-align: center;
   position: relative;
 }
+
 :deep(h2::after) {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 48px;
-  height: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
   background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
   border-radius: 2px;
 }
+
 .tab-bar {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
+
 .tab {
   background: transparent;
   font-weight: 500;
   color: #4a5568;
-  border: none;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.tab:hover {
+  background-color: #f0f9ff;
+  border-color: #4facfe;
 }
 .tab.active {
   color: #2c3e50;
-  border-bottom: 2px solid #4facfe;
+  background-color: #e6f7ff;
+  border-color: #4facfe;
 }
+
 .config-flex {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 32px;
 }
+
 .form-area,
 .editor-area {
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 680px;
+  padding-right: 8px;
 }
-.add-btn {
+
+.editor-area .el-input__inner,
+.editor-area textarea {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  background-color: #f9f9f9;
+}
+
+.el-form-item {
+  margin-bottom: 18px;
+}
+
+.add-btn,
+.export-btn {
+  margin-top: 16px;
   margin-bottom: 12px;
 }
+
 .export-btn {
   float: right;
-  margin-top: 12px;
 }
+
 .array-item {
   display: flex;
   gap: 8px;
   align-items: center;
   margin-bottom: 8px;
 }
+
 .el-collapse {
   border: none;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 4px 6px;
 }
+
+.el-collapse-item__header {
+  font-weight: 600;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.el-collapse-item__wrap {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+
+.el-form {
+  padding: 8px 0;
+}
+
+.el-button {
+  border-radius: 8px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -416,6 +481,7 @@ export default {
     transform: translateY(0) scale(1);
   }
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s;
@@ -423,5 +489,16 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* 自定义滚动条美化（可选） */
+.form-area::-webkit-scrollbar,
+.editor-area::-webkit-scrollbar {
+  width: 6px;
+}
+.form-area::-webkit-scrollbar-thumb,
+.editor-area::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 </style>
