@@ -12,11 +12,12 @@
         <el-select v-model="form.type" placeholder="请选择类型" @change="handleTypeChange">
           <el-option label="设置玩家等级" value="AccountLevel"></el-option>
           <el-option label="设置玩家通知" value="Toast"></el-option>
+          <el-option label="一键通关走格子" value="Campaign"></el-option> <!-- ✅ 新增类型 -->
         </el-select>
       </el-form-item>
 
       <!-- sub1 输入框 -->
-      <el-form-item :label="sub1Label">
+      <el-form-item v-if="showSub1" :label="sub1Label">
         <el-input
           v-model="form.sub1"
           :placeholder="sub1Placeholder"
@@ -93,6 +94,9 @@ export default {
       }
       return this.form.type === 'AccountLevel' ? '请输入玩家等级（数字）' : '请输入通知内容'
     },
+    showSub1() {
+      return this.form.type !== 'Campaign' && this.form.type !== ''
+    },
     banner1() {
       return banner1
     },
@@ -108,14 +112,18 @@ export default {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
-      if (!this.form.uid || !this.form.type || !this.form.sub1) {
+      if (!this.form.uid || !this.form.type || (this.showSub1 && !this.form.sub1)) {
         this.$message.error('请填写完整信息')
         return
       }
       this.isSubmitting = true
       this.response = ''
       try {
-        const url = `${baseURL}/cdq/api?cmd=set&uid=${this.form.uid}&type=${this.form.type}&sub1=${encodeURIComponent(this.form.sub1)}`
+        // ✅ 根据是否需要 sub1 构建 URL
+        let url = `${baseURL}/cdq/api?cmd=set&uid=${this.form.uid}&type=${this.form.type}`
+        if (this.showSub1) {
+          url += `&sub1=${encodeURIComponent(this.form.sub1)}`
+        }
         let headers = {}
         if (authKey) {
           headers.Authorization = authKey
@@ -227,7 +235,6 @@ export default {
   border-bottom: 1px solid #e2e8f0;
   position: relative;
 }
-
 :deep(h2::after) {
   content: '';
   position: absolute;
