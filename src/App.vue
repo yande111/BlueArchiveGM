@@ -27,7 +27,6 @@ export default {
     AnnouncementModal,
   },
   mounted() {
-    // 挂载后自动打开公告弹窗（可根据需求调整调用时机）
     this.$refs.announcementModal.open()
   },
 }

@@ -167,10 +167,10 @@ export default {
       form: {
         player_type: 0,
         uid: '',
-        sender: '系统管理员',
-        comment: '',
-        send_date: Math.floor(Date.now() / 1000),
-        expire_date: Math.floor(Date.now() / 1000) + 604800,
+        sender: 'BaPsServer',
+        comment: '请查收邮件',
+        send_date: 946656000,
+        expire_date: 4070880000,
         parcel_info_list: [],
       },
       typeOptions: [
@@ -235,15 +235,17 @@ export default {
       this.$refs.mailForm.validate(async (valid) => {
         if (!valid) return
         this.isSubmitting = true
+
         const baseURL = localStorage.getItem('serverAddress')
         const authKey = localStorage.getItem('serverAuthKey')
+
         const params = {
           cmd: 'gameMail',
-          player: Boolean(this.form.player_type),
-          sender: this.form.sender,
-          comment: this.form.comment,
-          sendDate: this.form.send_date,
-          expireDate: this.form.expire_date,
+          recipient: this.form.player_type === 0 ? 'all' : this.form.uid,
+          sender: this.form.sender || 'gucooing',
+          comment: this.form.comment || '请查收邮件',
+          sendDate: this.form.send_date || 946656000,
+          expireDate: this.form.expire_date || 4070880000,
           parcelInfoList: JSON.stringify(
             this.form.parcel_info_list.map((item) => ({
               type: item.type,
@@ -252,13 +254,16 @@ export default {
             })),
           ),
         }
-        if (this.form.player_type === 1) params.uid = this.form.uid
 
         try {
-          let config = { params }
+          const config = { params }
           if (authKey) config.headers = { Authorization: authKey }
           const res = await axios.get(`${baseURL}/cdq/api`, config)
-          res.data.code === 0 ? this.$message.success('发送成功') : this.$message.error('发送失败')
+          if (res.data.code === 0) {
+            this.$message.success('发送成功')
+          } else {
+            this.$message.error('发送失败')
+          }
           this.response = res.data.msg
         } catch (err) {
           const msg = err.response?.data?.message || err.message
@@ -270,7 +275,13 @@ export default {
       })
     },
   },
-  components: { User, Message, Delete, Plus, QuestionFilled },
+  components: {
+    User,
+    Message,
+    Delete,
+    Plus,
+    QuestionFilled,
+  },
 }
 </script>
 

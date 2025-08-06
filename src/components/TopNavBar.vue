@@ -1,7 +1,6 @@
 <template>
   <div class="top-navbar">
     <div class="navbar-content">
-      <!-- GitHub 按钮放置在右侧 -->
       <GithubButton />
     </div>
   </div>

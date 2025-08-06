@@ -12,7 +12,8 @@
         <el-select v-model="form.type" placeholder="请选择类型" @change="handleTypeChange">
           <el-option label="设置玩家等级" value="AccountLevel"></el-option>
           <el-option label="设置玩家通知" value="Toast"></el-option>
-          <el-option label="一键通关走格子" value="Campaign"></el-option> <!-- ✅ 新增类型 -->
+          <el-option label="获取服务器配置" value="GetConfig"></el-option>
+          <el-option label="一键通关走格子" value="Campaign"></el-option>
         </el-select>
       </el-form-item>
 
@@ -46,14 +47,6 @@
             <p class="code">{{ response }}</p>
             <p class="message-text">请检查是否生效</p>
           </div>
-          <!-- <div class="footer">
-            <div class="copyright">
-              Copyright © {{ currentYear }}<br />
-              <a>KitanoSakura</a>. All Rights Reserved
-            </div>
-            <p class="description">如有问题请重新提交</p>
-            <p class="more">有任何问题可前往 [关于] 进行反馈</p>
-          </div> -->
         </div>
       </div>
     </div>
@@ -62,7 +55,7 @@
 
 <script>
 import axios from 'axios'
-import banner1 from '@/assets/images/bg1.ccb168ef.jpg' // 引入图片
+import banner1 from '@/assets/images/bg1.ccb168ef.jpg'
 
 export default {
   name: 'SetGame',
@@ -78,24 +71,37 @@ export default {
     }
   },
   computed: {
-    // 获取当前年份
-    currentYear() {
-      return new Date().getFullYear()
-    },
-    // sub1 的标签
+    // sub1 的标签，根据 type 区分
     sub1Label() {
-      if (!this.form.type) return '无' // 未选择类型时显示 "无"
-      return this.form.type === 'AccountLevel' ? '等级' : '通知'
+      switch (this.form.type) {
+        case 'AccountLevel':
+          return '等级'
+        case 'Toast':
+          return '通知'
+        case 'GetConfig':
+        case 'Campaign':
+          return '占位参数'
+        default:
+          return '参数'
+      }
     },
     // sub1 的占位符
     sub1Placeholder() {
-      if (!this.form.type) {
-        return '请选择类型'
+      switch (this.form.type) {
+        case 'AccountLevel':
+          return '请输入玩家等级（数字）'
+        case 'Toast':
+          return '请输入通知内容'
+        case 'GetConfig':
+        case 'Campaign':
+          return '请输入任意值'
+        default:
+          return '请选择类型'
       }
-      return this.form.type === 'AccountLevel' ? '请输入玩家等级（数字）' : '请输入通知内容'
     },
+    // 是否显示 sub1 输入项，所有 type 均需提供 sub1
     showSub1() {
-      return this.form.type !== 'Campaign' && this.form.type !== ''
+      return this.form.type !== ''
     },
     banner1() {
       return banner1
@@ -112,22 +118,16 @@ export default {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
-      if (!this.form.uid || !this.form.type || (this.showSub1 && !this.form.sub1)) {
+      if (!this.form.uid || !this.form.type || !this.form.sub1) {
         this.$message.error('请填写完整信息')
         return
       }
       this.isSubmitting = true
       this.response = ''
       try {
-        // ✅ 根据是否需要 sub1 构建 URL
-        let url = `${baseURL}/cdq/api?cmd=set&uid=${this.form.uid}&type=${this.form.type}`
-        if (this.showSub1) {
-          url += `&sub1=${encodeURIComponent(this.form.sub1)}`
-        }
-        let headers = {}
-        if (authKey) {
-          headers.Authorization = authKey
-        }
+        let url = `${baseURL}/cdq/api?cmd=set&uid=${this.form.uid}&type=${this.form.type}&sub1=${encodeURIComponent(this.form.sub1)}`
+        const headers = {}
+        if (authKey) headers.Authorization = authKey
         const res = await axios.get(url, { headers })
         if (res.data.code === 0) {
           this.$message.success('操作成功')
@@ -160,18 +160,22 @@ export default {
   box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
 }
+
 .function-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.16);
 }
+
 .submit-btn {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
   border: none !important;
   padding: 12px 32px !important;
 }
+
 .submit-btn:hover {
   transform: translateY(-1px);
 }
+
 .respond-card {
   display: flex;
   align-items: center;
@@ -179,6 +183,7 @@ export default {
   color: #666;
   font-size: 14px;
 }
+
 .respond-card-container {
   width: 500px;
   margin: 0 auto;
@@ -187,12 +192,15 @@ export default {
   border-radius: 5px;
   background: #fff;
 }
+
 .header-image {
   width: 100%;
 }
+
 .body {
   padding: 30px 20px;
 }
+
 .message-box {
   text-align: center;
   padding: 20px;
@@ -201,10 +209,12 @@ export default {
   max-width: 400px;
   margin: 20px auto;
 }
+
 .message-text {
   font-size: 16px;
   color: #333;
 }
+
 .code {
   font-size: 18px;
   font-weight: bold;
@@ -215,18 +225,7 @@ export default {
   display: inline-block;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.description,
-.more {
-  font-size: 13px;
-  color: #999;
-  text-align: center;
-}
-/* 标题样式 */
+
 :deep(h2) {
   color: #2c3e50 !important;
   font-weight: 600;
@@ -235,6 +234,7 @@ export default {
   border-bottom: 1px solid #e2e8f0;
   position: relative;
 }
+
 :deep(h2::after) {
   content: '';
   position: absolute;

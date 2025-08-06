@@ -9,8 +9,13 @@
           </template>
         </el-input>
       </el-form-item>
+
       <el-form-item label="输出JSON">
-        <el-switch v-model="form.json" active-value="1" inactive-value="0"></el-switch>
+        <el-switch
+          v-model="form.encodingFormat"
+          :active-value="'json'"
+          :inactive-value="'base64'"
+        ></el-switch>
       </el-form-item>
       <el-form-item label="仅基础数据">
         <el-switch v-model="form.basis" active-value="1" inactive-value="0"></el-switch>
@@ -33,6 +38,7 @@
 <script>
 import axios from 'axios'
 import { User } from '@element-plus/icons-vue'
+
 export default {
   name: 'GetTeacher',
   components: { User },
@@ -40,7 +46,7 @@ export default {
     return {
       form: {
         uid: '',
-        json: '0',
+        encodingFormat: 'base64',
         basis: '0',
       },
       response: '',
@@ -51,17 +57,31 @@ export default {
     async handleGetTeacher() {
       const baseURL = localStorage.getItem('serverAddress')
       const authKey = localStorage.getItem('serverAuthKey')
+
       if (!baseURL) {
         this.$message.error('请先在首页保存服务器地址')
         return
       }
+
       try {
-        const url = `${baseURL}/cdq/api?cmd=getPlayer&uid=${this.form.uid}&json=${this.form.json}&basis=${this.form.basis}`
-        let headers = {}
-        if (authKey) {
-          headers.Authorization = authKey
+        const paramsObj = {
+          cmd: 'getPlayer',
+          uid: this.form.uid,
         }
-        const res = await axios.get(url, { headers })
+
+        if (this.form.encodingFormat && this.form.encodingFormat !== 'base64') {
+          paramsObj.encodingFormat = this.form.encodingFormat
+        }
+
+        if (this.form.basis === '1') {
+          paramsObj.basis = '1'
+        }
+
+        const params = new URLSearchParams(paramsObj).toString()
+
+        const res = await axios.get(`${baseURL}/cdq/api?${params}`, {
+          headers: authKey ? { Authorization: authKey } : {},
+        })
 
         if (res.data.code === 0) {
           this.responseType = 'success'

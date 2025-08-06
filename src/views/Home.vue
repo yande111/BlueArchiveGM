@@ -116,7 +116,7 @@ export default {
   components: { Key, Link, Refresh, Upload },
   data() {
     return {
-      isLite: localStorage.getItem('isLite') === 'false',
+      isLite: JSON.parse(localStorage.getItem('isLite') || 'true'),
       serverAddress: localStorage.getItem('serverAddress') || '',
       serverAuthKey: localStorage.getItem('serverAuthKey') || '',
       hasSaved: !!localStorage.getItem('serverAddress'),
@@ -169,7 +169,7 @@ export default {
       }
       this.saving = true
       try {
-        localStorage.setItem('isLite', this.isLite)
+        localStorage.setItem('isLite', JSON.stringify(this.isLite))
         localStorage.setItem('serverAddress', this.serverAddress)
         localStorage.setItem('serverAuthKey', this.serverAuthKey)
         if (!this.hasSaved) {

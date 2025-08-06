@@ -13,7 +13,7 @@
         <h2>关于 BlueArchiveGM</h2>
       </div>
       <div class="about-content">
-        <p><strong>版本：</strong> 2.0.0</p>
+        <p><strong>版本：</strong> 2.0.5</p>
         <p><strong>开发者：</strong> KitanoSakura（北野桜奈）</p>
         <p>
           <strong>项目基于：</strong>

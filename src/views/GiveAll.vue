@@ -15,9 +15,9 @@
         </el-input>
       </el-form-item>
 
-      <!-- 物品类型输入 改为下拉菜单 -->
+      <!-- 物品类型输入 -->
       <el-form-item label="物品类型">
-        <el-select v-model="form.t" placeholder="请选择物品类型">
+        <el-select v-model="form.type" placeholder="请选择物品类型">
           <el-option
             v-for="option in typeOptions"
             :key="option.value"
@@ -76,41 +76,21 @@ export default {
     return {
       form: {
         uid: '',
-        t: '',
+        type: '',
         num: 1,
       },
-      response: '', // 只保存接口返回的 msg 字段
+      response: '',
       typeOptions: [
-        // { value: 'None', label: '无' },
-        // { value: 'Character', label: '学生' },
-        // { value: 'Currency', label: '货币' },
-        // { value: 'Equipment', label: '装备' },
-        // { value: 'Item', label: '物品' },
-        // { value: 'GachaGroup', label: '卡池' },
-        // { value: 'Product', label: '商品' },
-        // { value: 'Shop', label: '商店' },
-        // { value: 'AccountExp', label: '账号经验' },
-        // { value: 'CharacterExp', label: '学生经验' },
-        // { value: 'FavorExp', label: '好感经验' },
-        // { value: 'TSS', label: 'TSS' },
-        // { value: 'Furniture', label: '家具' },
-        // { value: 'ShopRefresh', label: '商店刷新' },
-        // { value: 'LocationExp', label: '地点经验' },
-        // { value: 'Recipe', label: '配方' },
-        // { value: 'CharacterWeapon', label: '学生武器' },
-        // { value: 'ProductMonthly', label: '月度商品' },
-        // { value: 'CharacterGear', label: '学生装备' },
-        // { value: 'IdCardBackground', label: '资料背景' },
-        // { value: 'Emblem', label: '徽章' },
-        // { value: 'Costume', label: '服饰' },
-        { value: 'Material', label: '材料' },
+        { value: 'All', label: '全部' },
+        { value: 'Item', label: '物品' },
         { value: 'Character', label: '学生' },
         { value: 'Equipment', label: '装备' },
         { value: 'Furniture', label: '家具' },
         { value: 'Favor', label: '礼物' },
         { value: 'Emblem', label: '称号' },
-        { value: 'MemoryLobby', label: '记忆大厅' },
         { value: 'Sticker', label: '贴纸' },
+        { value: 'MemoryLobby', label: '记忆大厅' },
+        { value: 'Currency', label: '货币' },
       ],
       banner1: banner1,
     }
@@ -124,11 +104,16 @@ export default {
         return
       }
       try {
-        const params = new URLSearchParams({
-          ...this.form,
+        const paramsObj = {
+          uid: this.form.uid,
+          type: this.form.type,
           cmd: 'ga',
-        }).toString()
+        }
+        if (this.form.num && this.form.num !== 1) {
+          paramsObj.num = this.form.num
+        }
 
+        const params = new URLSearchParams(paramsObj).toString()
         const res = await axios.get(`${baseURL}/cdq/api?${params}`, {
           headers: { Authorization: authKey },
         })
@@ -138,11 +123,10 @@ export default {
         } else {
           this.$message.error('操作失败：' + (res.data.message || '请查看响应获取具体错误'))
         }
-        // 仅获取返回的 msg 字段
         this.response = res.data.msg
       } catch (error) {
         const errorMsg = error.response?.data?.message || error.message
-        this.$message.error('操作失败，请检查配置')
+        this.$message.error('操作失败：' + errorMsg)
         this.response = errorMsg
       }
     },
