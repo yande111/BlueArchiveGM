@@ -41,20 +41,24 @@
       <!-- 时间设置 -->
       <el-form-item label="发送时间" prop="send_date">
         <el-date-picker
-          v-model="form.send_date"
+          v-model="sendDateMs"
           type="datetime"
-          value-format="timestamp"
+          value-format="x"
           placeholder="选择发送时间"
           style="width: 100%"
+          :validate-event="false"
+          @change="onSendChange"
         ></el-date-picker>
       </el-form-item>
       <el-form-item label="过期时间" prop="expire_date">
         <el-date-picker
-          v-model="form.expire_date"
+          v-model="expireDateMs"
           type="datetime"
-          value-format="timestamp"
+          value-format="x"
           placeholder="选择过期时间"
           style="width: 100%"
+          :validate-event="false"
+          @change="onExpireChange"
         ></el-date-picker>
       </el-form-item>
 
@@ -173,6 +177,8 @@ export default {
         expire_date: 4070880000,
         parcel_info_list: [],
       },
+      sendDateMs: null,
+      expireDateMs: null,
       typeOptions: [
         { value: 1, label: '学生' },
         { value: 2, label: '货币' },
@@ -224,6 +230,34 @@ export default {
       },
     }
   },
+  created() {
+    this.sendDateMs = this.form.send_date ? this.form.send_date * 1000 : null
+    this.expireDateMs = this.form.expire_date ? this.form.expire_date * 1000 : null
+  },
+  watch: {
+    sendDateMs(ms) {
+      if (ms === null) {
+        this.form.send_date = null
+        return
+      }
+      if (typeof ms === 'number' && isFinite(ms)) {
+        this.form.send_date = Math.floor(ms / 1000)
+      } else {
+        console.log('sendDateMs ignored (not number):', ms)
+      }
+    },
+    expireDateMs(ms) {
+      if (ms === null) {
+        this.form.expire_date = null
+        return
+      }
+      if (typeof ms === 'number' && isFinite(ms)) {
+        this.form.expire_date = Math.floor(ms / 1000)
+      } else {
+        console.log('expireDateMs ignored (not number):', ms)
+      }
+    },
+  },
   methods: {
     addAttachment() {
       this.form.parcel_info_list.push({ type: 0, id: 0, num: 0 })
@@ -271,6 +305,42 @@ export default {
           this.response = msg
         } finally {
           this.isSubmitting = false
+        }
+      })
+    },
+    onSendChange(val) {
+      if (val === null) {
+        this.form.send_date = null
+        return
+      }
+      if (typeof val === 'number' && isFinite(val)) {
+        this.form.send_date = Math.floor(val / 1000)
+        return
+      }
+      this.$nextTick(() => {
+        const ms = this.sendDateMs
+        if (typeof ms === 'number' && isFinite(ms)) {
+          this.form.send_date = Math.floor(ms / 1000)
+        } else {
+          console.log('[nextTick] still not number:', ms)
+        }
+      })
+    },
+    onExpireChange(val) {
+      if (val === null) {
+        this.form.expire_date = null
+        return
+      }
+      if (typeof val === 'number' && isFinite(val)) {
+        this.form.expire_date = Math.floor(val / 1000)
+        return
+      }
+      this.$nextTick(() => {
+        const ms = this.expireDateMs
+        if (typeof ms === 'number' && isFinite(ms)) {
+          this.form.expire_date = Math.floor(ms / 1000)
+        } else {
+          console.log('[nextTick] still not number:', ms)
         }
       })
     },
