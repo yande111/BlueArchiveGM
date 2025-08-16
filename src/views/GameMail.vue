@@ -104,14 +104,14 @@
               <div class="field-group">
                 <div class="field-label">
                   数量
-                  <el-tooltip content="必须大于等于0的整数，最大999" placement="top">
+                  <el-tooltip content="必须大于等于0的整数，最大9999999" placement="top">
                     <el-icon class="tip-icon"><QuestionFilled /></el-icon>
                   </el-tooltip>
                 </div>
                 <el-input-number
                   v-model.number="item.num"
                   :min="0"
-                  :max="999"
+                  :max="9999999"
                   class="num-input"
                   size="small"
                 />
